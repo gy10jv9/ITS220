@@ -1,0 +1,12 @@
+@font-face {
+    font-family: streak;
+    src: url(../fonts/LTStreak-Regular.woff2);
+}
+@font-face {
+    font-family: "streak semibold";
+    src: url(../fonts/LTStreak-Semibold.woff2);
+}
+@font-face {
+    font-family: "streak medium";
+    src: url(../fonts/LTStreak-Medium.woff2);
+}
