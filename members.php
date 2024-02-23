@@ -9,7 +9,7 @@
         <div class="form-container">
             <div class="label-container">
                 <img src="img/icon-back.png" class="back-bttn" onclick="location.href = 'index.php'">
-                <p class="label"> Register a Member </p>
+                <p class="label"> Register Member </p>
             </div>
             <main>
                 <form>
@@ -81,10 +81,4 @@
             </main>       
         </div>
     </body>
-    <script>
-        // Add this script to handle the cancel button click event
-        document.querySelector('.bttn-cancel').addEventListener('click', function() {
-            location.href = 'index.php';
-        });
-    </script>
 </html>
