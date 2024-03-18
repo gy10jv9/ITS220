@@ -2,15 +2,11 @@
     <head>
         <link rel="stylesheet" href="css/style.css">
         <link rel="stylesheet" href="css/fonts.css">
+        <link rel="stylesheet" href="css/index.css">
     </head>
     <body>
-        <div class="fullWindow centerContent">
-            <main>
-                <button onclick="location.href = 'members.php';"> Add Members </button>
-                <button onclick="location.href = 'inventory.php';"> Add Inventory </button>
-                <button onclick="location.href = 'works.php';"> Add Work Report </button>
-                <button onclick="location.href = 'donations.php';"> Add Donations </button>
-            </main>
-        </div>
+        <div class="fullWindow relative" style="color: black;">
+            <img class="background"></img>
+		</div>
     </body>
 </html>
