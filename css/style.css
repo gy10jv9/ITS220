@@ -5,6 +5,7 @@
     font-family: "streak medium";
     font-size: 16px;
     color: #1E1E1E;
+    border: 1px solid black;
 }
 body {
     background-color: #f5f5f5;
@@ -139,3 +140,4 @@ hr {
     align-items: center;
 }
 .relative { position: relative }
+.f-row { display: flex; flex-direction: row; }

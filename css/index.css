@@ -1,4 +1,12 @@
-.background {
-    width: 100vw;
-    height: 50%;
+.sideNav {
+    position: fixed;
+    left: 0;
+    width: 164px;
+    height: 100%;
+    padding: 16px 0 0 32px;
+}
+.logo {
+    width: 50px;
+    aspect-ratio: 1/1;
+    background: url("../img/logo.jpg") center center/cover;
 }
