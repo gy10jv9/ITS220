@@ -14,8 +14,10 @@
             <ul>
                 <li> home </li>
                 <li> dashboard </li>
+                <li> volunteers </li>
                 <li> profile </li>
                 <li> settings </li>
+                <li> help </li>
             </ul>
         </div>
     </body>
