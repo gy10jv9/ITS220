@@ -37,7 +37,6 @@ body {
 .label {
     color: white;
     font-size: 16px;
-    text-transform: uppercase;
     line-height: 0;
     font-family: "streak semibold";
     margin-top: 2px;
@@ -141,8 +140,9 @@ hr {
 .sideNav {
     width: 150px;
     height: 100%;
-    background-color: white;
+    background-color: #82171B;
     padding: 16px;
+    border-radius: 4px;
 }
 li { 
     cursor: pointer;
@@ -153,9 +153,10 @@ li {
     transition: all 0.03s ease-in-out; 
     border-radius: 4px;
     padding-left: 8px;
+    color: white;
 }
 li:hover {
-    background-color: #81171B;
+    background-color: rgb(65, 12, 15);
     color: white;
 }
 
@@ -187,11 +188,12 @@ header {
     width: 100px;
     aspect-ratio: 1/1;
     background: url("../img/logo-edited.png") center center/cover;
+    margin-left: 16px;
 }
 .container-details {
     height: 100%;
     width: 80%;
-    border-left: #a12a2e 1px solid;
+    border-left: #1E1E1E 1px solid;
     padding: 8px 8px 8px 32px;
 }
 .container-details h1 {
@@ -199,16 +201,38 @@ header {
     font-size: 20px;
     text-transform: uppercase;
 }
+.container-details hr {
+    margin: 0;
+    margin-bottom: 8px;
+    border-top: 1px dashed #1E1E1E;
+}
 .container-socials {
     display: flex;
     flex-wrap: wrap;
 }
-.container-socials p {
+.container-socials .social-link {
     flex: 1 0 50%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
 }
+.container-socials .icon {
+    height: 20px;
+    aspect-ratio: 1/1;
+    margin-right: 8px;
+}
+.container-socials .fb { background: url(../img/icon-fb.png) center center/cover; }
+.container-socials .ig { background: url(../img/icon-ig.png) center center/cover; }
+.container-socials .yt { background: url(../img/icon-yt.png) center center/cover; }
+.container-socials .email { background: url(../img/icon-email.png) center center/cover; }
+.container-socials p { margin-top: 4px; }
 
 
 /* section containing list */
+.container-serach {
+    display: flex;
+    flex-direction: row;
+}
 .container-list {
     margin-top: 16px;
     height: fit-content;

@@ -29,9 +29,22 @@
                         <hr/>
 
                         <div class="container-socials">
-                            <p> facebook </p>
-                            <p> instagram </p>
-                            <p> youtube </p>
+                            <div class="social-link">
+                                <div class="icon fb" ></div>
+                                <p> Red Amity Volunteer PH </p>
+                            </div>
+                            <div class="social-link">
+                                <div class="icon ig" ></div>
+                                <p> @redamityph </p>
+                            </div>
+                            <div class="social-link">
+                                <div class="icon yt" ></div>
+                                <p> Red Amity PH </p>
+                            </div>
+                            <div class="social-link">
+                                <div class="icon email" ></div>
+                                <p> redamityph@gmail.com </p>
+                            </div>
                         </div>
                     </div>
                 </header>
@@ -39,7 +52,7 @@
                 <section class="container-list">
                     <div class="label-container">
                         <img src="img/icon-back.png" class="back-bttn" onclick="location.href='dashboard.php'">
-                        <p class="label"> list of volunteers </p>
+                        <p class="label"> List of Volunteers </p>
                     </div>
 
                     <div class="container-search">
