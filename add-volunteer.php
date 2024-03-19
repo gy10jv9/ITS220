@@ -8,7 +8,7 @@
     <body>
         <div class="form-container">
             <div class="label-container">
-                <img src="img/icon-back.png" class="back-bttn" onclick="location.href = 'index.php'">
+                <img src="img/icon-back.png" class="back-bttn" onclick="location.href = 'dash-volunteers.php'">
                 <p class="label"> Register Member </p>
             </div>
             <main>

@@ -4,48 +4,58 @@
         <link rel="stylesheet" href="css/fonts.css">
     </head>
     <body>
-        <div class="sideNav">
-            <ul>
-                <li> home </li>
-                <li> dashboard </li>
-                <li onclick="window.location.href='dash-volunteers.php'"> volunteers </li>
-                <li> profile </li>
-                <li> settings </li>
-            </ul>
+        <div class="container-sideNav">
+            <div class="sideNav">
+                <ul>
+                    <li> home </li>
+                    <li onclick="window.location.href='dashboard.php'"> dashboard </li>
+                    <li onclick="window.location.href='dash-volunteers.php'"> volunteers </li>
+                    <li onclick="window.location.href='dash-volunteers.php'"> donations </li>
+                    <li onclick="window.location.href='dash-volunteers.php'"> inventory </li>
+                    <li onclick="window.location.href='dash-volunteers.php'"> works </li>
+                    <li> profile </li>
+                    <li> settings </li>
+                </ul>
+            </div>
         </div>
 
-        <main>
-            <header>
-                <div class="logo"></div>
-                <div class="container-details">
-                    <h1> Red Amity Philippines Volunteer Services </h1>
-                    <p> 123 Rizal Avenue, Barangay Poblacion 5, Bacolod City, Negros Occidental, 6100 </p>
-                    <div class="container-socials">
-                        <p> facebook </p>
-                        <p> instagram </p>
-                        <p> youtube </p>
+        <div class="container-main">
+            <main>
+                <header>
+                    <div class="logo"></div>
+                    <div class="container-details">
+                        <h1> philippine red amity Volunteer Services </h1>
+                        <p> 123 Rizal Avenue, Barangay Poblacion 5, Bacolod City, Negros Occidental, 6100 </p>
+                        <hr/>
+
+                        <div class="container-socials">
+                            <p> facebook </p>
+                            <p> instagram </p>
+                            <p> youtube </p>
+                        </div>
                     </div>
-                </div>
-            </header>
+                </header>
 
-            <section class="container-list">
-                <div class="label-container">
-                    <img src="img/icon-back.png" class="back-bttn" onclick="location.href='index.php'">
-                    <p class="label"> list of volunteers </p>
-                </div>
+                <section class="container-list">
+                    <div class="label-container">
+                        <img src="img/icon-back.png" class="back-bttn" onclick="location.href='dashboard.php'">
+                        <p class="label"> list of volunteers </p>
+                    </div>
 
-                <div class="container-search">
-                    <input type="text"/>
-                </div>
+                    <div class="container-search">
+                        <input type="text"/>
+                    </div>
 
-                <button> add volunteer </button>
-                <h2> No Volunteers Yet </h2>
-                <p> click "add volunteer" to add one </p>
-            </section>
-        </main>
+                    <button onclick="location.href='add-volunteer.php'"> add volunteer </button>
+                    <h2> No Volunteers Yet </h2>
+                    <p> click "add volunteer" to add one </p>
+                </section>
+            </main>
+        </div>
 
         <div class="container-charts">
             <img src="img/chart1.png"></img>
+            <img src="img/chart2.png"></img>
         </div>
     </body>
 </html>
