@@ -5,10 +5,13 @@
     font-family: "streak medium";
     font-size: 16px;
     color: #1E1E1E;
-    border: 1px solid black;
+    letter-spacing: 0.2;
 }
 body {
     background-color: #f5f5f5;
+    display: flex;
+    flex-direction: row;
+    height: 100%;
 }
 
 .form-container {
@@ -34,9 +37,9 @@ body {
 .label {
     color: white;
     font-size: 16px;
-    text-transform: uppercase;
     line-height: 0;
     font-family: "streak semibold";
+    margin-top: 2px;
 }
 .back-bttn {
     height: 20px;
@@ -129,6 +132,123 @@ hr {
   justify-content: center;
 }
 
+
+/* ----- side nav ----- */
+.container-sideNav {
+    padding: 16px 0 0 16px;
+}
+.sideNav {
+    width: 150px;
+    height: 100%;
+    background-color: #82171B;
+    padding: 16px;
+    border-radius: 4px;
+}
+li { 
+    cursor: pointer;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    text-transform: capitalize;
+    transition: all 0.03s ease-in-out; 
+    border-radius: 4px;
+    padding-left: 8px;
+    color: white;
+}
+li:hover {
+    background-color: rgb(65, 12, 15);
+    color: white;
+}
+
+
+/* ----- main ----- */
+.container-main {
+    width: 64%;
+    height: 100%;
+    padding: 0 16px 0 16px;
+}
+main {
+    background-color: white;
+    height: 100%;
+    box-shadow: 2px 2px 4px rgba(49, 9, 10, 0.1), -2px 2px 4px rgba(49, 9, 10, 0.1);
+    border-radius: 4px;
+}
+
+/* ----- header ----- */
+header {
+    width: 100%;
+    height: fit-content;
+    margin-top: 16px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 12px 24px;
+}
+.logo {
+    width: 100px;
+    aspect-ratio: 1/1;
+    background: url("../img/logo-edited.png") center center/cover;
+    margin-left: 16px;
+}
+.container-details {
+    height: 100%;
+    width: 80%;
+    border-left: #1E1E1E 1px solid;
+    padding: 8px 8px 8px 32px;
+}
+.container-details h1 {
+    color: #81171B;
+    font-size: 20px;
+    text-transform: uppercase;
+}
+.container-details hr {
+    margin: 0;
+    margin-bottom: 8px;
+    border-top: 1px dashed #1E1E1E;
+}
+.container-socials {
+    display: flex;
+    flex-wrap: wrap;
+}
+.container-socials .social-link {
+    flex: 1 0 50%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+.container-socials .icon {
+    height: 20px;
+    aspect-ratio: 1/1;
+    margin-right: 8px;
+}
+.container-socials .fb { background: url(../img/icon-fb.png) center center/cover; }
+.container-socials .ig { background: url(../img/icon-ig.png) center center/cover; }
+.container-socials .yt { background: url(../img/icon-yt.png) center center/cover; }
+.container-socials .email { background: url(../img/icon-email.png) center center/cover; }
+.container-socials p { margin-top: 4px; }
+
+
+/* section containing list */
+.container-serach {
+    display: flex;
+    flex-direction: row;
+}
+.container-list {
+    margin-top: 16px;
+    height: fit-content;
+    width: 100%;
+}
+
+
+/* ----- charts ----- */
+.container-charts img {
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+}
+
+
+/* ----- classname sng tag isa lng css ----- */
 .fgrow-1 { flex-grow: 1 !important }
 .fgrow-2 { flex-grow: 2 !important }
 .fgrow-3 { flex-grow: 3 !important }
