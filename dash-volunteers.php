@@ -30,16 +30,22 @@
 
             <section class="container-list">
                 <div class="label-container">
-                    <img src="img/icon-back.png" class="back-bttn" onclick="location.href = 'index.php'">
+                    <img src="img/icon-back.png" class="back-bttn" onclick="location.href='index.php'">
                     <p class="label"> list of volunteers </p>
                 </div>
 
                 <div class="container-search">
-                    
+                    <input type="text"/>
                 </div>
+
+                <button> add volunteer </button>
+                <h2> No Volunteers Yet </h2>
+                <p> click "add volunteer" to add one </p>
             </section>
         </main>
 
-        <div class="container-charts"></div>
+        <div class="container-charts">
+            <img src="img/chart1.png"></img>
+        </div>
     </body>
 </html>

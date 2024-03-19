@@ -187,6 +187,12 @@ header {
 }
 
 
+/* ----- charts ----- */
+img {
+    width: 300px;
+}
+
+
 /* ----- classname sng tag isa lng css ----- */
 .fgrow-1 { flex-grow: 1 !important }
 .fgrow-2 { flex-grow: 2 !important }
