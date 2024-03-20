@@ -167,11 +167,15 @@ li:hover {
     height: 100%;
     padding: 16px;
 }
+.container-main.v2 {
+    width: 100%;
+}
 main {
     background-color: white;
     height: 100%;
     box-shadow: 2px 2px 4px rgba(49, 9, 10, 0.1), -2px 2px 4px rgba(49, 9, 10, 0.1);
     border-radius: 4px;
+    overflow-y: scroll;
 }
 
 /* ----- header ----- */
@@ -267,6 +271,26 @@ button {
     width: 300px;
     display: flex;
     flex-direction: column;
+}
+
+
+/* ----- LOGIN FORM ----- */
+.loginForm {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    width: 100%;
+}
+.loginForm .form {
+    height: 100px;
+    border: 1px solid black;
+    display: flex;
+    flex-direction: column;
+}
+.login {
+    grid-column: 1/2;
+}
+.register {
+    grid-column: 2/3;
 }
 
 

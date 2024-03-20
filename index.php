@@ -4,19 +4,72 @@
         <link rel="stylesheet" href="css/fonts.css">
     </head>
     <body>
-        <div class="sideNav">
-            <div class="f-row">
-                <div class="logo"></div>
-                <h1> Red Amity </h1>
+        <div class="container-sideNav">
+            <div class="sideNav">
+                <ul>
+                    <li onclick="window.location.href='index.php'"> home </li>
+                    <li onclick="window.location.href='dashboard.php'"> dashboard </li>
+                    <li onclick="window.location.href='dash-volunteers.php'"> volunteers </li>
+                    <li onclick="window.location.href='dash-donations.php'"> donations </li>
+                    <li onclick="window.location.href='dash-inventory.php'"> inventory </li>
+                    <li onclick="window.location.href='dash-works.php'"> works </li>
+                    <li onclick="window.location.href='index.php'"> profile </li>
+                    <li> settings </li>
+                </ul>
             </div>
+        </div>
 
-            <ul>
-                <li> home </li>
-                <li> dashboard </li>
-                <li onclick="window.location.href='dash-volunteers.php'"> volunteers </li>
-                <li> profile </li>
-                <li> settings </li>
-            </ul>
+        <div class="container-main v2">
+            <main>
+                <header>
+                    <div class="logo"></div>
+                    <div class="container-details">
+                        <h1> philippine red amity Volunteer Services </h1>
+                        <p> 123 Rizal Avenue, Barangay Poblacion 5, Bacolod City, Negros Occidental, 6100 </p>
+                        <hr/>
+
+                        <div class="container-socials">
+                            <div class="social-link">
+                                <div class="icon fb" ></div>
+                                <p> Red Amity Volunteer PH </p>
+                            </div>
+                            <div class="social-link">
+                                <div class="icon ig" ></div>
+                                <p> @redamityph </p>
+                            </div>
+                            <div class="social-link">
+                                <div class="icon yt" ></div>
+                                <p> Red Amity PH </p>
+                            </div>
+                            <div class="social-link">
+                                <div class="icon email" ></div>
+                                <p> redamityph@gmail.com </p>
+                            </div>
+                        </div>
+                    </div>
+                </header>
+
+                <!-- container na ni dapat ka log in form kaso tamad ko mag ilis class name -->
+                <section class="container-list">
+                    <div class="label-container">
+                        <img src="img/icon-back.png" class="back-bttn" onclick="location.href='dashboard.php'">
+                        <p class="label"> Login / Register Account </p>
+                    </div>
+
+                    <div class="loginForm">
+                        <div class="form login">
+                            <p> Email </p>
+                            <input type="email" placeholder="enter email"/>
+                            <p> Password </p>
+                            <input type="password" placeholder="enter password"/>
+
+                        </div>
+                        <div class="form register">
+                            
+                        </div>
+                    </div>
+                </section>
+            </main>
         </div>
     </body>
 </html>

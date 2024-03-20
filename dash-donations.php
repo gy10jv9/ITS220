@@ -7,13 +7,13 @@
         <div class="container-sideNav">
             <div class="sideNav">
                 <ul>
-                    <li> home </li>
+                    <li onclick="window.location.href='index.php'"> home </li>
                     <li onclick="window.location.href='dashboard.php'"> dashboard </li>
                     <li onclick="window.location.href='dash-volunteers.php'"> volunteers </li>
                     <li onclick="window.location.href='dash-donations.php'"> donations </li>
                     <li onclick="window.location.href='dash-inventory.php'"> inventory </li>
                     <li onclick="window.location.href='dash-works.php'"> works </li>
-                    <li> profile </li>
+                    <li onclick="window.location.href='index.php'"> profile </li>
                     <li> settings </li>
                 </ul>
             </div>
