@@ -52,7 +52,7 @@
                 <section class="container-list">
                     <div class="label-container">
                         <img src="img/icon-back.png" class="back-bttn" onclick="location.href='dashboard.php'">
-                        <p class="label"> List of Volunteers </p>
+                        <p class="label"> Inventory </p>
                     </div>
 
                     <div class="container-search">
@@ -61,9 +61,9 @@
                     </div>
 
                     <div class="list">
-                        <button onclick="location.href='add-volunteer.php'"> add volunteer </button>
-                        <h2 class="text-center" style="margin-top: 10%;"> No Volunteers Yet </h2>
-                        <p class="text-center"> click "Add Volunteer" to add one </p>
+                        <button onclick="location.href='add-inventory.php'"> add inventory </button>
+                        <h2 class="text-center" style="margin-top: 10%;"> No inventory Yet </h2>
+                        <p class="text-center"> click "Add Inventory" to add one </p>
                     </div>
                 </section>
             </main>
