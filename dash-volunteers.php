@@ -56,12 +56,15 @@
                     </div>
 
                     <div class="container-search">
-                        <input type="text"/>
+                        <input type="text" placeholder="search volunteer"/>
+                        <button> Search </button>
                     </div>
 
-                    <button onclick="location.href='add-volunteer.php'"> add volunteer </button>
-                    <h2> No Volunteers Yet </h2>
-                    <p> click "add volunteer" to add one </p>
+                    <div class="list">
+                        <button onclick="location.href='add-volunteer.php'"> add volunteer </button>
+                        <h2 class="text-center" style="margin-top: 10%;"> No Volunteers Yet </h2>
+                        <p class="text-center"> click "add volunteer" to add one </p>
+                    </div>
                 </section>
             </main>
         </div>
