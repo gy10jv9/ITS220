@@ -176,6 +176,7 @@ main {
     box-shadow: 2px 2px 4px rgba(49, 9, 10, 0.1), -2px 2px 4px rgba(49, 9, 10, 0.1);
     border-radius: 4px;
     overflow-y: scroll;
+    scrollbar-width: none;
 }
 
 /* ----- header ----- */

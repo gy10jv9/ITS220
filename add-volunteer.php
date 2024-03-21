@@ -7,6 +7,34 @@
     </head>
     <body>
         <div class="form-container">
+            <header>
+                <div class="logo"></div>
+                <div class="container-details">
+                    <h1> philippine red amity Volunteer Services </h1>
+                    <p> 123 Rizal Avenue, Barangay Poblacion 5, Bacolod City, Negros Occidental, 6100 </p>
+                    <hr/>
+
+                    <div class="container-socials">
+                        <div class="social-link">
+                            <div class="icon fb" ></div>
+                            <p> Red Amity Volunteer PH </p>
+                        </div>
+                        <div class="social-link">
+                            <div class="icon ig" ></div>
+                            <p> @redamityph </p>
+                        </div>
+                        <div class="social-link">
+                            <div class="icon yt" ></div>
+                            <p> Red Amity PH </p>
+                        </div>
+                        <div class="social-link">
+                            <div class="icon email" ></div>
+                            <p> redamityph@gmail.com </p>
+                        </div>
+                    </div>
+                </div>
+            </header>
+
             <div class="label-container">
                 <img src="img/icon-back.png" class="back-bttn" onclick="location.href = 'dash-volunteers.php'">
                 <p class="label"> Register Member </p>
@@ -43,8 +71,10 @@
                         <div class="select-container fgrow-1">
                             <select>
                                 <option> -- Select Civil Status -- </option>    
-                                <option> Male </option>    
-                                <option> Female </option>    
+                                <option> Single </option>    
+                                <option> Married </option>    
+                                <option> Divorced </option>    
+                                <option> Widdowed </option>    
                             <select>
                         </div>
                     </div>
@@ -77,7 +107,7 @@
                         <input type="submit" class="bttn-primary fgrow-1" value="Register Member">
                         <button class="bttn-cancel" onclick="event.preventDefault(); location.href = 'index.php'"> Cancel </button>
                     </div>
-                </form>  
+                </form>
             </main>       
         </div>
     </body>
