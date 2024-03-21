@@ -126,6 +126,10 @@ hr {
 .bttn-cancel:hover {
     border: 2px solid #81171B;
 }
+input[type="checkbox"], input[type="radio"] {
+    width: auto;
+    cursor: pointer;
+}
 
 .content {
     width: 100%;
