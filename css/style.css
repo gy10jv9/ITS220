@@ -135,7 +135,7 @@ hr {
 
 /* ----- side nav ----- */
 .container-sideNav {
-    padding: 16px 0 0 16px;
+    padding: 16px 0 16px 16px;
 }
 .sideNav {
     width: 150px;
@@ -165,20 +165,24 @@ li:hover {
 .container-main {
     width: 64%;
     height: 100%;
-    padding: 0 16px 0 16px;
+    padding: 16px;
+}
+.container-main.v2 {
+    width: 100%;
 }
 main {
     background-color: white;
     height: 100%;
     box-shadow: 2px 2px 4px rgba(49, 9, 10, 0.1), -2px 2px 4px rgba(49, 9, 10, 0.1);
     border-radius: 4px;
+    overflow-y: scroll;
+    scrollbar-width: none;
 }
 
 /* ----- header ----- */
 header {
     width: 100%;
     height: fit-content;
-    margin-top: 16px;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -229,14 +233,37 @@ header {
 
 
 /* section containing list */
-.container-serach {
+.container-search {
     display: flex;
     flex-direction: row;
+    padding: 16px 24px;
+    justify-content: space-between;
+    row-gap: 16px;
+}
+.container-search input[type="text"] {
+    width: 88% !important;
+}
+.container-search button {
+    padding: 0 16px;
+}
+button {
+    cursor: pointer;
 }
 .container-list {
     margin-top: 16px;
     height: fit-content;
     width: 100%;
+}
+.list {
+    padding: 0 24px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.list button {
+    width: 100%;
+    padding: 4px 0;
+    text-transform: capitalize;
 }
 
 
@@ -245,6 +272,56 @@ header {
     width: 300px;
     display: flex;
     flex-direction: column;
+}
+
+
+/* ----- LOGIN FORM ----- */
+.loginForm {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 16px;
+    width: 100%;
+    margin-top: 64px;
+}
+.loginForm .form {
+    height: 100px;
+    display: flex;
+    flex-direction: column;
+}
+.login {
+    grid-column: 1/2;
+    padding-left: 24px;
+}
+.register {
+    grid-column: 2/3;
+    padding-right: 24px;
+}
+.loginForm .icon {
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    left: 8px;
+    top: 4px;
+}
+.loginForm input {
+    padding-left: 34px;
+}
+.loginForm .icon.email {
+    background: url(../img/icon-email2.png) center center/cover;
+}
+.loginForm .icon.lock {
+    background: url(../img/icon-lock.png) center center/cover;
+}
+
+
+/* ----- FOOTER ----- */
+footer {
+    background-color: #e6cacb;
+    margin-top: 6rem;
+    padding: 0 2rem 0 2rem
+}
+footer p {
+    text-align: justify;
 }
 
 
@@ -259,5 +336,7 @@ header {
     justify-content: center;
     align-items: center;
 }
+.align-center { display: flex; align-items: center; }
 .relative { position: relative }
 .f-row { display: flex; flex-direction: row; }
+.text-center { text-align: center; }
