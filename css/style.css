@@ -314,6 +314,17 @@ button {
 }
 
 
+/* ----- FOOTER ----- */
+footer {
+    background-color: #e6cacb;
+    margin-top: 6rem;
+    padding: 0 2rem 0 2rem
+}
+footer p {
+    text-align: justify;
+}
+
+
 /* ----- classname sng tag isa lng css ----- */
 .fgrow-1 { flex-grow: 1 !important }
 .fgrow-2 { flex-grow: 2 !important }
