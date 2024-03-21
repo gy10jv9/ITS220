@@ -37,7 +37,7 @@
 
             <div class="label-container">
                 <img src="img/icon-back.png" class="back-bttn" onclick="location.href = 'dash-volunteers.php'">
-                <p class="label"> Register Member </p>
+                <p class="label"> Add Volunteer </p>
             </div>
             <main>
                 <form>
@@ -104,7 +104,7 @@
 
                     <br/>
                     <div class="input-container">
-                        <input type="submit" class="bttn-primary fgrow-1" value="Register Member">
+                        <input type="submit" class="bttn-primary fgrow-1" value="Add Volunteer">
                         <button class="bttn-cancel" onclick="event.preventDefault(); location.href = 'index.php'"> Cancel </button>
                     </div>
                 </form>

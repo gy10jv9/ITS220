@@ -12,7 +12,7 @@
                     <li onclick="window.location.href='dash-volunteers.php'"> volunteers </li>
                     <li onclick="window.location.href='dash-donations.php'"> donations </li>
                     <li onclick="window.location.href='dash-inventory.php'"> inventory </li>
-                    <li onclick="window.location.href='dash-works.php'"> works </li>
+                    <li onclick="window.location.href='dash-serviceReport.php'"> services </li>
                     <li onclick="window.location.href='index.php'"> profile </li>
                     <li> settings </li>
                 </ul>
@@ -52,18 +52,18 @@
                 <section class="container-list">
                     <div class="label-container">
                         <img src="img/icon-back.png" class="back-bttn" onclick="location.href='dashboard.php'">
-                        <p class="label"> Volunteer Works </p>
+                        <p class="label"> Service Reports </p>
                     </div>
 
                     <div class="container-search">
-                        <input type="text" placeholder="search volunteer"/>
+                        <input type="text" placeholder="search services"/>
                         <button> Search </button>
                     </div>
 
                     <div class="list">
-                        <button onclick="location.href='add-works.php'"> add work </button>
+                        <button onclick="location.href='add-serviceReport.php'"> add service report </button>
                         <h2 class="text-center" style="margin-top: 10%;"> No Works Yet </h2>
-                        <p class="text-center"> click "Add Wolunteer" to add one </p>
+                        <p class="text-center"> click "Add Service Report" to add one </p>
                     </div>
                 </section>
             </main>

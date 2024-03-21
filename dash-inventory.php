@@ -12,7 +12,7 @@
                     <li onclick="window.location.href='dash-volunteers.php'"> volunteers </li>
                     <li onclick="window.location.href='dash-donations.php'"> donations </li>
                     <li onclick="window.location.href='dash-inventory.php'"> inventory </li>
-                    <li onclick="window.location.href='dash-works.php'"> works </li>
+                    <li onclick="window.location.href='dash-serviceReport.php'"> services </li>
                     <li onclick="window.location.href='index.php'"> profile </li>
                     <li> settings </li>
                 </ul>
