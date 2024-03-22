@@ -68,6 +68,33 @@
                     </div>
 
                     <hr/>
+                    <h1> Enter Non-Cash Donation Details </h1>
+                    <div class="input-container m-0">
+                        <div class="fgrow-1">
+                            <p> Brandname </p> 
+                            <input type = "text">
+                        </div>
+                        <div class="fgrow-1">
+                            <p> Item Type </p>
+                            <input type = "text">
+                        </div>
+                    </div>
+                    <div class="input-container">
+                        <div class="fgrow-1">
+                            <p> Date of Purchase </p> 
+                            <input type = "date">
+                        </div>
+                        <div class="quantity-container fgrow-1">
+                            <p> Quantity </p> 
+                            <input type = "number">
+                        </div>
+                        <div class="fgrow-3">
+                            <p> Distributor </p> 
+                            <input type = "text">
+                        </div>
+                    </div>
+
+                    <hr/>
                     <h1> Enter Billing Address </h1>
                     <div class="input-container m-0">
                         <div class="fgrow-1">
