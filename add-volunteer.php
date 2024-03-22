@@ -93,7 +93,7 @@
                             <input type = "text">
                         </div>
                         <div class="fgrow-1">
-                            <p> State/Region </p> 
+                            <p> Region </p> 
                             <input type = "text">
                         </div>
                         <div class="fgrow-1">
