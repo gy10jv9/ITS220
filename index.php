@@ -68,16 +68,16 @@
                             </d>
                             <button onclick="location.href='dashboard.php'"> LOGIN </button>
                         </div>
+
                         <div class="form register">
                             <d class="f-row relative">
                                 <div class="icon email"></div>
                                 <input type="email" placeholder="enter email"/>
                             </d>
-                            <d class="f-row relative">
+                            <d class="f-row relative" style="gap: 0.5rem;">
                                 <div class="icon lock"></div>
                                 <input type="password" placeholder="enter password"/>
                                 <input type="password" placeholder="re-enter password"/>
-
                             </d>
                             <button onclick="location.href='dashboard.php'"> REGISTER </button>
                         </div>

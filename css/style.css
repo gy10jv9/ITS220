@@ -303,6 +303,8 @@ button {
     height: 100px;
     display: flex;
     flex-direction: column;
+    gap: 0.5rem;
+    justify-content: space-around;
 }
 .login {
     grid-column: 1/2;
