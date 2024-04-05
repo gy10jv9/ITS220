@@ -13,15 +13,15 @@ if(isset($_REQUEST["btn"])) {
         <form method="POST">
             <div>
                 <label> Firstname: </label>
-                <input type="text"/>
+                <input type="text" name="fname"/>
             </div><br/>
             <div>
                 <label> Lastname: </label>
-                <input type="text"/>
+                <input type="text" name="lname"/>
             </div><br/>
             <div>
                 <label> Birthday: </label>
-                <input type="date">
+                <input type="date" name="bdate">
             </div><br/>
 
             <button name="btn"> Register </button>

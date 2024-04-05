@@ -7,7 +7,7 @@ class Profile {
         $bdate = date("Y-m-d", strtotime($req["bdate"]));
 
         try {
-            $sql = "INSERT INTO 'tbl_profile'
+            $sql = "INSERT INTO `tbl_profile`
             VALUES (0, '$fname', '$lname', '', '$bdate', 1)";
             $con->exec($sql);
             echo "Added Successfully";
