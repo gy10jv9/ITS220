@@ -1,13 +1,13 @@
 <?php
-    class Profile {
-        function addprofile() {
+class Profile {
+    function addprofile() {
 
-        }
-        function viewProfile() {
-
-        }
-        function searchProfile() {
-            
-        }
     }
+    function viewProfile() {
+
+    }
+    function searchProfile() {
+        
+    }
+}
 ?>
