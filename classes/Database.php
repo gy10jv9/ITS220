@@ -15,7 +15,7 @@ class Database{
             $con = new PDO('mysql:host='.$db_host.'; dbname='.$db_name, $db_user, $user_pw);
             $con->setAttribute( PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION );
             $con->exec("SET CHARACTER SET utf8");  //  return all sql requests as UTF-8
-            //echo 'Successfully Connected';
+            echo '<script> console.log("Successfully Connected"); </script>';
 
         }
         catch (PDOException $err) {

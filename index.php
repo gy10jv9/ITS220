@@ -1,8 +1,16 @@
 <?php 
-    include("partials/header.php")
+include("partials/header.php");
+include("classes/Profile.php");
+
+$profile = new Profile();
+
+if(isset($_REQUEST["btn"])) {
+    $profile->addprofile($_REQUEST);
+};
 ?>
+
         <h1> Registration Form </h1>
-        <form>
+        <form method="POST">
             <div>
                 <label> Firstname: </label>
                 <input type="text"/>
@@ -16,7 +24,7 @@
                 <input type="date">
             </div><br/>
 
-            <button> Register </button>
+            <button name="btn"> Register </button>
         </form><br/>
 
         <a href=""> View All </a>
