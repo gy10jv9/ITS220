@@ -1,4 +1,6 @@
-<?php include("partials/header.php")?>
+<?php 
+    include("partials/header.php")
+?>
         <h1> Registration Form </h1>
         <form>
             <div>
@@ -18,4 +20,5 @@
         </form><br/>
 
         <a href=""> View All </a>
+        
 <?php include("partials/footer.php")?>
