@@ -11,7 +11,9 @@ $profiles = $Profile->displayProfiles();
             <th> ID </th>
             <th> First Name </th>
             <th> Last Name </th>
+            <th> Address </th>
             <th> Birthday </th>
+            <th> Status </th>
             <th> Action </th>
         </tr>
 
@@ -21,14 +23,16 @@ $profiles = $Profile->displayProfiles();
             <td><?php echo $prof['id'];?></td>
             <td><a href = "profile.php?id=<?php echo $prof['id']; ?>"><?php echo $prof['fname'];?> </a></td>
             <td><?php echo $prof['lname'];?></td>
+            <td><?php echo $prof['address'];?></td>
             <td><?php echo date("F d,Y" , strtotime($prof['bdate']));?></td>
+            <td><?php echo $prof['status'];?></td>
             <td>
                 <img src ='images/view.png' width = '16' >
                 <img src ='images/edit.png' width = '16' >
                 <img src ='images/delete.png' width = '16' >
             </td>
         </tr>
-        
+
          <?php } ?>
     </table>
         

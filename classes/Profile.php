@@ -25,8 +25,13 @@ class Profile {
        
         return $stmt->fetchAll(PDO::FETCH_BOTH);
     }
-    function viewProfile(){
-
+    function viewProfile($id = 0){
+        global $con;
+        $sql = "SELECT * FROM `tbl_profile` WHERE id = $id ";
+        $stmt = $con->prepare($sql);
+        $stmt->execute();
+       
+        return $stmt->fetch(PDO::FETCH_BOTH);
     }
     function searchProfile(){
 
