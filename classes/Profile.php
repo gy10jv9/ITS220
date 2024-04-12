@@ -22,5 +22,10 @@ class Profile {
     function searchProfile() {
         
     }
+    function displayProfile() {
+        global $con;
+        $sql = "SELECT * FROM `tbl_profile` ORDER BY id";
+        $stmt = $con->pre
+    }
 }
 ?>
