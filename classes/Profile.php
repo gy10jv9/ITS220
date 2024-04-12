@@ -16,16 +16,20 @@ class Profile {
             echo $sql . "<br>" . $e->getMessage();
         }
     }
-    function viewProfile() {
+    function displayProfiles(){
+        global $con;
+        $sql = "SELECT * FROM `tbl_profile` ORDER BY id ";
+    
+        $stmt = $con->prepare($sql);
+        $stmt->execute();
+       
+        return $stmt->fetchAll(PDO::FETCH_BOTH);
+    }
+    function viewProfile(){
 
     }
-    function searchProfile() {
-        
-    }
-    function displayProfile() {
-        global $con;
-        $sql = "SELECT * FROM `tbl_profile` ORDER BY id";
-        $stmt = $con->pre
+    function searchProfile(){
+
     }
 }
 ?>

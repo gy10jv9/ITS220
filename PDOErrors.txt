@@ -1,0 +1,6 @@
+PDOException: SQLSTATE[HY000] [1049] Unknown database 'db_app' in C:\xampp\htdocs\its220-infoman\classes\Database.php:15
+Stack trace:
+#0 C:\xampp\htdocs\its220-infoman\classes\Database.php(15): PDO->__construct('mysql:host=loca...', 'root', Object(SensitiveParameterValue))
+#1 C:\xampp\htdocs\its220-infoman\partials\header.php(7): Database::connectDB()
+#2 C:\xampp\htdocs\its220-infoman\index.php(2): include('C:\\xampp\\htdocs...')
+#3 {main}
