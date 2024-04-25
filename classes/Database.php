@@ -9,7 +9,6 @@ class Database{
             $db_name = 'db_redcross';   // databasename
             $db_user = 'root';          // username
             $user_pw = '';              // passwords
-       
 
             $con = new PDO('mysql:host='.$db_host.'; dbname='.$db_name, $db_user, $user_pw);
             $con->setAttribute( PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION );
