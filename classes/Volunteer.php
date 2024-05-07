@@ -26,20 +26,13 @@ class Volunteer {
 
         $this->db->getConnection()->exec($query);
     }
-/**
- * Update a volunteer
- *
- * @param int $id
- * @param string $fname
- * @return void
- */
-public function update($id, $fname) {
-    $query = "UPDATE tbl_members2 SET firstName = :fname WHERE volunteer_id = :id";
-    $stmt = $this->db->getConnection()->prepare($query);
-    $stmt->bindParam(':id', $id, PDO::PARAM_INT);
-    $stmt->bindParam(':fname', $fname, PDO::PARAM_STR);
-    $stmt->execute();
-}
+    public function update($id, $fname) {
+        $query = "UPDATE tbl_members2 SET firstName = :fname WHERE volunteer_id = :id";
+        $stmt = $this->db->getConnection()->prepare($query);
+        $stmt->bindParam(':id', $id, PDO::PARAM_INT);
+        $stmt->bindParam(':fname', $fname, PDO::PARAM_STR);
+        $stmt->execute();
+    }
     public function view($id) {
         $query = "SELECT * 
                 FROM `tbl_members2`
