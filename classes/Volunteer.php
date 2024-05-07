@@ -12,7 +12,6 @@ class Volunteer {
 
         $this->db->getConnection()->exec($query);
     }
-
     public function displayall() {
         $query = "SELECT * FROM `tbl_members2`";
 
@@ -21,53 +20,37 @@ class Volunteer {
 
         return $stmt->fetchAll(PDO::FETCH_BOTH);
     }
-
     public function delete($id) {
-        // echo "<script> console.log('delete working') </script>";
         $query = "DELETE FROM tbl_members2
             WHERE volunteer_id = $id";
 
         $this->db->getConnection()->exec($query);
     }
+/**
+ * Update a volunteer
+ *
+ * @param int $id
+ * @param string $fname
+ * @return void
+ */
+public function update($id, $fname) {
+    $query = "UPDATE tbl_members2 SET firstName = :fname WHERE volunteer_id = :id";
+    $stmt = $this->db->getConnection()->prepare($query);
+    $stmt->bindParam(':id', $id, PDO::PARAM_INT);
+    $stmt->bindParam(':fname', $fname, PDO::PARAM_STR);
+    $stmt->execute();
+}
+    public function view($id) {
+        $query = "SELECT * 
+                FROM `tbl_members2`
+                WHERE volunteer_id = :id
+                LIMIT 1";
+
+        $stmt = $this->db->getConnection()->prepare($query);
+        $stmt->bindParam(':id', $id, PDO::PARAM_INT);
+        $stmt->execute();
+
+        return $stmt->fetch(PDO::FETCH_ASSOC);
+    }
 }
 ?>
-
-<?php
-    // function addprofile($req) {
-    //     global $con;
-    //     $fname = $req["fname"];
-    //     $lname = $req["lname"];
-    //     $bdate = date("Y-m-d", strtotime($req["bdate"]));
-
-    //     try {
-    //         $sql = "INSERT INTO `tbl_profile`
-    //         VALUES (0, '$fname', '$lname', '', '$bdate', 1)";
-    //         $con->exec($sql);
-    //         echo "Added Successfully";
-    //     }
-    //     catch(PDOException $e) {
-    //         echo $sql . "<br>" . $e->getMessage();
-    //     }
-    // }
-    // function displayProfiles(){
-    //     global $con;
-    //     $sql = "SELECT * FROM `tbl_profile` ORDER BY id ";
-    
-    //     $stmt = $con->prepare($sql);
-    //     $stmt->execute();
-        
-    //     return $stmt->fetchAll(PDO::FETCH_BOTH);
-    // }
-    // function viewProfile($id = 0){
-    //     global $con;
-    //     $sql = "SELECT * FROM `tbl_profile` WHERE id = $id ";
-    //     $stmt = $con->prepare($sql);
-    //     $stmt->execute();
-        
-    //     return $stmt->fetch(PDO::FETCH_BOTH);
-    // }
-    // function searchProfile(){
-
-    // }
-//
-// ?>

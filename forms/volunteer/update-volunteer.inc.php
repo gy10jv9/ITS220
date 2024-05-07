@@ -1,7 +1,7 @@
 <?php
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $id = $_GET["id"];
     $fname = $_POST["fname"];
-    $lname = $_POST["lname"];
 
     try {
         include("../../classes/Database.php");
@@ -9,7 +9,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         $db = new Database();
         $Volunteer = new Volunteer($db);
-        $Volunteer->add($fname);
+        $Volunteer->update($id, $fname);
     } catch (Exception $e) {
         die("Error: ". $e->getMessage());
     }

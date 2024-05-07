@@ -75,7 +75,9 @@ $volunteers = $Volunteer->displayall();
                             <td><?php echo $vol["firstName"] ?></td>
                             <td>
                                 <img src ='img/view.png' width = '16' >
-                                <img src ='img/edit.png' width = '16' >
+                                <a href="http://localhost/its220-infoman/forms/volunteer/updateForm-volunteer.php?id=<?= isset($vol['volunteer_id'])? (int) $vol['volunteer_id'] : 0?>">
+                                    <img src ='img/edit.png' width = '16' >
+                                </a>
                                 <a href="http://localhost/its220-infoman/forms/volunteer/delete-volunteer.inc.php?id=<?= isset($vol['volunteer_id'])? (int) $vol['volunteer_id'] : 0?>">
                                     <img src ='img/delete.png' width = '16' alt="Delete">
                                 </a>
