@@ -1,5 +1,12 @@
 <?php
-include("./partials/header.php")
+include("./partials/header.php");
+include("./classes/Database.php");
+include("./classes/Voluntereer.php");
+
+$db = new Database();
+$Volunteer = new Volunteer($db);
+
+$volunteers = $Volunteer->displayall();
 ?>
 
 <div class="container-sideNav">
@@ -59,8 +66,13 @@ include("./partials/header.php")
             </div>
 
             <div class="list">
-                <button onclick="location.href='add-volunteer.php'"> add volunteer </button>
-                <h2 class="text-center" style="margin-top: 10%;"> No Volunteers Yet </h2>
+                <button onclick="location.href='forms/volunteer/form-volunteer.php'"> add volunteer </button>
+                <!-- <h2 class="text-center" style="margin-top: 10%;"> No Volunteers Yet </h2> -->
+                <?php foreach($volunteers as $vol) { ?>
+                    <tr>
+                        <td><?php echo $vol["firstName"] ?></td>
+                    </tr>
+                <?php } ?>
                 <p class="text-center"> click "Add Volunteer" to add one </p>
             </div>
         </section>
