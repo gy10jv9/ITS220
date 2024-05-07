@@ -2,7 +2,7 @@
 // if ($_SERVER["REQUEST_METHOD"] == "POST") {
     try {
         include("../../classes/Database.php");
-        include("../../classes/Voluntereer.php");
+        include("../../classes/Volunteer.php");
 
         $db = new Database();
         $Volunteer = new Volunteer($db);

@@ -1,7 +1,7 @@
 <?php
 include("./partials/header.php");
 include("./classes/Database.php");
-include("./classes/Voluntereer.php");
+include("./classes/Volunteer.php");
 
 $db = new Database();
 $Volunteer = new Volunteer($db);
@@ -68,11 +68,22 @@ $volunteers = $Volunteer->displayall();
             <div class="list">
                 <button onclick="location.href='forms/volunteer/form-volunteer.php'"> add volunteer </button>
                 <!-- <h2 class="text-center" style="margin-top: 10%;"> No Volunteers Yet </h2> -->
-                <?php foreach($volunteers as $vol) { ?>
-                    <tr>
-                        <td><?php echo $vol["firstName"] ?></td>
-                    </tr>
-                <?php } ?>
+
+                <table border="1" cellpadding="5">
+                    <?php foreach($volunteers as $vol) { ?>
+                        <tr>
+                            <td><?php echo $vol["firstName"] ?></td>
+                            <td>
+                                <img src ='img/view.png' width = '16' >
+                                <img src ='img/edit.png' width = '16' >
+                                <a href="http://localhost/its220-infoman/forms/volunteer/delete-volunteer.inc.php?id=<?= isset($vol['volunteer_id'])? (int) $vol['volunteer_id'] : 0?>">
+                                    <img src ='img/delete.png' width = '16' alt="Delete">
+                                </a>
+                            </td>
+                        </tr>
+                    <?php } ?>
+                </table>
+
                 <p class="text-center"> click "Add Volunteer" to add one </p>
             </div>
         </section>

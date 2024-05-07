@@ -21,6 +21,14 @@ class Volunteer {
 
         return $stmt->fetchAll(PDO::FETCH_BOTH);
     }
+
+    public function delete($id) {
+        // echo "<script> console.log('delete working') </script>";
+        $query = "DELETE FROM tbl_members2
+            WHERE volunteer_id = $id";
+
+        $this->db->getConnection()->exec($query);
+    }
 }
 ?>
 
