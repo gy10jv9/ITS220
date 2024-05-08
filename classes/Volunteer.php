@@ -6,12 +6,21 @@ class Volunteer {
         $this->db = $db;
     }
 
-    public function add($firstName) {
-        $query = "INSERT INTO `tbl_members2` (firstName) 
-                VALUES ('$firstName')";
+    public function add($volunteer) {
+        $query = "INSERT INTO `tbl_members2` (firstName, lastName, contactNumber, nationality, sexuality_id, civilStatus_id, bdate) 
+                VALUES (:fname, :lname, :num, :nat, :sex, :cvlstat, :bdate)";
 
-        $this->db->getConnection()->exec($query);
+        $stmt = $this->db->getConnection()->prepare($query);
+        $stmt->bindParam(':fname', $volunteer["fname"], PDO::PARAM_STR);
+        $stmt->bindParam(':lname', $volunteer["lname"], PDO::PARAM_STR);
+        $stmt->bindParam(':num', $volunteer["contactnum"], PDO::PARAM_STR);
+        $stmt->bindParam(':nat', $volunteer["nationality"], PDO::PARAM_STR);
+        $stmt->bindParam(':sex', $volunteer["sex"], PDO::PARAM_INT);
+        $stmt->bindParam(':cvlstat', $volunteer["cvlstat"], PDO::PARAM_INT);
+        $stmt->bindParam(':bdate', $volunteer["bdate"], PDO::PARAM_STR);
+        $stmt->execute();
     }
+
     public function displayall() {
         $query = "SELECT * FROM `tbl_members2`";
 
@@ -26,11 +35,11 @@ class Volunteer {
 
         $this->db->getConnection()->exec($query);
     }
-    public function update($id, $fname) {
+    public function update($id, $volunteer) {
         $query = "UPDATE tbl_members2 SET firstName = :fname WHERE volunteer_id = :id";
         $stmt = $this->db->getConnection()->prepare($query);
         $stmt->bindParam(':id', $id, PDO::PARAM_INT);
-        $stmt->bindParam(':fname', $fname, PDO::PARAM_STR);
+        $stmt->bindParam(':fname', $volunteer["fname"], PDO::PARAM_STR);
         $stmt->execute();
     }
     public function view($id) {

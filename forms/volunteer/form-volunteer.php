@@ -36,7 +36,7 @@ include("../../partials/form-header.php");
         <p class="label"> Add Volunteer </p>
     </div>
     <main>
-        <form action="add-volunteer.inc.php" method="POST">
+        <form action="_add-volunteer.inc.php" method="POST">
             <h1> Enter Primary Information </h1>
             <div class="input-container">
                 <div class="fgrow-1">
@@ -51,33 +51,36 @@ include("../../partials/form-header.php");
             <div class="input-container">
                 <div class="fgrow-2">
                     <p> Contact Number </p> 
-                    <input type = "text">
+                    <input type = "text" name="contactnum">
                 </div>
                 <div class="fgrow-2">
                     <p> Nationality </p> 
-                    <input type = "text">
+                    <input type = "text" name="nationality">
                 </div>
                 <div class="select-container fgrow-1">
-                    <select>
-                        <option> -- Select Sex -- </option>    
-                        <option> Male </option>    
-                        <option> Female </option>    
+                    <select name="sex">
+                        <option value=""> -- Select Sex -- </option>    
+                        <option value="0"> Male </option>
+                        <option value="1"> Female </option>    
                     <select>
                 </div>
+
+                <!-- civil status -->
                 <div class="select-container fgrow-1">
-                    <select>
-                        <option> -- Select Civil Status -- </option>    
-                        <option> Single </option>    
-                        <option> Married </option>    
-                        <option> Divorced </option>    
-                        <option> Widdowed </option>    
+                    <select name="cvlstat">
+                        <option value=""> -- Select Civil Status -- </option>    
+                        <option value="0"> Single </option>    
+                        <option value="1"> Married </option>    
+                        <option value="2"> Divorced </option>    
+                        <option value="3"> Widdowed </option>    
                     <select>
                 </div>
             </div>
             <div class="input-container">
+                <!-- birthdate -->
                 <div class="fgrow-1">
                     <p> Birthdate </p> 
-                    <input type = "date">
+                    <input type = "date" name="bdate">
                 </div>
                 <div class="select-container fgrow-1">
                     <select>
