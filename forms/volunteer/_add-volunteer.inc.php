@@ -11,7 +11,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         "strtAddress" => $_POST["strtAddress"],
         "city" => $_POST["city"],
         "region" => $_POST["region"],
-        "country" => $_POST["country"]
+        "country" => $_POST["country"],
     ];
 
     try {
