@@ -99,24 +99,28 @@ include("../../partials/form-header.php");
 
             <hr/>
             <h1> Enter Primary Address </h1>
+
             <div class="input-container m-0">
                 <div class="fgrow-1">
                     <p> Street Address </p> 
-                    <input type = "text">
+                    <input type = "text" name="strtAddress">
                 </div>
             </div>
+
             <div class="input-container">
                 <div class="fgrow-1">
                     <p> City/Province </p> 
-                    <input type = "text">
+                    <input type = "text" name="city">
                 </div>
+
                 <div class="fgrow-1">
                     <p> Region </p> 
-                    <input type = "text">
+                    <input type = "text" name="region">
                 </div>
+
                 <div class="fgrow-1">
                     <p> Country </p> 
-                    <input type = "text">
+                    <input type = "text" name="country">
                 </div>
             </div>
 

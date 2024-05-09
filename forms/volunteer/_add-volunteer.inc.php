@@ -8,6 +8,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         "sex" => $_POST["sex"],
         "cvlstat" => $_POST["cvlstat"],
         "bdate" => $_POST["bdate"],
+        "strtAddress" => $_POST["strtAddress"],
+        "city" => $_POST["city"],
+        "region" => $_POST["region"],
+        "country" => $_POST["country"]
     ];
 
     try {

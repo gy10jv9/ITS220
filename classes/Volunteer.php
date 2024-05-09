@@ -7,8 +7,8 @@ class Volunteer {
     }
 
     public function add($volunteer) {
-        $query = "INSERT INTO `tbl_members2` (firstName, lastName, contactNumber, nationality, sexuality_id, civilStatus_id, bdate) 
-                VALUES (:fname, :lname, :num, :nat, :sex, :cvlstat, :bdate)";
+        $query = "INSERT INTO `tbl_members2` (firstName, lastName, contactNumber, nationality, sexuality_id, civilStatus_id, bdate, streetAddress, city, region, country) 
+                VALUES (:fname, :lname, :num, :nat, :sex, :cvlstat, :bdate, :strtAddress, :city, :region, :country)";
 
         $stmt = $this->db->getConnection()->prepare($query);
         $stmt->bindParam(':fname', $volunteer["fname"], PDO::PARAM_STR);
@@ -18,6 +18,10 @@ class Volunteer {
         $stmt->bindParam(':sex', $volunteer["sex"], PDO::PARAM_INT);
         $stmt->bindParam(':cvlstat', $volunteer["cvlstat"], PDO::PARAM_INT);
         $stmt->bindParam(':bdate', $volunteer["bdate"], PDO::PARAM_STR);
+        $stmt->bindParam(':strtAddress', $volunteer["strtAddress"], PDO::PARAM_STR);
+        $stmt->bindParam(':city', $volunteer["city"], PDO::PARAM_STR);
+        $stmt->bindParam(':region', $volunteer["region"], PDO::PARAM_STR);
+        $stmt->bindParam(':country', $volunteer["country"], PDO::PARAM_STR);
         $stmt->execute();
     }
 
