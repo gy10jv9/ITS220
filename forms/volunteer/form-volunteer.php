@@ -84,7 +84,7 @@ include("../../partials/form-header.php");
                 </div>
 
                 <div class="select-container fgrow-1">
-                    <select name="occ">
+                    <select name="occup">
                         <option value=""> -- Select Occuppation -- </option>    
                         <option value="0"> Student </option>    
                         <option value="1"> CEO </option>    

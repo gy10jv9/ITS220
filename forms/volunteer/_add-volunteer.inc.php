@@ -12,13 +12,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         "strtAddress" => $_POST["strtAddress"],
         "city" => $_POST["city"],
         "region" => $_POST["region"],
-        "sun" => $_POST["sun"],
-        "mon" => $_POST["mon"],
-        "tue" => $_POST["tue"],
-        "wed" => $_POST["wed"],
-        "thu" => $_POST["thu"],
-        "fri" => $_POST["fri"],
-        "sat" => $_POST["sat"],
+        "country" => $_POST["country"],
+        "sun" => isset($_POST["sun"])? $_POST["sun"] : "0",
+        "mon" => isset($_POST["mon"])? $_POST["mon"] : "0",
+        "tue" => isset($_POST["tue"])? $_POST["tue"] : "0",
+        "wed" => isset($_POST["wed"])? $_POST["wed"] : "0",
+        "thu" => isset($_POST["thu"])? $_POST["thu"] : "0",
+        "fri" => isset($_POST["fri"])? $_POST["fri"] : "0",
+        "sat" => isset($_POST["sat"])? $_POST["sat"] : "0",
     ];
 
     try {
