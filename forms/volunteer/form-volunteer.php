@@ -82,13 +82,14 @@ include("../../partials/form-header.php");
                     <p> Birthdate </p> 
                     <input type = "date" name="bdate">
                 </div>
+
                 <div class="select-container fgrow-1">
-                    <select>
-                        <option> -- Select Occuppation -- </option>    
-                        <option> Student </option>    
-                        <option> CEO </option>    
-                        <option> Unemployed </option>    
-                        <option> Teacher </option>    
+                    <select name="occ">
+                        <option value=""> -- Select Occuppation -- </option>    
+                        <option value="0"> Student </option>    
+                        <option value="1"> CEO </option>    
+                        <option value="2"> Unemployed </option>    
+                        <option value="3"> Teacher </option>    
                     <select>
                 </div>
                 <div class="fgrow-1">
