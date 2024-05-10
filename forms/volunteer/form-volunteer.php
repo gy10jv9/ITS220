@@ -131,25 +131,25 @@ include("../../partials/form-header.php");
                 <div class="fgrow-1">
                     <p> Days of the Week </p> 
 
-                    <input type="checkbox" name="days[]">
+                    <input type="checkbox" name="sun" value="1">
                     <label> Sunday </label><br/>
 
-                    <input type="checkbox" name="days[]">
+                    <input type="checkbox" name="mon" value="1">
                     <label> Monday </label><br/>
 
-                    <input type="checkbox" name="days[]">
+                    <input type="checkbox" name="tue" value="1">
                     <label> Tuesday </label><br/>
 
-                    <input type="checkbox" name="days[]">
+                    <input type="checkbox" name="wed" value="1">
                     <label> Wednesday </label><br/>
 
-                    <input type="checkbox" name="days[]">
+                    <input type="checkbox" name="thu" value="1">
                     <label> Thursday </label><br/>
 
-                    <input type="checkbox" name="days[]">
+                    <input type="checkbox" name="fri" value="1">
                     <label> Friday </label><br/>
                     
-                    <input type="checkbox" name="days[]">
+                    <input type="checkbox" name="sat" value="1">
                     <label> Saturday </label><br/>
                 </div>
                 <div class="fgrow-1">
