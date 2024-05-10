@@ -154,11 +154,14 @@ include("../../partials/form-header.php");
                 </div>
                 <div class="fgrow-1">
                     <p> Time of the Day </p> 
-                    <input type="checkbox">
+                    
+                    <input type="checkbox" name="morning" value="1">
                     <label> Morning </label><br/>
-                    <input type="checkbox">
+
+                    <input type="checkbox" name="afternoon" value="1">
                     <label> Afternoon </label><br/>
-                    <input type="checkbox">
+
+                    <input type="checkbox" name="evening" value="1">
                     <label> Evening </label><br/>
                 </div>
                 <div class="fgrow-1">

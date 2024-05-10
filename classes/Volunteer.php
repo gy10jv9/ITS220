@@ -7,8 +7,8 @@ class Volunteer {
     }
 
     public function add($volunteer) {
-        $query = "INSERT INTO `tbl_members2` (firstName, lastName, contactNumber, nationality, sexuality_id, civilStatus_id, bdate, occupation, streetAddress, city, region, country, sun, mon, tue, wed, thu, fri, sat) 
-                VALUES (:fname, :lname, :num, :nat, :sex, :cvlstat, :bdate, :occup, :strtAddress, :city, :region, :country, :sun, :mon, :tue, :wed, :thu, :fri, :sat)";
+        $query = "INSERT INTO `tbl_members2` (firstName, lastName, contactNumber, nationality, sexuality_id, civilStatus_id, bdate, occupation, streetAddress, city, region, country, sun, mon, tue, wed, thu, fri, sat, morning, afternoon, evening) 
+                VALUES (:fname, :lname, :num, :nat, :sex, :cvlstat, :bdate, :occup, :strtAddress, :city, :region, :country, :sun, :mon, :tue, :wed, :thu, :fri, :sat, :morning, :afternoon, :evening)";
 
         $stmt = $this->db->getConnection()->prepare($query);
         $stmt->bindParam(':fname', $volunteer["fname"], PDO::PARAM_STR);
@@ -30,6 +30,9 @@ class Volunteer {
         $stmt->bindParam(':thu', $volunteer["thu"], PDO::PARAM_STR);
         $stmt->bindParam(':fri', $volunteer["fri"], PDO::PARAM_STR);
         $stmt->bindParam(':sat', $volunteer["sat"], PDO::PARAM_STR);
+        $stmt->bindParam(':morning', $volunteer["morning"], PDO::PARAM_STR);
+        $stmt->bindParam(':afternoon', $volunteer["afternoon"], PDO::PARAM_STR);
+        $stmt->bindParam(':evening', $volunteer["evening"], PDO::PARAM_STR);
         $stmt->execute();
     }
 

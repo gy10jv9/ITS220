@@ -20,6 +20,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         "thu" => isset($_POST["thu"])? $_POST["thu"] : "0",
         "fri" => isset($_POST["fri"])? $_POST["fri"] : "0",
         "sat" => isset($_POST["sat"])? $_POST["sat"] : "0",
+        "morning" => isset($_POST["morning"])? $_POST["morning"] : "0",
+        "afternoon" => isset($_POST["afternoon"])? $_POST["afternoon"] : "0",
+        "evening" => isset($_POST["evening"])? $_POST["evening"] : "0",
     ];
 
     try {
