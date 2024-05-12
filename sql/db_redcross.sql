@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 22, 2024 at 10:12 AM
+-- Generation Time: May 10, 2024 at 01:31 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -128,6 +128,65 @@ CREATE TABLE `tbl_members` (
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `tbl_members2`
+--
+
+CREATE TABLE `tbl_members2` (
+  `volunteer_id` int(11) NOT NULL,
+  `firstName` varchar(200) NOT NULL,
+  `lastName` varchar(200) NOT NULL,
+  `contactNumber` varchar(20) NOT NULL,
+  `nationality` varchar(100) NOT NULL,
+  `sexuality_id` tinyint(4) NOT NULL,
+  `civilStatus_id` tinyint(4) NOT NULL,
+  `bdate` date DEFAULT NULL,
+  `occupation` tinyint(4) NOT NULL,
+  `streetAddress` varchar(255) NOT NULL,
+  `city` varchar(100) NOT NULL,
+  `region` varchar(100) NOT NULL,
+  `country` varchar(100) NOT NULL,
+  `sun` tinyint(4) NOT NULL,
+  `mon` tinyint(4) NOT NULL,
+  `tue` tinyint(4) NOT NULL,
+  `wed` tinyint(4) NOT NULL,
+  `thu` tinyint(4) NOT NULL,
+  `fri` tinyint(4) NOT NULL,
+  `sat` tinyint(4) NOT NULL,
+  `monday` tinyint(4) NOT NULL,
+  `afternoon` tinyint(4) NOT NULL,
+  `evening` tinyint(4) NOT NULL,
+  `frequency` tinyint(4) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `tbl_members2`
+--
+
+INSERT INTO `tbl_members2` (`volunteer_id`, `firstName`, `lastName`, `contactNumber`, `nationality`, `sexuality_id`, `civilStatus_id`, `bdate`, `occupation`, `streetAddress`, `city`, `region`, `country`, `sun`, `mon`, `tue`, `wed`, `thu`, `fri`, `sat`, `monday`, `afternoon`, `evening`, `frequency`) VALUES
+(1, '', '', '0', '0', 0, 0, NULL, 0, '', '0', '0', '0', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+(2, 'junico', '', '0', '0', 0, 0, NULL, 0, '', '0', '0', '0', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+(3, '', '', '0', '0', 0, 0, NULL, 0, '', '0', '0', '0', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+(4, 'test', '', '0', '0', 0, 0, NULL, 0, '', '0', '0', '0', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+(5, 'Array', '', '0', '0', 0, 0, NULL, 0, '', '0', '0', '0', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+(6, 'Array', '', '0', '0', 0, 0, NULL, 0, '', '0', '0', '0', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+(7, 'Array', '', '0', '0', 0, 0, NULL, 0, '', '0', '0', '0', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+(8, 'test3', '', '0', '0', 0, 0, NULL, 0, '', '0', '0', '0', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+(9, 'test', 'random', '09123456789', 'Atlantic', 0, 0, NULL, 0, '', '0', '0', '0', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+(10, 'random', 'with sexuality', '587468465', 'wadaw', 1, 0, NULL, 0, '', '0', '0', '0', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+(11, 'random', 'with sexuality', '587468465', 'wadaw', 0, 0, NULL, 0, '', '0', '0', '0', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+(12, 'random', 'with sexuality', '587468465', 'wadaw', 0, 0, NULL, 0, '', '0', '0', '0', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+(13, 'random', 'name', '524545', 'filam', 1, 1, NULL, 0, '', '0', '0', '0', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+(14, 'random', 'name', '524545', 'filam', 1, 1, '0000-00-00', 0, '', '0', '0', '0', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+(15, 'name', 'try', '1354151', 'fil', 1, 2, '2015-12-17', 0, '', '0', '0', '0', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+(16, 'test', 'date', '587468465', 'wadaw', 0, 0, '2024-05-17', 0, '', '0', '0', '0', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+(18, 'with', 'occupation', '6546', '', 0, 0, '0000-00-00', 0, '', '', '', '', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+(19, 'with', 'occupation', '65464', 'filipino', 1, 2, '2024-05-22', 0, 'waaaaaa', 'grhhhh', 'rtnnnnnnn', 'nryyyyyyyyy', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+(20, 'withdays', 'withdays', '8796789+78', 'sfrhrhr', 1, 1, '2024-05-13', 1, 'fymikk;yge', 'afafwq', 'srbewgfwe', 'brbhe', 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0),
+(21, 'withdays', 'withdays', '8796789+78', 'sfrhrhr', 1, 1, '2024-05-13', 1, 'fymikk;yge', 'afafwq', 'srbewgfwe', 'brbhe', 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0);
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `tbl_nationality`
 --
 
@@ -235,6 +294,12 @@ ALTER TABLE `tbl_members`
   ADD PRIMARY KEY (`volunteer_id`);
 
 --
+-- Indexes for table `tbl_members2`
+--
+ALTER TABLE `tbl_members2`
+  ADD PRIMARY KEY (`volunteer_id`);
+
+--
 -- Indexes for table `tbl_nationality`
 --
 ALTER TABLE `tbl_nationality`
@@ -315,6 +380,12 @@ ALTER TABLE `tbl_inventory`
 --
 ALTER TABLE `tbl_members`
   MODIFY `volunteer_id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `tbl_members2`
+--
+ALTER TABLE `tbl_members2`
+  MODIFY `volunteer_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
 
 --
 -- AUTO_INCREMENT for table `tbl_nationality`

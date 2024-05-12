@@ -1,26 +1,29 @@
 <?php
-class Database{
-    public static function connectDB()
-    {
-        global $con;
-        date_default_timezone_set('Asia/Manila');
-        try {
-            $db_host = 'localhost';     // host
-            $db_name = 'db_redcross';   // databasename
-            $db_user = 'root';          // username
-            $user_pw = '';              // passwords
+class Database {
+    private $con;
 
-            $con = new PDO('mysql:host='.$db_host.'; dbname='.$db_name, $db_user, $user_pw);
-            $con->setAttribute( PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION );
-            $con->exec("SET CHARACTER SET utf8");   //  return all sql requests as UTF-8
-            echo '<script> console.log("Successfully Connected"); </script>';
+    public function __construct() {
+        $this->connectDB();
+    }
+
+    private function connectDB() {
+        try {
+            $db_host = 'localhost';
+            $db_name = 'db_redcross';
+            $db_user = 'root';
+            $user_pw = '';
+
+            $this->con = new PDO('mysql:host='. $db_host. '; dbname='. $db_name, $db_user, $user_pw);
+            $this->con->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+            $this->con->exec("SET CHARACTER SET utf8");
+            echo "<script> console.log('Successfully connected to database!') </script>";
+        } catch (PDOException $err) {
+            die('Database connection failed: '. $err->getMessage());
         }
-        catch (PDOException $err) {
-            echo "<center><h3> You are currently denied access to Database. Contact Web Administrator </h3></center>";
-            echo  $err->getMessage() . "<br/>";
-            file_put_contents('PDOErrors.txt',$err, FILE_APPEND);  // write some details to an error-log outside public_html
-            die();  //  terminate connection
-        }
+    }
+
+    public function getConnection() {
+        return $this->con;
     }
 }
 ?>
