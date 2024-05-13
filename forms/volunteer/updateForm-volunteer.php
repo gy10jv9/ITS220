@@ -102,13 +102,13 @@ if (isset($_GET['id'])) {
                 <div class="select-container fgrow-1">
                     <select name="occup">
                         <option value=""> -- Select Occuppation -- </option>
-                        <?php $selected = $volunteer["sexuality_id"] == 0? 'selected' : ''; ?>    
+                        <?php $selected = $volunteer["occupation"] == 0? 'selected' : ''; ?>    
                         <option value="0" <?php echo $selected;?>> Student </option> 
-                        <?php $selected = $volunteer["sexuality_id"] == 1? 'selected' : ''; ?>   
+                        <?php $selected = $volunteer["occupation"] == 1? 'selected' : ''; ?>   
                         <option value="1" <?php echo $selected;?>> CEO </option>
-                        <?php $selected = $volunteer["sexuality_id"] == 2? 'selected' : ''; ?> 
+                        <?php $selected = $volunteer["occupation"] == 2? 'selected' : ''; ?> 
                         <option value="2" <?php echo $selected;?>> Unemployed </option>
-                        <?php $selected = $volunteer["sexuality_id"] == 3? 'selected' : ''; ?>    
+                        <?php $selected = $volunteer["occupation"] == 3? 'selected' : ''; ?>    
                         <option value="3" <?php echo $selected;?>> Teacher </option>    
                     <select>
                 </div>
