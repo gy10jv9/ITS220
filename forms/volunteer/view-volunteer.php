@@ -41,10 +41,142 @@ if (isset($_GET['id'])) {
         </div>
     </header>
 
+    <div class="label-container">
+        <img src="img/icon-back.png" class="back-bttn" onclick="location.href = 'dash-volunteers.php'">
+        <p class="label"> Add Volunteer </p>
+    </div>
     <main>
-        <p><?php echo isset($volunteer["firstName"]) ? $volunteer["firstName"] : ''; ?></p>
-        <p><?php echo isset($volunteer["lastName"]) ? $volunteer["lastName"] : ''; ?></p>
-        <p><?php echo isset($volunteer["contactNumber"]) ? $volunteer["contactNumber"] : ''; ?></p>
+        <form action="update-volunteer.inc.php?id=<?= isset($_GET['id'])? (int) $_GET['id'] : 0?>" method="POST">
+            <h1> Enter Primary Information </h1>
+            <div class="input-container">
+                <div class="fgrow-1">
+                    <p> First Name </p> 
+                    <input type = "text" name="fname" value="<?php echo isset($volunteer["firstName"]) ? $volunteer["firstName"] : ''; ?>" readonly>
+                </div>
+                <div class="fgrow-1">
+                    <p> Last Name </p>
+                    <input type = "text" name="lname" value="<?php echo isset($volunteer["lastName"]) ? $volunteer["lastName"] : ''; ?>" readonly>
+                </div>
+            </div>
+            <div class="input-container">
+                <div class="fgrow-2">
+                    <p> Contact Number </p> 
+                    <input type = "text" value="<?php echo isset($volunteer["contactNumber"]) ? $volunteer["contactNumber"] : ''; ?>" readonly>
+                </div>
+                <div class="fgrow-2">
+                    <p> Nationality </p> 
+                    <input type = "text" value="<?php echo isset($volunteer["nationality"]) ? $volunteer["nationality"] : ''; ?>" readonly>
+                </div>
+                <div class="select-container fgrow-1">
+                    <select>
+                        <option> -- Select Sex -- </option>    
+                        <option> Male </option>    
+                        <option> Female </option>    
+                    <select>
+                </div>
+                <div class="select-container fgrow-1">
+                    <select>
+                        <option> -- Select Civil Status -- </option>    
+                        <option> Single </option>    
+                        <option> Married </option>    
+                        <option> Divorced </option>    
+                        <option> Widdowed </option>    
+                    <select>
+                </div>
+            </div>
+            <div class="input-container">
+                <div class="fgrow-1">
+                    <p> Birthdate </p> 
+                    <input type = "date">
+                </div>
+                <div class="select-container fgrow-1">
+                    <select>
+                        <option> -- Select Occuppation -- </option>    
+                        <option> Student </option>    
+                        <option> CEO </option>    
+                        <option> Unemployed </option>    
+                        <option> Teacher </option>    
+                    <select>
+                </div>
+                <div class="fgrow-1">
+                    <p> Profile </p>
+                    <input type = "file">
+                </div>
+            </div>
+
+            <hr/>
+            <h1> Enter Primary Address </h1>
+            <div class="input-container m-0">
+                <div class="fgrow-1">
+                    <p> Street Address </p> 
+                    <input type = "text">
+                </div>
+            </div>
+            <div class="input-container">
+                <div class="fgrow-1">
+                    <p> City/Province </p> 
+                    <input type = "text">
+                </div>
+                <div class="fgrow-1">
+                    <p> Region </p> 
+                    <input type = "text">
+                </div>
+                <div class="fgrow-1">
+                    <p> Country </p> 
+                    <input type = "text">
+                </div>
+            </div>
+
+            <hr/>
+            <h1> Indicate Availabilty </h1>
+            <section class="f-row">
+                <div class="fgrow-1">
+                    <p> Days of the Week </p> 
+                    <input type="checkbox">
+                    <label> Sunday </label><br/>
+                    <input type="checkbox">
+                    <label> Monday </label><br/>
+                    <input type="checkbox">
+                    <label> Tuesday </label><br/>
+                    <input type="checkbox">
+                    <label> Wednesday </label><br/>
+                    <input type="checkbox">
+                    <label> Thursday </label><br/>
+                    <input type="checkbox">
+                    <label> Friday </label><br/>
+                    <input type="checkbox">
+                    <label> Saturday </label><br/>
+                </div>
+                <div class="fgrow-1">
+                    <p> Time of the Day </p> 
+                    <input type="checkbox">
+                    <label> Morning </label><br/>
+                    <input type="checkbox">
+                    <label> Afternoon </label><br/>
+                    <input type="checkbox">
+                    <label> Evening </label><br/>
+                </div>
+                <div class="fgrow-1">
+                    <p> Frequency </p> 
+                    <input type="radio" name="frequency">
+                    <label> Daily </label><br/>
+                    <input type="radio" name="frequency">
+                    <label> Weekly </label><br/>
+                    <input type="radio" name="frequency">
+                    <label> Biweekly </label><br/>
+                    <input type="radio" name="frequency">
+                    <label> Monthly </label><br/>
+                    <input type="radio" name="frequency">
+                    <label> Occasional </label><br/>
+                </div>
+            </section>
+
+            <br/>
+            <div class="input-container">
+                <input type="submit" class="bttn-primary fgrow-1" value="Add Volunteer">
+                <button class="bttn-cancel" onclick="event.preventDefault(); location.href = 'index.php'"> Cancel </button>
+            </div>
+        </form>
     </main>
 
     <footer>
