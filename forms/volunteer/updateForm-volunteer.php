@@ -69,9 +69,11 @@ if (isset($_GET['id'])) {
                 </div>
                 <div class="select-container fgrow-1">
                     <select name="sex">
-                        <option value=""> -- Select Sex -- </option>    
-                        <option value="0"> Male </option>
-                        <option value="1"> Female </option>    
+                        <option value=""> -- Select Sex -- </option>
+                        <?php $selected = $volunteer["sexuality_id"] == 0? 'selected' : ''; ?>
+                        <option value="0" <?php echo $selected;?>> Male </option>
+                        <?php $selected = $volunteer["sexuality_id"] == 1? 'selected' : ''; ?>
+                        <option value="1" <?php echo $selected;?>> Female </option>    
                     <select>
                 </div>
 
