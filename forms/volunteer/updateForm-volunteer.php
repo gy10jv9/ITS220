@@ -80,11 +80,15 @@ if (isset($_GET['id'])) {
                 <!-- civil status -->
                 <div class="select-container fgrow-1">
                     <select name="cvlstat">
-                        <option value=""> -- Select Civil Status -- </option>    
-                        <option value="0"> Single </option>    
-                        <option value="1"> Married </option>    
-                        <option value="2"> Divorced </option>    
-                        <option value="3"> Widdowed </option>    
+                        <option value=""> -- Select Civil Status -- </option>
+                        <?php $selected = $volunteer["sexuality_id"] == 0? 'selected' : ''; ?>
+                        <option value="0" <?php echo $selected;?>> Single </option>
+                        <?php $selected = $volunteer["sexuality_id"] == 1? 'selected' : ''; ?>
+                        <option value="1" <?php echo $selected;?>> Married </option>
+                        <?php $selected = $volunteer["sexuality_id"] == 2? 'selected' : ''; ?>
+                        <option value="2" <?php echo $selected;?>> Divorced </option>
+                        <?php $selected = $volunteer["sexuality_id"] == 3? 'selected' : ''; ?> 
+                        <option value="3" <?php echo $selected;?>> Widdowed </option>    
                     <select>
                 </div>
             </div>
@@ -97,11 +101,15 @@ if (isset($_GET['id'])) {
 
                 <div class="select-container fgrow-1">
                     <select name="occup">
-                        <option value=""> -- Select Occuppation -- </option>    
-                        <option value="0"> Student </option>    
-                        <option value="1"> CEO </option>    
-                        <option value="2"> Unemployed </option>    
-                        <option value="3"> Teacher </option>    
+                        <option value=""> -- Select Occuppation -- </option>
+                        <?php $selected = $volunteer["sexuality_id"] == 0? 'selected' : ''; ?>    
+                        <option value="0" <?php echo $selected;?>> Student </option> 
+                        <?php $selected = $volunteer["sexuality_id"] == 1? 'selected' : ''; ?>   
+                        <option value="1" <?php echo $selected;?>> CEO </option>
+                        <?php $selected = $volunteer["sexuality_id"] == 2? 'selected' : ''; ?> 
+                        <option value="2" <?php echo $selected;?>> Unemployed </option>
+                        <?php $selected = $volunteer["sexuality_id"] == 3? 'selected' : ''; ?>    
+                        <option value="3" <?php echo $selected;?>> Teacher </option>    
                     <select>
                 </div>
                 <div class="fgrow-1">
