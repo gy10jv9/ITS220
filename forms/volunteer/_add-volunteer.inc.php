@@ -8,11 +8,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         "sex" => $_POST["sex"],
         "cvlstat" => $_POST["cvlstat"],
         "bdate" => $_POST["bdate"],
+        "occup" => $_POST["occup"],
         "strtAddress" => $_POST["strtAddress"],
         "city" => $_POST["city"],
         "region" => $_POST["region"],
         "country" => $_POST["country"],
-        "occ" => $_POST["occ"],
         "sun" => isset($_POST["sun"])? $_POST["sun"] : "0",
         "mon" => isset($_POST["mon"])? $_POST["mon"] : "0",
         "tue" => isset($_POST["tue"])? $_POST["tue"] : "0",
@@ -23,7 +23,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         "morning" => isset($_POST["morning"])? $_POST["morning"] : "0",
         "afternoon" => isset($_POST["afternoon"])? $_POST["afternoon"] : "0",
         "evening" => isset($_POST["evening"])? $_POST["evening"] : "0",
-        "freq" => isset($_POST["frequency"])? $_POST["frequency"] : "0",
     ];
 
     try {

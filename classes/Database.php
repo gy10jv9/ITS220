@@ -16,6 +16,7 @@ class Database {
             $this->con = new PDO('mysql:host='. $db_host. '; dbname='. $db_name, $db_user, $user_pw);
             $this->con->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
             $this->con->exec("SET CHARACTER SET utf8");
+            echo "<script> console.log('Successfully connected to database!') </script>";
         } catch (PDOException $err) {
             die('Database connection failed: '. $err->getMessage());
         }

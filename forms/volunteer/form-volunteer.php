@@ -82,8 +82,9 @@ include("../../partials/form-header.php");
                     <p> Birthdate </p> 
                     <input type = "date" name="bdate">
                 </div>
+
                 <div class="select-container fgrow-1">
-                    <select name="occ">
+                    <select name="occup">
                         <option value=""> -- Select Occuppation -- </option>    
                         <option value="0"> Student </option>    
                         <option value="1"> CEO </option>    
@@ -129,28 +130,38 @@ include("../../partials/form-header.php");
             <section class="f-row">
                 <div class="fgrow-1">
                     <p> Days of the Week </p> 
-                    <input type="checkbox">
+
+                    <input type="checkbox" name="sun" value="1">
                     <label> Sunday </label><br/>
-                    <input type="checkbox">
+
+                    <input type="checkbox" name="mon" value="1">
                     <label> Monday </label><br/>
-                    <input type="checkbox">
+
+                    <input type="checkbox" name="tue" value="1">
                     <label> Tuesday </label><br/>
-                    <input type="checkbox">
+
+                    <input type="checkbox" name="wed" value="1">
                     <label> Wednesday </label><br/>
-                    <input type="checkbox">
+
+                    <input type="checkbox" name="thu" value="1">
                     <label> Thursday </label><br/>
-                    <input type="checkbox">
+
+                    <input type="checkbox" name="fri" value="1">
                     <label> Friday </label><br/>
-                    <input type="checkbox">
+                    
+                    <input type="checkbox" name="sat" value="1">
                     <label> Saturday </label><br/>
                 </div>
                 <div class="fgrow-1">
                     <p> Time of the Day </p> 
-                    <input type="checkbox">
+                    
+                    <input type="checkbox" name="morning" value="1">
                     <label> Morning </label><br/>
-                    <input type="checkbox">
+
+                    <input type="checkbox" name="afternoon" value="1">
                     <label> Afternoon </label><br/>
-                    <input type="checkbox">
+
+                    <input type="checkbox" name="evening" value="1">
                     <label> Evening </label><br/>
                 </div>
                 <div class="fgrow-1">

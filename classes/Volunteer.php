@@ -7,8 +7,8 @@ class Volunteer {
     }
 
     public function add($volunteer) {
-        $query = "INSERT INTO `tbl_members2` (firstName, lastName, contactNumber, nationality, sexuality_id, civilStatus_id, bdate, occupation, streetAddress, city, region, country, sun, mon, tue, wed, thu, fri, sat, morning, afternoon, evening, frequency_id) 
-                VALUES (:fname, :lname, :num, :nat, :sex, :cvlstat, :bdate, :occup, :strtAddress, :city, :region, :country, :sun, :mon, :tue, :wed, :thu, :fri, :sat, :morning, :afternoon, :evening, :freq)";
+        $query = "INSERT INTO `tbl_members2` (firstName, lastName, contactNumber, nationality, sexuality_id, civilStatus_id, bdate, occupation, streetAddress, city, region, country, sun, mon, tue, wed, thu, fri, sat, morning, afternoon, evening) 
+                VALUES (:fname, :lname, :num, :nat, :sex, :cvlstat, :bdate, :occup, :strtAddress, :city, :region, :country, :sun, :mon, :tue, :wed, :thu, :fri, :sat, :morning, :afternoon, :evening)";
 
         $stmt = $this->db->getConnection()->prepare($query);
         $stmt->bindParam(':fname', $volunteer["fname"], PDO::PARAM_STR);
@@ -18,22 +18,21 @@ class Volunteer {
         $stmt->bindParam(':sex', $volunteer["sex"], PDO::PARAM_INT);
         $stmt->bindParam(':cvlstat', $volunteer["cvlstat"], PDO::PARAM_INT);
         $stmt->bindParam(':bdate', $volunteer["bdate"], PDO::PARAM_STR);
-        $stmt->bindParam(':occ', $volunteer["occ"], PDO::PARAM_INT);
+        $stmt->bindParam(':occup', $volunteer["occup"], PDO::PARAM_INT);
         $stmt->bindParam(':strtAddress', $volunteer["strtAddress"], PDO::PARAM_STR);
         $stmt->bindParam(':city', $volunteer["city"], PDO::PARAM_STR);
         $stmt->bindParam(':region', $volunteer["region"], PDO::PARAM_STR);
         $stmt->bindParam(':country', $volunteer["country"], PDO::PARAM_STR);
-        $stmt->bindParam(':sun', $volunteer["sun"], PDO::PARAM_INT);
-        $stmt->bindParam(':mon', $volunteer["mon"], PDO::PARAM_INT);
-        $stmt->bindParam(':tue', $volunteer["tue"], PDO::PARAM_INT);
-        $stmt->bindParam(':wed', $volunteer["wed"], PDO::PARAM_INT);
-        $stmt->bindParam(':thu', $volunteer["thu"], PDO::PARAM_INT);
-        $stmt->bindParam(':fri', $volunteer["fri"], PDO::PARAM_INT);
-        $stmt->bindParam(':sat', $volunteer["sat"], PDO::PARAM_INT);
-        $stmt->bindParam(':morning', $volunteer["morning"], PDO::PARAM_INT);
-        $stmt->bindParam(':afternoon', $volunteer["afternoon"], PDO::PARAM_INT);
-        $stmt->bindParam(':evening', $volunteer["evening"], PDO::PARAM_INT);
-        $stmt->bindParam(':freq', $volunteer["freq"], PDO::PARAM_INT);
+        $stmt->bindParam(':sun', $volunteer["sun"], PDO::PARAM_STR);
+        $stmt->bindParam(':mon', $volunteer["mon"], PDO::PARAM_STR);
+        $stmt->bindParam(':tue', $volunteer["tue"], PDO::PARAM_STR);
+        $stmt->bindParam(':wed', $volunteer["wed"], PDO::PARAM_STR);
+        $stmt->bindParam(':thu', $volunteer["thu"], PDO::PARAM_STR);
+        $stmt->bindParam(':fri', $volunteer["fri"], PDO::PARAM_STR);
+        $stmt->bindParam(':sat', $volunteer["sat"], PDO::PARAM_STR);
+        $stmt->bindParam(':morning', $volunteer["morning"], PDO::PARAM_STR);
+        $stmt->bindParam(':afternoon', $volunteer["afternoon"], PDO::PARAM_STR);
+        $stmt->bindParam(':evening', $volunteer["evening"], PDO::PARAM_STR);
         $stmt->execute();
     }
 
