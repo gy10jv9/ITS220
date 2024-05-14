@@ -55,17 +55,17 @@ if (isset($_GET['id'])) {
                 </div>
                 <div class="fgrow-1">
                     <p> Last Name </p>
-                    <input type = "text" name="lname" value="<?php echo isset($volunteer["lastName"]) ? $volunteer["lastName"] : ''; ?>" readonly>
+                    <input type = "text" name="lname" value="<?php echo isset($volunteer["lastName"]) ? $volunteer["lastName"] : ''; ?>">
                 </div>
             </div>
             <div class="input-container">
                 <div class="fgrow-2">
                     <p> Contact Number </p> 
-                    <input type = "text" value="<?php echo isset($volunteer["contactNumber"]) ? $volunteer["contactNumber"] : ''; ?>" readonly>
+                    <input type = "text" value="<?php echo isset($volunteer["contactNumber"]) ? $volunteer["contactNumber"] : ''; ?>">
                 </div>
                 <div class="fgrow-2">
                     <p> Nationality </p> 
-                    <input type = "text" value="<?php echo isset($volunteer["nationality"]) ? $volunteer["nationality"] : ''; ?>" readonly>
+                    <input type = "text" value="<?php echo isset($volunteer["nationality"]) ? $volunteer["nationality"] : ''; ?>">
                 </div>
                 <div class="select-container fgrow-1">
                     <select name="sex">
@@ -96,7 +96,7 @@ if (isset($_GET['id'])) {
                 <!-- birthdate -->
                 <div class="fgrow-1">
                     <p> Birthdate </p> 
-                    <input type = "date" name="bdate">
+                    <input type = "date" name="bdate"  value="<?php echo isset($volunteer["bdate"]) ? $volunteer["bdate"] : ''; ?>">
                 </div>
 
                 <div class="select-container fgrow-1">
@@ -124,24 +124,24 @@ if (isset($_GET['id'])) {
             <div class="input-container m-0">
                 <div class="fgrow-1">
                     <p> Street Address </p> 
-                    <input type = "text" name="strtAddress">
+                    <input type = "text" name="strtAddress" value="<?php echo isset($volunteer["streetAddress"]) ? $volunteer["streetAddress"] : ''; ?>">
                 </div>
             </div>
 
             <div class="input-container">
                 <div class="fgrow-1">
                     <p> City/Province </p> 
-                    <input type = "text" name="city">
+                    <input type = "text" name="city" value="<?php echo isset($volunteer["city"]) ? $volunteer["city"] : ''; ?>">
                 </div>
 
                 <div class="fgrow-1">
                     <p> Region </p> 
-                    <input type = "text" name="region">
+                    <input type = "text" name="region" value="<?php echo isset($volunteer["region"]) ? $volunteer["region"] : ''; ?>">
                 </div>
 
                 <div class="fgrow-1">
                     <p> Country </p> 
-                    <input type = "text" name="country">
+                    <input type = "text" name="country" value="<?php echo isset($volunteer["country"]) ? $volunteer["country"] : ''; ?>">
                 </div>
             </div>
 
@@ -151,50 +151,65 @@ if (isset($_GET['id'])) {
                 <div class="fgrow-1">
                     <p> Days of the Week </p> 
 
-                    <input type="checkbox" name="sun" value="1">
+                    <?php $selected = $volunteer["sun"] == 1? 'checked' : ''; ?>   
+                    <input type="checkbox" name="sun" value="1" <?php echo $selected;?>>
                     <label> Sunday </label><br/>
 
-                    <input type="checkbox" name="mon" value="1">
+                    <?php $selected = $volunteer["mon"] == 1? 'checked' : ''; ?>   
+                    <input type="checkbox" name="mon" value="1" <?php echo $selected;?>>
                     <label> Monday </label><br/>
 
-                    <input type="checkbox" name="tue" value="1">
+                    <?php $selected = $volunteer["tue"] == 1? 'checked' : ''; ?>   
+                    <input type="checkbox" name="tue" value="1" <?php echo $selected;?>>
                     <label> Tuesday </label><br/>
 
-                    <input type="checkbox" name="wed" value="1">
+                    <?php $selected = $volunteer["wed"] == 1? 'checked' : ''; ?>   
+                    <input type="checkbox" name="wed" value="1" <?php echo $selected;?>>
                     <label> Wednesday </label><br/>
 
-                    <input type="checkbox" name="thu" value="1">
+                    <?php $selected = $volunteer["thu"] == 1? 'checked' : ''; ?>   
+                    <input type="checkbox" name="thu" value="1" <?php echo $selected;?>>
                     <label> Thursday </label><br/>
 
-                    <input type="checkbox" name="fri" value="1">
+                    <?php $selected = $volunteer["fri"] == 1? 'checked' : ''; ?>   
+                    <input type="checkbox" name="fri" value="1" <?php echo $selected;?>>
                     <label> Friday </label><br/>
                     
-                    <input type="checkbox" name="sat" value="1">
+                    <?php $selected = $volunteer["sat"] == 1? 'checked' : ''; ?>   
+                    <input type="checkbox" name="sat" value="1" <?php echo $selected;?>>
                     <label> Saturday </label><br/>
                 </div>
                 <div class="fgrow-1">
                     <p> Time of the Day </p> 
                     
-                    <input type="checkbox" name="morning" value="1">
+                    <?php $selected = $volunteer["morning"] == 1? 'checked' : ''; ?> 
+                    <input type="checkbox" name="morning" value="1" <?php echo $selected;?>>
                     <label> Morning </label><br/>
 
-                    <input type="checkbox" name="afternoon" value="1">
+                    <?php $selected = $volunteer["afternoon"] == 1? 'checked' : ''; ?> 
+                    <input type="checkbox" name="afternoon" value="1" <?php echo $selected;?>>
                     <label> Afternoon </label><br/>
 
-                    <input type="checkbox" name="evening" value="1">
+                    <?php $selected = $volunteer["evening"] == 1? 'checked' : ''; ?> 
+                    <input type="checkbox" name="evening" value="1" <?php echo $selected;?>>
                     <label> Evening </label><br/>
                 </div>
                 <div class="fgrow-1">
                 <p> Frequency </p> 
-                    <input type="radio" name="frequency" value="0">
+                    <?php $selected = $volunteer["frequency_id"] == 0? 'checked' : ''; ?> 
+                    <input type="radio" name="frequency" value="0" <?php echo $selected;?>>
                     <label> Daily </label><br/>
-                    <input type="radio" name="frequency" value="1">
+                    <?php $selected = $volunteer["frequency_id"] == 1? 'checked' : ''; ?> 
+                    <input type="radio" name="frequency" value="1" <?php echo $selected;?>>
                     <label> Weekly </label><br/>
-                    <input type="radio" name="frequency" value="2">
+                    <?php $selected = $volunteer["frequency_id"] == 2? 'checked' : ''; ?> 
+                    <input type="radio" name="frequency" value="2" <?php echo $selected;?>>
                     <label> Biweekly </label><br/>
-                    <input type="radio" name="frequency" value="3">
+                    <?php $selected = $volunteer["frequency_id"] == 3? 'checked' : ''; ?> 
+                    <input type="radio" name="frequency" value="3" <?php echo $selected;?>>
                     <label> Monthly </label><br/>
-                    <input type="radio" name="frequency" value="4">
+                    <?php $selected = $volunteer["frequency_id"] == 4? 'checked' : ''; ?> 
+                    <input type="radio" name="frequency" value="4" <?php echo $selected;?>>
                     <label> Occasional </label><br/>
                 </div>
             </section>
