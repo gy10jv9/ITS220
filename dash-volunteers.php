@@ -69,11 +69,18 @@ $volunteers = $Volunteer->displayall();
                 <button onclick="location.href='forms/volunteer/form-volunteer.php'"> add volunteer </button>
                 <!-- <h2 class="text-center" style="margin-top: 10%;"> No Volunteers Yet </h2> -->
 
-                <table border="1" cellpadding="5">
+                <!-- /////[ TABLE ]///// -->
+                <table cellpadding="5" style="margin-top: 1rem;">
+                    <tr style="border: 2px solid #81171b;">
+                        <td style="border: 2px solid #81171b;"><h2> Fullname </h2></td>
+                        <td style="border: 2px solid #81171b;"><h2> Contact Num </h2></td>
+                        <td class="text-center" style="border: 2px solid #81171b;"><h2> Actions </h2></td>
+                    </tr>
                     <?php foreach($volunteers as $vol) { ?>
                         <tr>
-                            <td><?php echo $vol["firstName"] ?></td>
-                            <td>
+                            <td><?php echo $vol["firstName"]. " ". $vol["lastName"] ?></td>
+                            <td><?php echo $vol["contactNumber"] ?></td>
+                            <td class="text-center">
                                 <a href="http://localhost/its220-infoman/forms/volunteer/view-volunteer.php?id=<?= isset($vol['volunteer_id'])? (int) $vol['volunteer_id'] : 0?>">
                                      <img src ='img/view.png' width = '16' >
                                 </a>
