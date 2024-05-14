@@ -14,4 +14,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         die("Error: ". $e->getMessage());
     }
 }
+header('Location: ../../dash-volunteers.php');
+exit;
 ?>

@@ -32,7 +32,7 @@ include("../../partials/form-header.php");
     </header>
 
     <div class="label-container">
-        <img src="img/icon-back.png" class="back-bttn" onclick="location.href = 'dash-volunteers.php'">
+        <img src="../../img/icon-back.png" class="back-bttn" onclick="location.href = '../../dash-volunteers.php'">
         <p class="label"> Add Volunteer </p>
     </div>
     <main>
