@@ -32,7 +32,7 @@ class Donation {
     }
 
     public function displayall() {
-        $query = "SELECT * FROM `tbl_members2`";
+        $query = "SELECT * FROM `tbl_donations`";
 
         $stmt = $this->db->getConnection()->prepare($query);
         $stmt->execute();
@@ -40,13 +40,13 @@ class Donation {
         return $stmt->fetchAll(PDO::FETCH_BOTH);
     }
     public function delete($id) {
-        $query = "DELETE FROM tbl_members2
+        $query = "DELETE FROM tbl_donations
             WHERE donation_id = $id";
 
         $this->db->getConnection()->exec($query);
     }
     public function update($id, $donation) {
-        $query = "UPDATE tbl_members2 SET firstName = :fname WHERE donation_id = :id";
+        $query = "UPDATE tbl_donations SET fname = :fname WHERE donation_id = :id";
         $stmt = $this->db->getConnection()->prepare($query);
         $stmt->bindParam(':id', $id, PDO::PARAM_INT);
         $stmt->bindParam(':fname', $donation["fname"], PDO::PARAM_STR);

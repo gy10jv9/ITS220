@@ -46,7 +46,7 @@ if (isset($_GET['id'])) {
         <p class="label"> Add Volunteer </p>
     </div>
     <main>
-        <form action="update-volunteer.inc.php?id=<?= isset($_GET['id'])? (int) $_GET['id'] : 0?>" method="POST">
+        <form action="_updateVolunteer.php?id=<?= isset($_GET['id'])? (int) $_GET['id'] : 0?>" method="POST">
             <h1> Enter Primary Information </h1>
             <div class="input-container">
                 <div class="fgrow-1">

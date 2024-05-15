@@ -67,7 +67,6 @@ $volunteers = $Volunteer->displayall();
 
             <div class="list">
                 <button onclick="location.href='forms/volunteer/form-volunteer.php'"> add volunteer </button>
-                <!-- <h2 class="text-center" style="margin-top: 10%;"> No Volunteers Yet </h2> -->
 
                 <!-- /////[ TABLE ]///// -->
                 <table cellpadding="5" style="margin-top: 1rem;">
