@@ -61,7 +61,7 @@
                     </div>
 
                     <div class="list">
-                        <button onclick="location.href='add-donations.php'"> add donation </button>
+                        <button onclick="location.href='forms/donation/form-donation.php'"> add donation </button>
                         <h2 class="text-center" style="margin-top: 10%;"> No Donations Yet </h2>
                         <p class="text-center"> click "Add Donation" to add one </p>
                     </div>

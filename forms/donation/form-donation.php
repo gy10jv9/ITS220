@@ -2,8 +2,8 @@
 
 <html>
     <head>
-        <link rel="stylesheet" href="css/style.css">
-        <link rel="stylesheet" href="css/fonts.css">
+        <link rel="stylesheet" href="../../css/style.css">
+        <link rel="stylesheet" href="../../css/fonts.css">
     </head>
     <body>
         <div class="form-container">
@@ -36,34 +36,34 @@
             </header>
 
             <div class="label-container">
-                <img src="img/icon-back.png" class="back-bttn" onclick="location.href = 'index.php'">
+                <img src="../../img/icon-back.png" class="back-bttn" onclick="location.href = 'index.php'">
                 <p class="label"> add donation </p>
             </div>
             <main>
-                <form>
+                <form action="_addDonation.php" method="POST">
                     <h1> Enter Primary Information </h1>
                     <div class="input-container">
                         <div class="fgrow-1">
                             <p> First Name </p> 
-                            <input type = "text">
+                            <input type = "text" name="fname">
                         </div>
                         <div class="fgrow-1">
                             <p> Last Name </p>
-                            <input type = "text">
+                            <input type = "text" name="lname">
                         </div>
                     </div>
                     <div class="input-container">
                         <div class="fgrow-2">
                             <p> Contact Number </p> 
-                            <input type = "text">
+                            <input type = "text" name="contactnum">
                         </div>
                         <div class="fgrow-2">
                             <p> Nationality </p> 
-                            <input type = "text">
+                            <input type = "text" name="nationality">
                         </div>
                         <div class="fgrow-2">
                             <p> Donation Amount (PHP) </p> 
-                            <input type = "number">
+                            <input type = "number" name="amount">
                         </div>
                     </div>
 
@@ -72,25 +72,25 @@
                     <div class="input-container m-0">
                         <div class="fgrow-1">
                             <p> Brandname </p> 
-                            <input type = "text">
+                            <input type = "text" name="brand">
                         </div>
                         <div class="fgrow-1">
                             <p> Item Type </p>
-                            <input type = "text">
+                            <input type = "text" name="item">
                         </div>
                     </div>
                     <div class="input-container">
                         <div class="fgrow-1">
                             <p> Date of Purchase </p> 
-                            <input type = "date">
+                            <input type = "date" name="purchaseDate">
                         </div>
                         <div class="quantity-container fgrow-1">
                             <p> Quantity </p> 
-                            <input type = "number">
+                            <input type = "number" name="quant">
                         </div>
                         <div class="fgrow-3">
                             <p> Distributor </p> 
-                            <input type = "text">
+                            <input type = "text" name="distributor">
                         </div>
                     </div>
 
@@ -99,21 +99,21 @@
                     <div class="input-container m-0">
                         <div class="fgrow-1">
                             <p> Street Address </p> 
-                            <input type = "text">
+                            <input type = "text" name="streetAddr">
                         </div>
                     </div>
                     <div class="input-container">
                         <div class="fgrow-1">
                             <p> City/Province </p> 
-                            <input type = "text">
+                            <input type = "text" name="city">
                         </div>
                         <div class="fgrow-1">
                             <p> State/Region </p> 
-                            <input type = "text">
+                            <input type = "text" name="region">
                         </div>
                         <div class="fgrow-1">
                             <p> Country </p> 
-                            <input type = "text">
+                            <input type = "text" name="country">
                         </div>
                     </div>
 
@@ -122,15 +122,15 @@
                     <div class="input-container m-0">
                         <div class="fgrow-3">
                             <p> Card Number </p> 
-                            <input type = "text">
+                            <input type = "text" name="cardnum">
                         </div>
                         <div class="fgrow-1">
                             <p> Expiration Date </p> 
-                            <input type = "date">
+                            <input type = "date" name="expdate">
                         </div>
                         <div class="quantity-container">
                             <p> CCV </p> 
-                            <input type = "text">
+                            <input type = "text" name="ccv">
                         </div>
                     </div>
 

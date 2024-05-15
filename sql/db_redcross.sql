@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 13, 2024 at 07:48 AM
+-- Generation Time: May 15, 2024 at 03:42 AM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -73,10 +73,31 @@ CREATE TABLE `tbl_daysofweek` (
 
 CREATE TABLE `tbl_donations` (
   `id` int(11) NOT NULL,
-  `fName` varchar(200) NOT NULL,
-  `lName` varchar(200) NOT NULL,
-  `amount` double NOT NULL
+  `fname` varchar(200) NOT NULL,
+  `lname` varchar(200) NOT NULL,
+  `contactnum` varchar(200) NOT NULL,
+  `nationality` varchar(100) NOT NULL,
+  `amount` int(11) NOT NULL,
+  `brand` varchar(200) NOT NULL,
+  `item` varchar(200) NOT NULL,
+  `purchaseDate` date NOT NULL,
+  `quant` int(11) NOT NULL,
+  `distributor` varchar(200) NOT NULL,
+  `streetAddr` varchar(255) NOT NULL,
+  `city` varchar(100) NOT NULL,
+  `region` varchar(100) NOT NULL,
+  `country` varchar(100) NOT NULL,
+  `cardnum` varchar(100) NOT NULL,
+  `expdate` date NOT NULL,
+  `ccv` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `tbl_donations`
+--
+
+INSERT INTO `tbl_donations` (`id`, `fname`, `lname`, `contactnum`, `nationality`, `amount`, `brand`, `item`, `purchaseDate`, `quant`, `distributor`, `streetAddr`, `city`, `region`, `country`, `cardnum`, `expdate`, `ccv`) VALUES
+(1, 'ssca', 'cassssss', 'csaaaaaaaa', 'sacccccccccc', 47757, 'kihhhh', 'lhhhhhhhk', '2024-05-30', 1, 'hhhhhhhh', 'tttttttttt', 'kkkkkkk', 'yyyyyyyyy', 'kkkkkkkkk', 'uiiiiiiii', '2024-05-23', '111');
 
 -- --------------------------------------------------------
 
@@ -195,8 +216,7 @@ INSERT INTO `tbl_members2` (`volunteer_id`, `firstName`, `lastName`, `contactNum
 (29, 'with', 'frequency', '8327837', 'efage', 1, 1, '2024-05-22', 1, 'feeeeeeeeee', 'i,u', 'iul', '.uooooooo', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
 (30, 'with', 'frequency', '8327837', 'efage', 1, 1, '2024-05-22', 1, 'feeeeeeeeee', 'i,u', 'iul', '.uooooooo', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
 (31, 'ewttt', 'wtttttttttt', 'w3333333', 'errrrr', 0, 2, '2024-05-23', 2, 'rge', 'yjjjjjjjjjjj', 'jyyyyyyyyyyy', 'htttttt', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
-(32, 'ewttt', 'wtttttttttt', 'w3333333', 'errrrr', 0, 2, '2024-05-23', 2, 'rge', 'yjjjjjjjjjjj', 'jyyyyyyyyyyy', 'htttttt', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
-(33, 'ewttt', 'wtttttttttt', 'w3333333', 'errrrr', 0, 2, '2024-05-23', 2, 'rge', 'yjjjjjjjjjjj', 'jyyyyyyyyyyy', 'htttttt', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
+(32, 'ewttt', 'wtttttttttt', 'w3333333', 'errrrr', 0, 2, '2024-05-23', 2, 'rge', 'yjjjjjjjjjjj', 'jyyyyyyyyyyy', 'htttttt', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
 
 -- --------------------------------------------------------
 
@@ -375,7 +395,7 @@ ALTER TABLE `tbl_daysofweek`
 -- AUTO_INCREMENT for table `tbl_donations`
 --
 ALTER TABLE `tbl_donations`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `tbl_frequency`
@@ -399,7 +419,7 @@ ALTER TABLE `tbl_members`
 -- AUTO_INCREMENT for table `tbl_members2`
 --
 ALTER TABLE `tbl_members2`
-  MODIFY `volunteer_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=34;
+  MODIFY `volunteer_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=37;
 
 --
 -- AUTO_INCREMENT for table `tbl_nationality`
