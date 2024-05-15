@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 15, 2024 at 03:42 AM
+-- Generation Time: May 15, 2024 at 06:02 AM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -187,9 +187,9 @@ CREATE TABLE `tbl_members2` (
 
 INSERT INTO `tbl_members2` (`volunteer_id`, `firstName`, `lastName`, `contactNumber`, `nationality`, `sexuality_id`, `civilStatus_id`, `bdate`, `occupation`, `streetAddress`, `city`, `region`, `country`, `day_id`, `timeofday_id`, `sun`, `mon`, `tue`, `wed`, `thu`, `fri`, `sat`, `morning`, `afternoon`, `evening`, `frequency_id`) VALUES
 (1, '', '', '0', '0', 0, 0, NULL, 0, '', '0', '0', '0', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
-(2, 'junico', '', '0', '0', 0, 0, NULL, 0, '', '0', '0', '0', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+(2, '', '', '', '', 0, 0, NULL, 0, '', '', '', '', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
 (3, '', '', '0', '0', 0, 0, NULL, 0, '', '0', '0', '0', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
-(4, 'test', '', '0', '0', 0, 0, NULL, 0, '', '0', '0', '0', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+(4, 'test', 'edited', '', '', 0, 0, '0000-00-00', 0, '', '0', '0', '0', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
 (5, 'Array', '', '0', '0', 0, 0, NULL, 0, '', '0', '0', '0', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
 (6, 'Array', '', '0', '0', 0, 0, NULL, 0, '', '0', '0', '0', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
 (7, 'Array', '', '0', '0', 0, 0, NULL, 0, '', '0', '0', '0', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
