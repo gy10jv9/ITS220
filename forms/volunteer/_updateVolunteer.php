@@ -32,12 +32,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         $db = new Database();
         $Volunteer = new Volunteer($db);
-        $Volunteer->add($volunteer);
+        $Volunteer->update($_GET['id'], $volunteer);
     } catch (Exception $e) {
         die("Error: ". $e->getMessage());
     }
-
-    header('Location: ../../dash-volunteers.php');
-    exit;
 }
+
+header('Location: ../../dash-volunteers.php');
+exit;
 ?>

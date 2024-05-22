@@ -54,6 +54,10 @@ form h1 {
     font-family: "streak semibold";
     color: #81171B;
 }
+h2 {
+    font-family: "streak semibold";
+    color: #81171B;
+}
 form p {
     color: #333333;
 }
@@ -404,6 +408,13 @@ footer .socials {
     border-radius: 4px;
 }
 
+/* ////[ TABLE ]//// */
+table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+    padding: 0.25rem;
+}
+
 
 /* ----- classname sng tag isa lng css ----- */
 .fgrow-1 { flex-grow: 1 !important }
@@ -421,3 +432,4 @@ footer .socials {
 .f-row { display: flex; flex-direction: row; }
 .text-center { text-align: center; }
 .w-full { width: 100%; }
+.text-center { text-align: center; }

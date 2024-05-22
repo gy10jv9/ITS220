@@ -32,7 +32,7 @@ include("../../partials/form-header.php");
     </header>
 
     <div class="label-container">
-        <img src="img/icon-back.png" class="back-bttn" onclick="location.href = 'dash-volunteers.php'">
+        <img src="../../img/icon-back.png" class="back-bttn" onclick="location.href = '../../dash-volunteers.php'">
         <p class="label"> Add Volunteer </p>
     </div>
     <main>
@@ -165,16 +165,16 @@ include("../../partials/form-header.php");
                     <label> Evening </label><br/>
                 </div>
                 <div class="fgrow-1">
-                    <p> Frequency </p> 
-                    <input type="radio" name="frequency">
+                <p> Frequency </p> 
+                    <input type="radio" name="frequency" value="0">
                     <label> Daily </label><br/>
-                    <input type="radio" name="frequency">
+                    <input type="radio" name="frequency" value="1">
                     <label> Weekly </label><br/>
-                    <input type="radio" name="frequency">
+                    <input type="radio" name="frequency" value="2">
                     <label> Biweekly </label><br/>
-                    <input type="radio" name="frequency">
+                    <input type="radio" name="frequency" value="3">
                     <label> Monthly </label><br/>
-                    <input type="radio" name="frequency">
+                    <input type="radio" name="frequency" value="4">
                     <label> Occasional </label><br/>
                 </div>
             </section>
