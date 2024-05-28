@@ -427,6 +427,7 @@ table, th, td {
     justify-content: center;
     align-items: center;
 }
+.centerContent2 { display: grid; place-items: center; }
 .align-center { display: flex; align-items: center; }
 .relative { position: relative }
 .f-row { display: flex; flex-direction: row; }
