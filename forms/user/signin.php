@@ -1,15 +1,7 @@
-<?php
-include("../../partials/form-header.php");
+<?php include("../../partials/form-header.php"); ?>
 
-// -----[ BUTTON FUNTIONS ]-----
-if (isset($_POST['register'])) {
-    header("Location: register.php");
-    exit;
-}
-?>
-
-<div class="fullWindow centerContent2">
-    <form method="post">
+<div class="fullWindow2 centerContent2">
+    <form action="_signin.php" method="post">
         <div class="f-row relative">
             <div class="icon email"></div>
             <input type="email" placeholder="enter email"/>
@@ -18,10 +10,10 @@ if (isset($_POST['register'])) {
             <div class="icon lock"></div>
             <input type="password" placeholder="enter password"/>
         </div>
-        <button name="login"> Sign in </button>
+        <button name="signin"> Sign in </button>
         <p> Forgot password? <a href="login.php"> Click here </a></p>
         <p> Don't have an account?</p>
-        <button name="register"> Register </button>
+        <button type="button" class="signin" onclick="location.href='register.php'"> Register </button>
     </form>
 </div>
 

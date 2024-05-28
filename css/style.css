@@ -422,6 +422,7 @@ table, th, td {
 .fgrow-3 { flex-grow: 3 !important }
 .m-0 { margin: 0 !important }
 .fullWindow { width: 100vw; height: 100%; }
+.fullWindow2 { width: 100vw; height: 100vh; }
 .centerContent { 
     display: flex; 
     justify-content: center;
