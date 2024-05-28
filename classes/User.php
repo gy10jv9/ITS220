@@ -24,6 +24,18 @@ class User {
         $stmt->bindParam(1, $user["username"], PDO::PARAM_STR);
         $stmt->execute();
 
-        return $stmt->fetchAll(PDO::FETCH_BOTH);
+        $result = $stmt->fetch(PDO::FETCH_BOTH);
+
+        if ($result) { // if may nakita nga result
+            if (password_verify($user["password"], $result["password"])) { // check if equals sa encrypted nga password
+                $_SESSION["isvalid"] = true;
+                header("Location: ../../index.php");
+                exit;
+            } else {
+                throw new Exception("Invalid password");
+            }
+        } else {
+            throw new Exception("Invalid username");
+        }
     }
 }

@@ -14,7 +14,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $User = new User($Database);
         $User->register($user);
 
-        header("Location: signin.php");
+        header("Location: login.php");
         exit;
     } catch (Exception $e) {
         die("Error: ". $e->getMessage());

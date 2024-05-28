@@ -1,4 +1,6 @@
 <?php
+session_start();
+
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $user = [
         "username" => $_POST["username"],
@@ -11,10 +13,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         $Database = new Database();
         $User = new User($Database);
-        $User->verify($user);
-
-        header("Location: signin.php");
-        exit;
+        $user = $User->verify($user);
     } catch (Exception $e) {
         die("Error: ". $e->getMessage());
     }

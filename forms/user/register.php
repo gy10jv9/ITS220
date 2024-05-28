@@ -17,7 +17,7 @@
 
         <button name="register"> Register </button>
         <p> Already have an account?</p>
-        <button type="button" class="signin" onclick="location.href='signin.php'"> Sign in </button>
+        <button type="button" class="login" onclick="location.href='login.php'"> Sign in </button>
     </form>
 </div>
 
