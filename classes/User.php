@@ -16,4 +16,14 @@ class User {
         $stmt->bindParam(3, $user["password"], PDO::PARAM_STR);
         $stmt->execute();
     }
+
+    public function verify($user) {
+        $query = "SELECT * FROM db_redcross.tbl_users WHERE username = ?";
+
+        $stmt = $this->db->getConnection()->prepare($query);
+        $stmt->bindParam(1, $user["username"], PDO::PARAM_STR);
+        $stmt->execute();
+
+        return $stmt->fetchAll(PDO::FETCH_BOTH);
+    }
 }
