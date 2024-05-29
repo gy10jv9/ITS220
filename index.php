@@ -11,7 +11,7 @@
                 <li onclick="window.location.href='dash-serviceReport.php'"> services </li>
                 <li onclick="window.location.href='index.php'"> profile </li>
                 <li> settings </li>
-                <li onclick="<?php session_destroy();?> document.location.href='forms/user/login.php'"> logout </li>
+                <li onclick=" <?php /*session_destroy();*/?> document.location.href='forms/user/login.php'"> logout </li>
             </ul>
         </div>
     </div>
