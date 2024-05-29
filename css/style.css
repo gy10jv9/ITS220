@@ -20,7 +20,7 @@ body {
     height: 25rem;
     border-radius: 0.5rem;
     background-color: white;
-    box-shadow: 2px 2px 4px rgba(49, 9, 10, 0.2);
+    box-shadow: 2px 2px 8px rgba(49, 9, 10, 0.2);
 }
 .container-login form {
     height: 100%;
@@ -49,17 +49,18 @@ body {
     box-shadow: none;
 }
 .bttn-secondary {
-    color: white;
+    color: #DF7C6F;
     width: 67%;
-    background-color: #DF7C6F;
+    background-color: white;
     cursor: pointer;
     border: 1px solid #DF7C6F;
     box-shadow: 2px 2px 8px rgba(49, 9, 10, 0.2);
     border-radius: 0.25rem;
 }
 .bttn-secondary:hover {
-    background-color: #DD5746;
     box-shadow: none;
+    border: 1px solid #DD5746;
+    color: #DD5746;
 }
 
 /* ----- FORMS ----- */
@@ -468,6 +469,8 @@ table, th, td {
 .fgrow-2 { flex-grow: 2 !important }
 .fgrow-3 { flex-grow: 3 !important }
 .m-0 { margin: 0 !important }
+.mt-pt25 { margin-top: 0.25rem !important }
+.mt-1 { margin-top: 1rem !important }
 .fullWindow { width: 100vw; height: 100%; }
 .fullWindow2 { width: 100vw; height: 100vh; }
 .centerContent { 
@@ -482,3 +485,6 @@ table, th, td {
 .text-center { text-align: center; }
 .w-full { width: 100%; }
 .text-center { text-align: center; }
+.size-14 { font-size: 14px; }
+.grey-1 { color: #a7a7a7;}
+.grey-2 { color: #636363;}
