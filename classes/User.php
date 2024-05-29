@@ -28,7 +28,7 @@ class User {
 
         if ($result) { // if may nakita nga result
             if (password_verify($user["password"], $result["password"])) { // check if equals sa encrypted nga password
-                $_SESSION["isvalid"] = true;
+                $_SESSION["isvalid"] = 1;
                 header("Location: ../../index.php");
                 exit;
             } else {

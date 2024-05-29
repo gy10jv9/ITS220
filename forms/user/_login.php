@@ -1,7 +1,7 @@
 <?php
 session_start();
 
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
+if ($_SERVER["REQUEST_METHOD"] == "POST" && !empty($_POST["username"]) && !empty($_POST["password"])) {
     $user = [
         "username" => $_POST["username"],
         "password" => $_POST["password"]
@@ -18,6 +18,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         die("Error: ". $e->getMessage());
     }
 } else {
-    header("Location: register.php");
+    header("Location: login.php");
     exit;
 }
