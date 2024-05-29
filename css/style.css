@@ -14,6 +14,53 @@ body {
     height: 100vh;
 }
 
+/* -----[ LOGIN CONTAINER ]----- */
+.container-login {
+    display: flex;
+    height: 25rem;
+    border-radius: 0.5rem;
+    background-color: white;
+    box-shadow: 2px 2px 4px rgba(49, 9, 10, 0.2);
+}
+.container-login form {
+    height: 100%;
+    width: 20rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.container-login .poster {
+    height: 100%;
+    width: 20rem;
+    border-radius: 0 0.5rem 0.5rem 0;
+}
+.bttn-primary2 {
+    color: white;
+    width: 67%;
+    background-color: #DF7C6F;
+    cursor: pointer;
+    border: 1px solid #DF7C6F;
+    box-shadow: 2px 2px 8px rgba(49, 9, 10, 0.2);
+    border-radius: 0.25rem;
+}
+.bttn-primary2:hover {
+    background-color: #DD5746;
+    box-shadow: none;
+}
+.bttn-secondary {
+    color: white;
+    width: 67%;
+    background-color: #DF7C6F;
+    cursor: pointer;
+    border: 1px solid #DF7C6F;
+    box-shadow: 2px 2px 8px rgba(49, 9, 10, 0.2);
+    border-radius: 0.25rem;
+}
+.bttn-secondary:hover {
+    background-color: #DD5746;
+    box-shadow: none;
+}
 
 /* ----- FORMS ----- */
 .form-container {
