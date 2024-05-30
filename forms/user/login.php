@@ -1,8 +1,10 @@
 <?php include("../../partials/form-header.php"); ?>
 
-<div class="fullWindow2 centerContent2" style="background-color: #e2e6ec;">
+<div class="viewport-login">
     <div class="container-login">
         <form action="_login.php" method="post">
+            <div class="logo-1"></div>
+
             <div class="f-row relative">
                 <div class="icon email"></div>
                 <input type="text" name="username" placeholder="enter username"/>
