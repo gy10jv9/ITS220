@@ -2,7 +2,7 @@
 
 <div class="viewport-login">
     <div class="container-login">
-        <form action="_login.php" method="post">
+        <form action="_login.php" method="post" onmouseenter="onformHover()" onmouseleave="onformLeave()">
             <div class="logo-1"></div>
 
             <div class="container-inputs">
@@ -23,7 +23,13 @@
             </div>
         </form>
 
-        <div class="poster" style="background: url(../../img/service-1.jpg) center center/cover;"></div>
+        <div class="poster" style="background: url(../../img/service-1.jpg) center center/cover;">
+            <div class="overlay">
+                <div class="column"></div>
+                <div class="column" style="opacity: 50%;"></div>
+                <div class="column" style="opacity: 25%;"></div>
+            </div>
+        </div>
     </div>
 </div>
 
