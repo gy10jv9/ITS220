@@ -1,6 +1,6 @@
 <?php include("../../partials/form-header.php"); ?>
 
-<div class="viewport-login">
+<div class="viewport-login" style="background-color: #848178;">
     <div class="container-login">
         <form action="_login.php" method="post" onmouseenter="onformHover()" onmouseleave="onformLeave()">
             <div class="logo-1"></div>
@@ -16,7 +16,7 @@
                 </div>
 
                 <button name="login" class="bttn-primary2 mt-1"> Sign in </button>
-                <p class="size-14 grey-2"> Forgot password? <a href="login.php" class="size-14 grey-2"> Click here </a></p>
+                <p class="size-14 grey-2"> Forgot password? <a href="login.php"> Click here </a></p>
 
                 <p class="size-14 grey-2 mt-1"> Don't have an account?</p>
                 <button type="button" class="bttn-secondary" onclick="location.href='register.php'"> Register </button>

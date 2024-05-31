@@ -57,6 +57,11 @@ body {
     width: 32rem;
     border-radius: 0 0.5rem 0.5rem 0;
 }
+.container-login .poster-left {
+    height: 100%;
+    width: 32rem;
+    border-radius: 0.5rem 0 0 0.5rem;
+}
 .container-login input {
     width: 286px;
 }
@@ -98,6 +103,15 @@ body {
     opacity: 0;
     display: flex;
     justify-content: left;
+}
+.container-login .overlay-right {
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    border-radius: 0.5rem 0 0 0.5rem;
+    opacity: 0;
+    display: flex;
+    justify-content: right;
 }
 .container-login .column {
     width: 1rem;
