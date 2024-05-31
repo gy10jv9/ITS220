@@ -34,11 +34,19 @@ body {
     background: url("../img/logo-1.png") center center/cover;
     width: 10rem;
     aspect-ratio: 966/363;
-
 }
 .container-login form {
     height: 100%;
     width: 26rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 4rem;
+}
+.container-login .container-inputs {
+    width: 100%;
+    flex-grow: 1;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -49,9 +57,15 @@ body {
     width: 32rem;
     border-radius: 0 0.5rem 0.5rem 0;
 }
+.container-login input {
+    width: 286px;
+}
+.container-login input:focus-visible {
+    outline: 2px solid #EAD196;
+}
 .bttn-primary2 {
     color: white;
-    width: 67%;
+    width: 100%;
     background-color: #BF3131;
     cursor: pointer;
     border: 1px solid #BF3131;
@@ -64,7 +78,7 @@ body {
 }
 .bttn-secondary {
     color: #BF3131;
-    width: 67%;
+    width: 100%;
     background-color: white;
     cursor: pointer;
     border: 1px solid #BF3131;
