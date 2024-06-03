@@ -1,4 +1,13 @@
-<?php include('./partials/header.php') ?>
+<?php 
+include('./partials/header.php');
+include("./classes/Database.php");
+include("./classes/Request.php");
+
+$db = new Database();
+$Request = new Request($db);
+
+$roleRequests = $Request->getallRoleRequests();
+?>
 
     <div class="container-sideNav">
         <div class="sideNav">
@@ -46,37 +55,43 @@
                 </div>
             </header>
 
-            <!-- container na ni dapat ka log in form kaso tamad ko mag ilis class name -->
             <section class="container-list">
                 <div class="label-container">
                     <img src="img/icon-back.png" class="back-bttn" onclick="location.href='dashboard.php'">
                     <p class="label"> Login / Register Account </p>
                 </div>
 
-                <div class="loginForm">
-                    <div class="form login">
-                        <d class="f-row relative">
-                            <div class="icon email"></div>
-                            <input type="email" placeholder="enter email"/>
-                        </d>
-                        <d class="f-row relative">
-                            <div class="icon lock"></div>
-                            <input type="password" placeholder="enter password"/>
-                        </d>
-                        <button onclick="location.href='dashboard.php'"> LOGIN </button>
+                <div class="superAdmin-dashboard">
+                    <div class="request-superAdminRole">
+                        <h1> Super Admin Role Requests </h1>
+               <!-- /////[ TABLE ]///// -->
+               <table cellpadding="5" style="margin-top: 1rem;">
+                    <tr style="border: 2px solid #81171b;">
+                        <td style="border: 2px solid #81171b;"><h2> Fullname </h2></td>
+                        <td style="border: 2px solid #81171b;"><h2> Contact Num </h2></td>
+                        <td class="text-center" style="border: 2px solid #81171b;"><h2> Actions </h2></td>
+                    </tr>
+                    <?php foreach($volunteers as $vol) { ?>
+                        <tr>
+                            <td><?php echo $vol["firstName"]. " ". $vol["lastName"] ?></td>
+                            <td><?php echo $vol["contactNumber"] ?></td>
+                            <td class="text-center">
+                                <a href="http://localhost/its220-infoman/forms/volunteer/view-volunteer.php?id=<?= isset($vol['volunteer_id'])? (int) $vol['volunteer_id'] : 0?>">
+                                     <img src ='img/view.png' width = '16' >
+                                </a>
+                                <a href="http://localhost/its220-infoman/forms/volunteer/updateForm-volunteer.php?id=<?= isset($vol['volunteer_id'])? (int) $vol['volunteer_id'] : 0?>">
+                                    <img src ='img/edit.png' width = '16' >
+                                </a>
+                                <a href="http://localhost/its220-infoman/forms/volunteer/delete-volunteer.inc.php?id=<?= isset($vol['volunteer_id'])? (int) $vol['volunteer_id'] : 0?>">
+                                    <img src ='img/delete.png' width = '16' alt="Delete">
+                                </a>
+                            </td>
+                        </tr>
+                    <?php } ?>
+                </table>
                     </div>
-
-                    <div class="form register">
-                        <d class="f-row relative">
-                            <div class="icon email"></div>
-                            <input type="email" placeholder="enter email"/>
-                        </d>
-                        <d class="f-row relative" style="gap: 0.5rem;">
-                            <div class="icon lock"></div>
-                            <input type="password" placeholder="enter password"/>
-                            <input type="password" placeholder="re-enter password"/>
-                        </d>
-                        <button onclick="location.href='dashboard.php'"> REGISTER </button>
+                    <div class="request-others">
+                        <h1> Recent Requests </h1>
                     </div>
                 </div>
             </section>

@@ -1,6 +1,6 @@
 <?php include("../../partials/form-header.php"); ?>
 
-<div class="viewport-login" style="background-color: #eff8ff;">
+<div class="viewport-login" style="background-color: #f4f4f4;">
     <div class="container-login">
         <form action="_login.php" method="post" onmouseenter="onformHover()" onmouseleave="onformLeave()">
             <div class="logo-1"></div>
