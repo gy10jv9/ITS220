@@ -4,7 +4,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         "username" => $_POST["username"],
         "email" => $_POST["email"],
         "password" => password_hash($_POST["password"], PASSWORD_BCRYPT), // Bcrypt nga algorythm. gamit password_verify()
-        "reqsuperAdmin" => $_POST["requestSuperAdmin"],
+        "requestSuperAdmin" => $_POST["requestSuperAdmin"],
     ];
 
     try {
@@ -14,6 +14,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $Database = new Database();
         $User = new User($Database);
         $User->register($user);
+
+        // if nag request super admin nga role
+        if ($user["requestSuperAdmin"] == 1) {
+            $User->requestSuperAdminRole($user);
+        } else {
+            $User->requestAdminRole($user);
+        }
 
         header("Location: login.php");
         exit;
