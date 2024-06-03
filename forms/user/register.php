@@ -1,6 +1,6 @@
 <?php include("../../partials/form-header.php"); ?>
 
-<div class="viewport-login" style="background-color: #85bbf1;">
+<div class="viewport-login" style="background-color: #eff8ff;">
     <div class="container-login">
         <!-- -----[ Poster ]----- -->
         <div class="poster-left" style="background: url(../../img/service-2.jpg) center center/cover;">

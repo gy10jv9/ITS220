@@ -3,7 +3,7 @@ session_start();
 if (isset($_SESSION["isvalid"]) == 0) {
     header("Location: forms/user/login.php");
 }
-echo $_SESSION["isvalid"];
+// echo $_SESSION["isvalid"];
 ?>
 
 <!DOCTYPE html>

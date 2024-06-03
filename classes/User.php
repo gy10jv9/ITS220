@@ -38,4 +38,21 @@ class User {
             throw new Exception("Invalid username");
         }
     }
+
+    public function requestSuperAdmin($user) {
+        //-----[]-----
+        $query1 = "SELECT id FROM db_redcross.tbl_users WHERE username = ?";
+
+        $stmt = $this->db->getConnection()->prepare($query1);
+        $stmt->bindParam(1, $user["username"], PDO::PARAM_STR);
+        $stmt->execute();
+
+        $result = $stmt->fetch(PDO::FETCH_BOTH);
+
+        $query2 = "INSERT INTO db_redcross.tbl_approvalrequests (user_id, type_id)
+                    VALUES (? , 1)";
+        $stmt = $this->db->getConnection()->prepare($query1);
+        $stmt->bindParam(1, $user["username"], PDO::PARAM_STR);
+        $stmt->execute();
+    }
 }

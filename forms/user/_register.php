@@ -3,7 +3,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $user = [
         "username" => $_POST["username"],
         "email" => $_POST["email"],
-        "password" => password_hash($_POST["password"], PASSWORD_BCRYPT) // Bcrypt nga algorythm. gamit password_verify()
+        "password" => password_hash($_POST["password"], PASSWORD_BCRYPT), // Bcrypt nga algorythm. gamit password_verify()
+        "reqsuperAdmin" => $_POST["requestSuperAdmin"],
     ];
 
     try {

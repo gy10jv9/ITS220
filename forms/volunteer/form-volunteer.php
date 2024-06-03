@@ -94,7 +94,7 @@ include("../../partials/form-header.php");
                 </div>
                 <div class="fgrow-1">
                     <p> Profile </p>
-                    <input type = "file">
+                    <input type = "file" accept="image/png, image/jpeg">
                 </div>
             </div>
 
