@@ -1,5 +1,47 @@
 <?php
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    // -----[ FILE UPLOAD ]-----
+    $target_dir = "../../img/";
+    $target_file = $target_dir . basename($_FILES["profile"]["name"]);
+    $uploadOk = 1;
+    $fileType = strtolower(pathinfo($target_file, PATHINFO_EXTENSION));
+
+    if (isset($_POST["submit"])) {
+        $check = getimagesize($_FILES["profile"]["tmp_name"]);
+        if ($check !== false) {
+            echo "File is an image - " . $check["mime"] . ".";
+            $uploadOk = 1;
+        } else {
+            echo "File is not an image.";
+            $uploadOk = 0;
+        }
+    }
+
+    if (file_exists($target_file)) {
+        echo "Sorry, file already exists.";
+        $uploadOk = 0;
+    }
+
+    if ($_FILES["profile"]["size"] > 500000) {
+        echo "Sorry, your file is too large.";
+        $uploadOk = 0;
+    }
+
+    if ($fileType != "jpg" && $fileType != "png" && $fileType != "jpeg" && $fileType != "gif") {
+        echo "Sorry, only JPG, JPEG, PNG & GIF files are allowed.";
+        $uploadOk = 0;
+    }
+
+    if ($uploadOk == 0) {
+        echo "Sorry, your file was not uploaded.";
+    } else {
+        if (move_uploaded_file($_FILES["profile"]["tmp_name"], $target_file)) {
+            echo "The file " . htmlspecialchars(basename($_FILES["profile"]["name"])) . " has been uploaded.";
+        } else {
+            echo "Sorry, there was an error uploading your file.";
+        }
+    }
+
     $volunteer = [
         "fname" => $_POST["fname"],
         "lname" => $_POST["lname"],
@@ -24,6 +66,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         "afternoon" => isset($_POST["afternoon"])? $_POST["afternoon"] : "0",
         "evening" => isset($_POST["evening"])? $_POST["evening"] : "0",
         "freq" => isset($_POST["frequency"])? $_POST["frequency"] : "0",
+        "profile" => "img/". htmlspecialchars(basename($_FILES["profile"]["name"])),
     ];
 
     try {

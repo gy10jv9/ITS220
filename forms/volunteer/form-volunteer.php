@@ -36,7 +36,7 @@ include("../../partials/form-header.php");
         <p class="label"> Add Volunteer </p>
     </div>
     <main>
-        <form action="_add-volunteer.inc.php" method="POST">
+        <form action="_add-volunteer.inc.php" method="POST" enctype="multipart/form-data">
             <h1> Enter Primary Information </h1>
             <div class="input-container">
                 <div class="fgrow-1">
@@ -94,7 +94,7 @@ include("../../partials/form-header.php");
                 </div>
                 <div class="fgrow-1">
                     <p> Profile </p>
-                    <input type = "file" accept="image/png, image/jpeg">
+                    <input type="file" name="profile" accept="image/png, image/jpeg">
                 </div>
             </div>
 
