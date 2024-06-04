@@ -284,6 +284,10 @@ input[type="file"] {
     align-items: center;
     justify-content: center;
 }
+.container-charts {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
 
 
 /* ----- side nav ----- */
@@ -429,7 +433,7 @@ button {
 
 
 /* ----- charts ----- */
-.container-charts {
+/* .container-charts {
     width: 300px;
     display: flex;
     flex-direction: column;
@@ -442,7 +446,7 @@ button {
     width: 300px;
     display: flex;
     flex-direction: column;
-}
+} */
 
 
 /* ----- LOGIN FORM ----- */
