@@ -7,8 +7,8 @@ class Volunteer {
     }
 
     public function add($volunteer) {
-        $query = "INSERT INTO `tbl_members2` (firstName, lastName, contactNumber, nationality, sexuality_id, civilStatus_id, bdate, occupation, streetAddress, city, region, country, sun, mon, tue, wed, thu, fri, sat, morning, afternoon, evening, frequency_id) 
-                VALUES (:fname, :lname, :num, :nat, :sex, :cvlstat, :bdate, :occup, :strtAddress, :city, :region, :country, :sun, :mon, :tue, :wed, :thu, :fri, :sat, :morning, :afternoon, :evening, :freq)";
+        $query = "INSERT INTO `tbl_members2` (firstName, lastName, contactNumber, nationality, sexuality_id, civilStatus_id, bdate, occupation, streetAddress, city, region, country, sun, mon, tue, wed, thu, fri, sat, morning, afternoon, evening, frequency_id, profileImage_url) 
+                VALUES (:fname, :lname, :num, :nat, :sex, :cvlstat, :bdate, :occup, :strtAddress, :city, :region, :country, :sun, :mon, :tue, :wed, :thu, :fri, :sat, :morning, :afternoon, :evening, :freq, :profileImage_url)";
 
         $stmt = $this->db->getConnection()->prepare($query);
         $stmt->bindParam(':fname', $volunteer["fname"], PDO::PARAM_STR);
@@ -34,6 +34,7 @@ class Volunteer {
         $stmt->bindParam(':afternoon', $volunteer["afternoon"], PDO::PARAM_STR);
         $stmt->bindParam(':evening', $volunteer["evening"], PDO::PARAM_STR);
         $stmt->bindParam(':freq', $volunteer["freq"], PDO::PARAM_INT);
+        $stmt->bindParam(':profileImage_url', $volunteer["profileImage_url"], PDO::PARAM_STR);
         $stmt->execute();
     }
 
@@ -75,7 +76,8 @@ class Volunteer {
                     morning = :morning, 
                     afternoon = :afternoon, 
                     evening = :evening, 
-                    frequency_id = :freq 
+                    frequency_id = :freq,
+                    profileImage_url = :profileImage_url 
                 WHERE volunteer_id = :id";
         $stmt = $this->db->getConnection()->prepare($query);
         $stmt->bindParam(':id', $id, PDO::PARAM_INT);
@@ -102,6 +104,7 @@ class Volunteer {
         $stmt->bindParam(':afternoon', $volunteer["afternoon"], PDO::PARAM_STR);
         $stmt->bindParam(':evening', $volunteer["evening"], PDO::PARAM_STR);
         $stmt->bindParam(':freq', $volunteer["freq"], PDO::PARAM_INT);
+        $stmt->bindParam(':profileImage_url', $volunteer["profileImage_url"], PDO::PARAM_STR);
         $stmt->execute();
     }
     public function view($id) {
