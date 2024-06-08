@@ -323,6 +323,7 @@ li:hover {
     width: 64%;
     height: 100%;
     padding: 16px;
+    flex-grow: 1;
 }
 .container-main.v2 {
     width: 100%;
