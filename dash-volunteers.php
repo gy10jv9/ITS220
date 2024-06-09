@@ -2,6 +2,7 @@
 include("./partials/header.php");
 include("./classes/Database.php");
 include("./classes/Volunteer.php");
+include("./partials/sidenav.php");
 
 $db = new Database();
 $Volunteer = new Volunteer($db);
@@ -13,21 +14,6 @@ if (isset($_GET['search']) && !empty($_GET['search'])) {
     $volunteers = $Volunteer->displayall();
 }
 ?>
-
-<div class="container-sideNav">
-    <div class="sideNav">
-        <ul>
-            <li onclick="window.location.href='index.php'"> home </li>
-            <li onclick="window.location.href='dashboard.php'"> dashboard </li>
-            <li onclick="window.location.href='dash-volunteers.php'"> volunteers </li>
-            <li onclick="window.location.href='dash-donations.php'"> donations </li>
-            <li onclick="window.location.href='dash-inventory.php'"> inventory </li>
-            <li onclick="window.location.href='dash-serviceReport.php'"> services </li>
-            <li onclick="window.location.href='index.php'"> profile </li>
-            <li> settings </li>
-        </ul>
-    </div>
-</div>
 
 <div class="container-main">
     <main>
