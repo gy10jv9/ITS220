@@ -1,7 +1,7 @@
 <?php
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $item = [
-        "brandName" => $_POST["brandName"],
+        "beneficiaryName" => $_POST["beneficiaryName"],
         "itemName" => $_POST["itemName"],
         "purchaseDate" => $_POST["purchaseDate"],
         "quantity" => $_POST["quantity"],
@@ -18,12 +18,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $Inventory = new Inventory($Database);
         $Inventory->add($item);
 
-        header("Location: inventory.php");
+        header("Location: ../../dashboards/dash-inventory.php");
         exit;
     } catch (Exception $e) {
         die("Error: ". $e->getMessage());
     }
 } else {
-    header("Location: register.php");
+    header("Location: inventory.php");
     exit;
 }

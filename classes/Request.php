@@ -48,4 +48,8 @@ class Request {
 
         $this->db->getConnection()->exec($query);
     }
+
+    public function getotherRequests() {
+        
+    }
 }
