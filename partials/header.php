@@ -1,8 +1,10 @@
 <?php
 session_start();
-if (isset($_SESSION["isvalid"]) == false) {
+if (isset($_SESSION["isvalid"]) == 0) {
     header("Location: forms/user/login.php");
 }
+
+
 ?>
 
 <!DOCTYPE html>

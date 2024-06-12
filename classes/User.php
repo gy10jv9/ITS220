@@ -28,7 +28,7 @@ class User {
 
         if ($result) { // if may nakita nga result
             if (password_verify($user["password"], $result["password"])) { // check if equals sa encrypted nga password
-                $_SESSION["isvalid"] = true;
+                $_SESSION["isvalid"] = 1;
                 header("Location: ../../index.php");
                 exit;
             } else {
@@ -37,5 +37,43 @@ class User {
         } else {
             throw new Exception("Invalid username");
         }
+    }
+
+    public function requestSuperAdminRole($user) {
+        // kwaun ang id sng user depende sa username
+        $query1 = "SELECT id FROM db_redcross.tbl_users WHERE username = ?";
+
+        $stmt = $this->db->getConnection()->prepare($query1);
+        $stmt->bindParam(1, $user["username"], PDO::PARAM_STR);
+        $stmt->execute();
+
+        // insert value sa tbl_approvalrequests
+        $result = $stmt->fetch(PDO::FETCH_BOTH);
+
+        $query2 = "INSERT INTO db_redcross.tbl_approvalrequests (user_id, type_id)
+                    VALUES (? , 1)"; // 1 for super admin role
+
+        $stmt = $this->db->getConnection()->prepare($query2);
+        $stmt->bindParam(1, $result["id"], PDO::PARAM_STR);
+        $stmt->execute();
+    }
+
+    public function requestAdminRole($user) {
+        // kwaun ang id sng user depende sa username
+        $query1 = "SELECT id FROM db_redcross.tbl_users WHERE username = ?";
+
+        $stmt = $this->db->getConnection()->prepare($query1);
+        $stmt->bindParam(1, $user["username"], PDO::PARAM_STR);
+        $stmt->execute();
+
+        // insert value sa tbl_approvalrequests
+        $result = $stmt->fetch(PDO::FETCH_BOTH);
+
+        $query2 = "INSERT INTO db_redcross.tbl_approvalrequests (user_id, type_id)
+                    VALUES (? , 2)"; // 2 for admin role
+                    
+        $stmt = $this->db->getConnection()->prepare($query2);
+        $stmt->bindParam(1, $result["id"], PDO::PARAM_STR);
+        $stmt->execute();
     }
 }

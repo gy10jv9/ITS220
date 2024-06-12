@@ -2,27 +2,18 @@
 include("./partials/header.php");
 include("./classes/Database.php");
 include("./classes/Volunteer.php");
+include("./partials/sidenav.php");
 
 $db = new Database();
 $Volunteer = new Volunteer($db);
 
-$volunteers = $Volunteer->displayall();
+if (isset($_GET['search']) && !empty($_GET['search'])) {
+    $searchTerm = $_GET['search'];
+    $volunteers = $Volunteer->search($searchTerm);
+} else {
+    $volunteers = $Volunteer->displayall();
+}
 ?>
-
-<div class="container-sideNav">
-    <div class="sideNav">
-        <ul>
-            <li onclick="window.location.href='index.php'"> home </li>
-            <li onclick="window.location.href='dashboard.php'"> dashboard </li>
-            <li onclick="window.location.href='dash-volunteers.php'"> volunteers </li>
-            <li onclick="window.location.href='dash-donations.php'"> donations </li>
-            <li onclick="window.location.href='dash-inventory.php'"> inventory </li>
-            <li onclick="window.location.href='dash-serviceReport.php'"> services </li>
-            <li onclick="window.location.href='index.php'"> profile </li>
-            <li> settings </li>
-        </ul>
-    </div>
-</div>
 
 <div class="container-main">
     <main>
@@ -60,10 +51,10 @@ $volunteers = $Volunteer->displayall();
                 <p class="label"> Volunteers </p>
             </div>
 
-            <div class="container-search">
-                <input type="text" placeholder="search volunteer"/>
-                <button> Search </button>
-            </div>
+            <form class="container-search" action="dash-volunteers.php" method="GET">
+                <input type="text" name="search" placeholder="search volunteer"/>
+                <button type="submit" value="search"> Search </button>
+            </form>
 
             <div class="list">
                 <button onclick="location.href='forms/volunteer/form-volunteer.php'"> add volunteer </button>
@@ -98,11 +89,6 @@ $volunteers = $Volunteer->displayall();
             </div>
         </section>
     </main>
-</div>
-
-<div class="container-charts">
-    <img src="img/chart1.png"></img>
-    <img src="img/chart2.png"></img>
 </div>
 
 <?php include("./partials/footer.php") ?>

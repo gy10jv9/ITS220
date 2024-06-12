@@ -64,5 +64,18 @@ class Donation {
 
         return $stmt->fetch(PDO::FETCH_ASSOC);
     }
+
+    public function search($searchTerm) {
+        $searchTerm = "%$searchTerm%";
+        $query = "SELECT * 
+                FROM `tbl_donations`
+                WHERE fname LIKE :search OR lname LIKE :search OR contactnum LIKE :search";
+
+        $stmt = $this->db->getConnection()->prepare($query);
+        $stmt->bindParam(':search', $searchTerm, PDO::PARAM_STR);
+        $stmt->execute();
+
+        return $stmt->fetchAll(PDO::FETCH_ASSOC);
+    }
 }
 ?>
