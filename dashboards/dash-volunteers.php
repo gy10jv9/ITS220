@@ -1,8 +1,8 @@
 <?php
-include("./partials/header.php");
-include("./classes/Database.php");
+include("../partials/dashboard-header.php");
+include("../classes/Database.php");
 include("./classes/Volunteer.php");
-include("./partials/sidenav.php");
+include("../partials/dashboard-sidenav.php");
 
 $db = new Database();
 $Volunteer = new Volunteer($db);
@@ -91,4 +91,4 @@ if (isset($_GET['search']) && !empty($_GET['search'])) {
     </main>
 </div>
 
-<?php include("./partials/footer.php") ?>
+<?php include("../partials/footer.php") ?>

@@ -1,6 +1,6 @@
 <?php
-include("./partials/header.php");;
-include("./partials/sidenav.php");
+include("../partials/dashboard-header.php");;
+include("../partials/dashboard-sidenav.php");
 ?>
 
 <div class="container-main">
@@ -45,7 +45,7 @@ include("./partials/sidenav.php");
             </div>
 
             <div class="list">
-                <button onclick="location.href='add-serviceReport.php'"> add service report </button>
+                <button onclick="location.href='../forms/serviceReport/serviceReport.php'"> add service report </button>
                 <h2 class="text-center" style="margin-top: 10%;"> No Works Yet </h2>
                 <p class="text-center"> click "Add Service Report" to add one </p>
             </div>
@@ -53,4 +53,4 @@ include("./partials/sidenav.php");
     </main>
 </div>
         
-<?php include("./partials/footer.php") ?>
+<?php include("../partials/footer.php") ?>

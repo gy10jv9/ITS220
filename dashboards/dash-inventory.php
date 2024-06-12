@@ -1,6 +1,6 @@
 <?php
-include("./partials/header.php");;
-include("./partials/sidenav.php");
+include("../partials/dashboard-header.php");;
+include("../partials/dashboard-sidenav.php");
 ?>
 
 <div class="container-main">
@@ -53,4 +53,4 @@ include("./partials/sidenav.php");
     </main>
 </div>
 
-<?php include("./partials/footer.php") ?>
+<?php include("../partials/footer.php") ?>
