@@ -45,7 +45,7 @@ include("../partials/dashboard-sidenav.php");
             </div>
 
             <div class="list">
-                <button onclick="location.href='add-inventory.php'"> add inventory </button>
+                <button onclick="location.href='../forms/inventory/inventory.php'"> add inventory </button>
                 <h2 class="text-center" style="margin-top: 10%;"> No inventory Yet </h2>
                 <p class="text-center"> click "Add Inventory" to add one </p>
             </div>
