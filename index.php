@@ -58,36 +58,33 @@ $roleRequests = $Request->getallRoleRequests();
                 <p class="label"> Login / Register Account </p>
             </div>
 
-            <div class="superAdmin-dashboard">
-                <div class="request-superAdminRole">
-                    <h1> Super Admin Role Requests </h1>
-                    <!-- -----[ ROLE REQUESTS TABLE ]----- -->
-                    <table cellpadding="5" style="margin-top: 1rem;" class="w-full">
-                        <tr style="border: 2px solid #81171b;">
-                            <td style="border: 2px solid #81171b;"><h2> Username </h2></td>
-                            <td style="border: 2px solid #81171b;"><h2> Role </h2></td>
-                            <td class="text-center" style="border: 2px solid #81171b;"><h2> Actions </h2></td>
+
+            <div class="request-superAdminRole">
+                <h1> Role Requests </h1>
+                <!-- -----[ ROLE REQUESTS TABLE ]----- -->
+                <table cellpadding="5" style="margin-top: 1rem;" class="w-full">
+                    <tr style="border: 2px solid #81171b;">
+                        <td style="border: 2px solid #81171b;"><h2> Username </h2></td>
+                        <td style="border: 2px solid #81171b;"><h2> Role </h2></td>
+                        <td class="text-center" style="border: 2px solid #81171b;"><h2> Actions </h2></td>
+                    </tr>
+                    <?php foreach ($roleRequests as $request): ?>
+                        <tr>
+                            <td><?php echo $request['username']; ?></td>
+                            <td><?php echo $request['type']; ?></td>
+                            <td class="text-center">
+                                <form method="post" class="action-form">
+                                    <input type="hidden" name="request_id" value="<?php echo $request['id']; ?>">
+                                    <input type="hidden" name="request_role" value="<?php echo $request['type_id']; ?>">
+                                    <button name="approve" type="submit" class="bttn-primary2">Approve</button>
+                                    <button name="decline" type="submit" class="bttn-primary2">Decline</button>
+                                </form>
+                            </td>
                         </tr>
-                        <?php foreach ($roleRequests as $request): ?>
-                            <tr>
-                                <td><?php echo $request['username']; ?></td>
-                                <td><?php echo $request['type']; ?></td>
-                                <td class="text-center">
-                                    <form method="post">
-                                        <input type="hidden" name="request_id" value="<?php echo $request['id']; ?>">
-                                        <input type="hidden" name="request_role" value="<?php echo $request['type_id']; ?>">
-                                        <button name="approve" type="submit">Approve</button>
-                                        <button name="decline" type="submit">Decline</button>
-                                    </form>
-                                </td>
-                            </tr>
-                        <?php endforeach; ?>
-                    </table>
-                </div>
-                <div class="request-others">
-                    <h1> Recent Requests </h1>
-                </div>
+                    <?php endforeach; ?>
+                </table>
             </div>
+
 
             <div class="container-charts">
                 <div><canvas id="bar"></canvas></div>
@@ -106,19 +103,29 @@ $roleRequests = $Request->getallRoleRequests();
     new Chart(ctx, {
         type: 'bar',
         data: {
-            labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+            labels: [
+                <?php
+                $dates = [];
+                for ($i = 0; $i >= -5; $i--) {
+                    $date = date('F j', strtotime("$i days"));
+                    $dates[] = "'$date'";
+                }
+                echo implode(',', array_reverse($dates));
+                ?>
+            ],
             datasets: [{
-                label: '# of Votes',
+                label: '# of new volunteers',
                 data: [12, 19, 3, 5, 2, 3],
+                backgroundColor: '#952727',
                 borderWidth: 1
             }]
         },
         options: {
-        scales: {
-            y: {
-                beginAtZero: true
+            scales: {
+                y: {
+                    beginAtZero: true
+                }
             }
-        }
         }
     });
 
