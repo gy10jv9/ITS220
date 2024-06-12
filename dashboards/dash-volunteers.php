@@ -1,7 +1,7 @@
 <?php
 include("../partials/dashboard-header.php");
 include("../classes/Database.php");
-include("./classes/Volunteer.php");
+include("../classes/Volunteer.php");
 include("../partials/dashboard-sidenav.php");
 
 $db = new Database();
@@ -47,7 +47,7 @@ if (isset($_GET['search']) && !empty($_GET['search'])) {
 
         <section class="container-list">
             <div class="label-container">
-                <img src="img/icon-back.png" class="back-bttn" onclick="location.href='dashboard.php'">
+                <img src="../img/icon-back.png" class="back-bttn" onclick="location.href='../index.php'">
                 <p class="label"> Volunteers </p>
             </div>
 
@@ -57,7 +57,7 @@ if (isset($_GET['search']) && !empty($_GET['search'])) {
             </form>
 
             <div class="list">
-                <button onclick="location.href='forms/volunteer/form-volunteer.php'"> add volunteer </button>
+                <button onclick="location.href='../forms/volunteer/form-volunteer.php'"> add volunteer </button>
 
                 <!-- /////[ TABLE ]///// -->
                 <table cellpadding="5" style="margin-top: 1rem;">
@@ -72,13 +72,13 @@ if (isset($_GET['search']) && !empty($_GET['search'])) {
                             <td><?php echo $vol["contactNumber"] ?></td>
                             <td class="text-center">
                                 <a href="http://localhost/its220-infoman/forms/volunteer/view-volunteer.php?id=<?= isset($vol['volunteer_id'])? (int) $vol['volunteer_id'] : 0?>">
-                                     <img src ='img/view.png' width = '16' >
+                                     <img src ='../img/view.png' width = '16' >
                                 </a>
                                 <a href="http://localhost/its220-infoman/forms/volunteer/updateForm-volunteer.php?id=<?= isset($vol['volunteer_id'])? (int) $vol['volunteer_id'] : 0?>">
-                                    <img src ='img/edit.png' width = '16' >
+                                    <img src ='../img/edit.png' width = '16' >
                                 </a>
-                                <a href="http://localhost/its220-infoman/forms/volunteer/delete-volunteer.inc.php?id=<?= isset($vol['volunteer_id'])? (int) $vol['volunteer_id'] : 0?>">
-                                    <img src ='img/delete.png' width = '16' alt="Delete">
+                                <a href="http://localhost/its220-infoman/forms/volunteer/_delete-volunteer.php?id=<?= isset($vol['volunteer_id'])? (int) $vol['volunteer_id'] : 0?>">
+                                    <img src ='../img/delete.png' width = '16' alt="Delete">
                                 </a>
                             </td>
                         </tr>

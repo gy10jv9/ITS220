@@ -47,7 +47,7 @@ if (isset($_GET['search']) && !empty($_GET['search'])) {
 
         <section class="container-list">
             <div class="label-container">
-                <img src="img/icon-back.png" class="back-bttn" onclick="location.href='dashboard.php'">
+                <img src="../img/icon-back.png" class="back-bttn" onclick="location.href='../index.php'">
                 <p class="label"> Donations </p>
             </div>
 
@@ -57,7 +57,7 @@ if (isset($_GET['search']) && !empty($_GET['search'])) {
             </form>
 
             <div class="list">
-                <button onclick="location.href='forms/donation/form-donation.php'"> add donation </button>
+                <button onclick="location.href='../forms/donation/form-donation.php'"> add donation </button>
 
             <!-- /////[ TABLE ]///// -->
             <table cellpadding="5" style="margin: 1rem 0 1rem 0;">
@@ -77,7 +77,7 @@ if (isset($_GET['search']) && !empty($_GET['search'])) {
                                 <a href="http://localhost/its220-infoman/forms/volunteer/updateForm-volunteer.php?id=<?= isset($donation['id'])? (int) $donation['id'] : 0?>">
                                     <img src ='img/edit.png' width = '16' >
                                 </a>
-                                <a href="http://localhost/its220-infoman/forms/volunteer/delete-volunteer.inc.php?id=<?= isset($donation['id'])? (int) $donation['id'] : 0?>">
+                                <a href="http://localhost/its220-infoman/forms/volunteer/_delete-volunteer.php?id=<?= isset($donation['id'])? (int) $donation['id'] : 0?>">
                                     <img src ='img/delete.png' width = '16' alt="Delete">
                                 </a>
                             </td>

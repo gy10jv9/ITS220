@@ -36,7 +36,7 @@ include("../../partials/form-header.php");
         <p class="label"> Add Volunteer </p>
     </div>
     <main>
-        <form action="_add-volunteer.inc.php" method="POST" enctype="multipart/form-data">
+        <form action="_add-volunteer.php" method="POST" enctype="multipart/form-data">
             <h1> Enter Primary Information </h1>
             <div class="input-container">
                 <div class="fgrow-1">

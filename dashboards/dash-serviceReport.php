@@ -35,7 +35,7 @@ include("../partials/dashboard-sidenav.php");
 
         <section class="container-list">
             <div class="label-container">
-                <img src="img/icon-back.png" class="back-bttn" onclick="location.href='dashboard.php'">
+                <img src="../img/icon-back.png" class="back-bttn" onclick="location.href='../index.php'">
                 <p class="label"> Service Reports </p>
             </div>
 

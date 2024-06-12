@@ -540,6 +540,18 @@ footer .socials {
     border-radius: 4px;
 }
 
+/* -----[ VIEW VOLUNTEER ]----- */
+.volunteer-primaryInformation {
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+    padding: 1rem;
+}
+.volunteer-primaryInformation .profile-picture {
+    width: 200px;
+    aspect-ratio: 1/1;
+}
+
 /* ////[ TABLE ]//// */
 table, th, td {
     border: 1px solid black;
