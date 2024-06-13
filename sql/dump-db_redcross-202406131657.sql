@@ -46,6 +46,29 @@ INSERT INTO `tbl_approvalrequests` VALUES (2,24,1,1),(3,28,1,1),(4,29,1,1),(5,30
 UNLOCK TABLES;
 
 --
+-- Table structure for table `tbl_beneficiaries`
+--
+
+DROP TABLE IF EXISTS `tbl_beneficiaries`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `tbl_beneficiaries` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `beneficiaryName` varchar(100) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `tbl_beneficiaries`
+--
+
+LOCK TABLES `tbl_beneficiaries` WRITE;
+/*!40000 ALTER TABLE `tbl_beneficiaries` DISABLE KEYS */;
+/*!40000 ALTER TABLE `tbl_beneficiaries` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `tbl_brands`
 --
 
@@ -119,6 +142,7 @@ CREATE TABLE `tbl_donations` (
   `cardnum` varchar(100) NOT NULL,
   `expdate` date NOT NULL,
   `ccv` varchar(100) NOT NULL,
+  `addedDate` date NOT NULL DEFAULT curdate(),
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -129,7 +153,7 @@ CREATE TABLE `tbl_donations` (
 
 LOCK TABLES `tbl_donations` WRITE;
 /*!40000 ALTER TABLE `tbl_donations` DISABLE KEYS */;
-INSERT INTO `tbl_donations` VALUES (1,'ssca','cassssss','csaaaaaaaa','sacccccccccc',47757,'kihhhh','lhhhhhhhk','2024-05-30',1,'hhhhhhhh','tttttttttt','kkkkkkk','yyyyyyyyy','kkkkkkkkk','uiiiiiiii','2024-05-23','111');
+INSERT INTO `tbl_donations` VALUES (1,'ssca','cassssss','csaaaaaaaa','sacccccccccc',47757,'kihhhh','lhhhhhhhk','2024-05-30',1,'hhhhhhhh','tttttttttt','kkkkkkk','yyyyyyyyy','kkkkkkkkk','uiiiiiiii','2024-05-23','111','2024-06-13');
 /*!40000 ALTER TABLE `tbl_donations` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -192,6 +216,29 @@ LOCK TABLES `tbl_items` WRITE;
 /*!40000 ALTER TABLE `tbl_items` DISABLE KEYS */;
 INSERT INTO `tbl_items` VALUES (1,'itemtest');
 /*!40000 ALTER TABLE `tbl_items` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `tbl_locations`
+--
+
+DROP TABLE IF EXISTS `tbl_locations`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `tbl_locations` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `location` varchar(100) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `tbl_locations`
+--
+
+LOCK TABLES `tbl_locations` WRITE;
+/*!40000 ALTER TABLE `tbl_locations` DISABLE KEYS */;
+/*!40000 ALTER TABLE `tbl_locations` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -330,10 +377,17 @@ DROP TABLE IF EXISTS `tbl_works`;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `tbl_works` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `beneficiary` varchar(200) NOT NULL,
-  `location` varchar(255) NOT NULL,
+  `beneficiary_id` int(11) DEFAULT NULL,
+  `location_id` int(11) NOT NULL,
+  `date` date NOT NULL DEFAULT curdate(),
   `expenses` double NOT NULL,
-  PRIMARY KEY (`id`)
+  `description` text DEFAULT NULL,
+  `remarks` text DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `tbl_works_tbl_beneficiaries_FK` (`beneficiary_id`),
+  KEY `tbl_works_tbl_locations_FK` (`location_id`),
+  CONSTRAINT `tbl_works_tbl_beneficiaries_FK` FOREIGN KEY (`beneficiary_id`) REFERENCES `tbl_beneficiaries` (`id`),
+  CONSTRAINT `tbl_works_tbl_locations_FK` FOREIGN KEY (`location_id`) REFERENCES `tbl_locations` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -359,4 +413,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2024-06-13 11:34:45
+-- Dump completed on 2024-06-13 16:57:49

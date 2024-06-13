@@ -69,4 +69,26 @@ class ServiceReport {
         $stmt->bindParam(6, $report["remarks"], PDO::PARAM_STR);
         $stmt->execute();
     }
+
+    public function countallWorks() {
+        $query = "SELECT COUNT(*) 
+                FROM `tbl_works`";
+
+        $stmt = $this->db->getConnection()->prepare($query);
+        $stmt->execute();
+
+        return $stmt->fetchColumn();
+    }
+
+    public function countWorksbyDate($date) {
+        $query = "SELECT COUNT(*) 
+                FROM `tbl_donations`
+                WHERE dateAdded = :date";
+
+        $stmt = $this->db->getConnection()->prepare($query);
+        $stmt->bindParam(':date', $date, PDO::PARAM_STR);
+        $stmt->execute();
+
+        return $stmt->fetchColumn();
+    }
 }

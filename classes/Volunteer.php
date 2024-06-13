@@ -142,5 +142,14 @@ class Volunteer {
 
         return $stmt->fetchColumn();
     }
+    public function countallVolunteers() {
+        $query = "SELECT COUNT(*) 
+                FROM `tbl_members2`";
+
+        $stmt = $this->db->getConnection()->prepare($query);
+        $stmt->execute();
+
+        return $stmt->fetchColumn();
+    }
 }
 ?>

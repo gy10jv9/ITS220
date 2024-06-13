@@ -4,10 +4,16 @@ include("./classes/Database.php");
 include("./classes/Request.php");
 include("./partials/sidenav.php");
 include("./classes/Volunteer.php");
+include("./classes/User.php");
+include("./classes/ServiceReport.php");
+include("./classes/Donation.php");
 
 $db = new Database();
 $Request = new Request($db);
 $Volunteer = new Volunteer($db);
+$User = new User($db);
+$ServiceReport = new ServiceReport($db);
+$Donation = new Donation($db);
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     if (isset($_POST['approve'])) {
@@ -156,7 +162,7 @@ $roleRequests = $Request->getallRoleRequests();
             labels: ['Volunteers', 'Admins','Works'],
             datasets: [{
                 label: 'My First Dataset',
-                data: [300, 50, 100],
+                data: [<?php echo $Volunteer->countallVolunteers() ?>, <?php echo $User->countallAdmin() ?>, <?php echo $ServiceReport->countallWorks() ?>],
                 backgroundColor: [
                     'rgb(149, 39, 39)',
                     'rgb(105, 45, 45)',
@@ -182,11 +188,26 @@ $roleRequests = $Request->getallRoleRequests();
     new Chart(ctxLine, {
     type: 'line',
     data: {
-        labels: ['January', 'February', 'March', 'April', 'May', 'June'],
+        labels: [
+            <?php
+                $dates = [];
+                $counts = [];
+                $counts2 = [];
+                $counts3 = [];
+                for ($i = 0; $i >= -5; $i--) {
+                    $date = date('F j', strtotime("$i days"));
+                    $dates[] = "'$date'";
+                    $counts[] = $Volunteer->countUsersbyDate(date('Y-m-d', strtotime("$i days")));
+                    // $counts2[] = $Donation->countDonationsbyDate(date('Y-m-d', strtotime("$i days")));
+                    // $counts3[] = $ServiceReport->countWorksbyDate(date('Y-m-d', strtotime("$i days")));
+                }
+                echo implode(',', array_reverse($dates));
+            ?>
+        ],
         datasets: [
             {
                 label: 'Volunteers',
-                data: [65, 59, 80, 81, 56, 55],
+                data: [<?php echo implode(',', array_reverse($counts)); ?>],
                 fill: false,
                 borderColor: 'rgb(149, 39, 39)',
                 tension: 0.1

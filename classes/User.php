@@ -87,4 +87,15 @@ class User {
 
         return $result[0];
     }
+
+    public function countallAdmin() {
+        $query = "SELECT COUNT(*) 
+            FROM `tbl_users`
+            WHERE role_id = 2 OR role_id = 3";
+
+        $stmt = $this->db->getConnection()->prepare($query);
+        $stmt->execute();
+
+        return $stmt->fetchColumn();
+    }
 }

@@ -77,5 +77,27 @@ class Donation {
 
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
+
+    public function countallDonations() {
+        $query = "SELECT COUNT(*) 
+                FROM `tbl_donations`";
+
+        $stmt = $this->db->getConnection()->prepare($query);
+        $stmt->execute();
+
+        return $stmt->fetchColumn();
+    }
+
+    public function countDonationsbyDate($date) {
+        $query = "SELECT COUNT(*) 
+                FROM `tbl_donations`
+                WHERE dateAdded = :date";
+
+        $stmt = $this->db->getConnection()->prepare($query);
+        $stmt->bindParam(':date', $date, PDO::PARAM_STR);
+        $stmt->execute();
+
+        return $stmt->fetchColumn();
+    }
 }
 ?>
