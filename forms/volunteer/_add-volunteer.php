@@ -80,7 +80,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         die("Error: ". $e->getMessage());
     }
 
-    header('Location: ../../dash-volunteers.php');
+    header('Location: ../../dashboards/dash-volunteers.php');
     exit;
 }
 ?>

@@ -7,7 +7,7 @@ if (isset($_GET['id'])) {
     $Volunteer = new Volunteer($db);
 
     $Volunteer->delete($_GET['id']);
-    header('Location: ../../dash-volunteers.php');
+    header('Location: ../../dashboards/dash-volunteers.php');
     exit;
 }
 ?>

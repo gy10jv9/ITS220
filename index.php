@@ -3,9 +3,11 @@ include('./partials/header.php');
 include("./classes/Database.php");
 include("./classes/Request.php");
 include("./partials/sidenav.php");
+include("./classes/Volunteer.php");
 
 $db = new Database();
 $Request = new Request($db);
+$Volunteer = new Volunteer($db);
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     if (isset($_POST['approve'])) {
@@ -115,16 +117,18 @@ $roleRequests = $Request->getallRoleRequests();
             labels: [
                 <?php
                 $dates = [];
+                $counts = [];
                 for ($i = 0; $i >= -5; $i--) {
                     $date = date('F j', strtotime("$i days"));
                     $dates[] = "'$date'";
+                    $counts[] = $Volunteer->countUsersbyDate(date('Y-m-d', strtotime("$i days")));
                 }
                 echo implode(',', array_reverse($dates));
                 ?>
             ],
             datasets: [{
                 label: '# of new volunteers',
-                data: [12, 19, 3, 5, 2, 3],
+                data: [<?php echo implode(',', array_reverse($counts)); ?>],
                 backgroundColor: '#952727',
                 borderWidth: 1
             }]

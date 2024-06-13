@@ -131,5 +131,16 @@ class Volunteer {
 
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
+    public function countUsersbyDate($date) {
+        $query = "SELECT COUNT(*) 
+                FROM `tbl_members2`
+                WHERE dateAdded = :date";
+
+        $stmt = $this->db->getConnection()->prepare($query);
+        $stmt->bindParam(':date', $date, PDO::PARAM_STR);
+        $stmt->execute();
+
+        return $stmt->fetchColumn();
+    }
 }
 ?>
