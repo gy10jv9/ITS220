@@ -6,7 +6,7 @@
             <li onclick="window.location.href='dashboards/dash-donations.php'"> donations </li>
             <li onclick="window.location.href='dashboards/dash-inventory.php'"> inventory </li>
             <li onclick="window.location.href='dashboards/dash-serviceReport.php'"> services </li>
-            <li onclick="window.location.href='../../forms/user/_logout.php'"> logout </li>
+            <li onclick="window.location.href='forms/user/_logout.php'"> logout </li>
         </ul>
     </div>
 </div>

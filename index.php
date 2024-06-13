@@ -2,7 +2,7 @@
 include('./partials/header.php');
 include("./classes/Database.php");
 include("./classes/Request.php");
-include("./partials/sidenav.php");
+include("./partials/index-sidenav.php");
 include("./classes/Volunteer.php");
 include("./classes/User.php");
 include("./classes/ServiceReport.php");

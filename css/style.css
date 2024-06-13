@@ -490,13 +490,13 @@ button {
 
 /* ----- FOOTER ----- */
 footer {
-    background-color: #e6cacb;
     margin-top: 4rem;
     padding: 2rem 50px 2rem 50px
 }
 footer p {
     text-align: justify;
     font-size: 14px;
+    font-style: italic;
 }
 footer .socials {
     border: 1px solid;
@@ -541,11 +541,14 @@ footer .socials {
     display: flex;
     flex-direction: row;
     gap: 1rem;
-    padding: 1rem;
+    padding: 1.5rem;
+    border: 1px solid #a7a7a7;
+    border-radius: 1rem;
 }
 .volunteer-primaryInformation .profile-picture {
     width: 200px;
     aspect-ratio: 1/1;
+    border-radius: 0.5rem;
 }
 
 /* ////[ TABLE ]//// */
@@ -563,6 +566,7 @@ table, th, td {
 .m-0 { margin: 0 !important }
 .mt-pt25 { margin-top: 0.25rem !important }
 .mt-1 { margin-top: 1rem !important }
+.ml-1 { margin-left: 1rem !important }
 .fullWindow { width: 100vw; height: 100%; }
 .fullWindow2 { width: 100vw; height: 100vh; }
 .centerContent { 
@@ -578,5 +582,7 @@ table, th, td {
 .w-full { width: 100%; }
 .text-center { text-align: center; }
 .size-14 { font-size: 14px; }
+.size-18 { font-size: 18px; }
+.size-24 { font-size: 24px; }
 .grey-1 { color: #a7a7a7;}
 .grey-2 { color: #636363;}

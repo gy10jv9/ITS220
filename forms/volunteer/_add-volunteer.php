@@ -66,7 +66,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         "afternoon" => isset($_POST["afternoon"])? $_POST["afternoon"] : "0",
         "evening" => isset($_POST["evening"])? $_POST["evening"] : "0",
         "freq" => isset($_POST["frequency"])? $_POST["frequency"] : "0",
-        "profileImage_url" => "img/". htmlspecialchars(basename($_FILES["profile"]["name"])),
+        "profileImage_url" => empty($_FILES["profile"]["name"]) ? "img/default-profile.jpg" : "img/". htmlspecialchars(basename($_FILES["profile"]["name"])),
     ];
 
     try {
