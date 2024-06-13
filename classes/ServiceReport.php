@@ -57,7 +57,7 @@ class ServiceReport {
         }
 
 
-        $query = "INSERT INTO db_redcross.tbl_servicereports (beneficiary_id, location_id, date, expense, description, remarks)
+        $query = "INSERT INTO db_redcross.tbl_works (beneficiary_id, location_id, date, expense, description, remarks)
                 VALUES (?, ?, ?, ?, ?, ?)";
 
         $stmt = $this->db->getConnection()->prepare($query);
@@ -93,10 +93,10 @@ class ServiceReport {
     }
 
     public function displayall() {
-        $query = 'SELECT tbl_servicereports.id, tbl_beneficiaries.beneficiaryName, tbl_locations.location, tbl_servicereports.date, tbl_servicereports.expense, tbl_servicereports.description, tbl_servicereports.remarks
-                FROM tbl_servicereports
-                INNER JOIN tbl_beneficiaries ON tbl_servicereports.beneficiary_id = tbl_beneficiaries.id
-                INNER JOIN tbl_locations ON tbl_servicereports.location_id = tbl_locations.id';
+        $query = 'SELECT tbl_works.id, tbl_beneficiaries.beneficiaryName, tbl_locations.location, tbl_works.date, tbl_works.expense, tbl_works.description, tbl_works.remarks
+                FROM tbl_works
+                INNER JOIN tbl_beneficiaries ON tbl_works.beneficiary_id = tbl_beneficiaries.id
+                INNER JOIN tbl_locations ON tbl_works.location_id = tbl_locations.id';
 
         $stmt = $this->db->getConnection()->prepare($query);
         $stmt->execute();

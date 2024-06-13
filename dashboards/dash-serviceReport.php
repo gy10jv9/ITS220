@@ -62,16 +62,16 @@ $report = $ServiceReport->displayall();
                     </tr>
                     <?php foreach($report as $rep) { ?>
                         <tr>
-                            <td><?php echo $rep["beneficiaryName"]. " ". $vol["lastName"] ?></td>
+                            <td><?php echo $rep["beneficiaryName"] ?></td>
                             <td><?php echo $rep["location"] ?></td>
                             <td class="text-center">
-                                <a href="http://localhost/its220-infoman/forms/volunteer/view-volunteer.php?id=<?= isset($vol['volunteer_id'])? (int) $vol['volunteer_id'] : 0?>">
+                                <a href="http://localhost/its220-infoman/forms/volunteer/view-volunteer.php?id=<?= isset($rep['id'])? (int) $vol['id'] : 0?>">
                                      <img src ='../img/view.png' width = '16' >
                                 </a>
-                                <a href="http://localhost/its220-infoman/forms/volunteer/updateForm-volunteer.php?id=<?= isset($vol['volunteer_id'])? (int) $vol['volunteer_id'] : 0?>">
+                                <a href="http://localhost/its220-infoman/forms/volunteer/updateForm-volunteer.php?id=<?= isset($rep['id'])? (int) $vol['id'] : 0?>">
                                     <img src ='../img/edit.png' width = '16' >
                                 </a>
-                                <a href="http://localhost/its220-infoman/forms/volunteer/_delete-volunteer.php?id=<?= isset($vol['volunteer_id'])? (int) $vol['volunteer_id'] : 0?>">
+                                <a href="http://localhost/its220-infoman/forms/volunteer/_delete-volunteer.php?id=<?= isset($rep['id'])? (int) $vol['id'] : 0?>">
                                     <img src ='../img/delete.png' width = '16' alt="Delete">
                                 </a>
                             </td>
