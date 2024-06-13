@@ -198,8 +198,8 @@ $roleRequests = $Request->getallRoleRequests();
                     $date = date('F j', strtotime("$i days"));
                     $dates[] = "'$date'";
                     $counts[] = $Volunteer->countUsersbyDate(date('Y-m-d', strtotime("$i days")));
-                    // $counts2[] = $Donation->countDonationsbyDate(date('Y-m-d', strtotime("$i days")));
-                    // $counts3[] = $ServiceReport->countWorksbyDate(date('Y-m-d', strtotime("$i days")));
+                    $counts2[] = $Donation->countDonationsbyDate(date('Y-m-d', strtotime("$i days")));
+                    $counts3[] = $ServiceReport->countWorksbyDate(date('Y-m-d', strtotime("$i days")));
                 }
                 echo implode(',', array_reverse($dates));
             ?>
@@ -214,14 +214,14 @@ $roleRequests = $Request->getallRoleRequests();
             },
             {
                 label: 'Donations',
-                data: [28, 48, 40, 19, 86, 27],
+                data: [<?php echo implode(',', array_reverse($counts2)); ?>],
                 fill: false,
                 borderColor: 'rgb(105, 45, 45)',
                 tension: 0.1
             },
             {
                 label: 'Volunteer Services',
-                data: [45, 25, 60, 75, 50, 40],
+                data: [<?php echo implode(',', array_reverse($counts3)); ?>],
                 fill: false,
                 borderColor: 'rgb(63, 37, 37)',
                 tension: 0.1

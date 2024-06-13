@@ -82,8 +82,8 @@ class ServiceReport {
 
     public function countWorksbyDate($date) {
         $query = "SELECT COUNT(*) 
-                FROM `tbl_donations`
-                WHERE dateAdded = :date";
+                FROM `tbl_works`
+                WHERE date = :date";
 
         $stmt = $this->db->getConnection()->prepare($query);
         $stmt->bindParam(':date', $date, PDO::PARAM_STR);
