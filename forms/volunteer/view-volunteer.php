@@ -19,7 +19,7 @@ if (isset($_GET['id'])) {
 <main>
     <div class="volunteer-primaryInformation">
         <div>
-            <div class="profile-picture" style="background: url('../../<?php echo $volunteer["profileImage_url"]?>') center center/cover" alt="profile"></div>
+            <div class="profile-picture" style="background: url('../../<?php echo $volunteer["profileImage_url"]?>') center top/cover" alt="profile"></div>
             <p class="mt-1 grey-2"> Fullname: </p>
             <h1 class="size-18"><?php echo isset($volunteer["firstName"]) ? $volunteer["firstName"] : ''; ?> <?php echo isset($volunteer["lastName"]) ? $volunteer["lastName"] : ''; ?></h1>
         </div>

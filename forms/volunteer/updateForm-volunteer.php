@@ -13,7 +13,7 @@ if (isset($_GET['id'])) {
 ?>
 
 <div class="label-container">
-    <img src="../../img/icon-back.png" class="back-bttn" onclick="location.href = '../../dash-volunteers.php'">
+    <img src="../../img/icon-back.png" class="back-bttn" onclick="location.href = '../../dashboards/dash-volunteers.php'">
     <p class="label"> Edit Volunteer </p>
 </div>
 <main>
