@@ -1,4 +1,4 @@
-<?php include("../../partials/form-header.php"); ?>
+<?php include("../../partials/login-header.php"); ?>
 
 <div class="viewport-login" style="background-color: #f4f4f4;">
     <div class="container-login">
@@ -33,4 +33,4 @@
     </div>
 </div>
 
-<?php include("../../partials/form-footer.php") ?>
+<?php include("../../partials/login-footer.php") ?>

@@ -173,11 +173,11 @@ body {
 }
 form h1 {
     font-family: "streak semibold";
-    color: #81171B;
+    color: #952727;
 }
 h2 {
     font-family: "streak semibold";
-    color: #81171B;
+    color: #952727;
 }
 form p {
     color: #333333;
@@ -236,15 +236,15 @@ textarea {
 hr {
     margin: 32px 0 16px 0;
     border: none;
-    border-top: 1px dashed #81171B;
+    border-top: 1px dashed #952727;
 }
 .bttn-primary {
     color: white;
     flex-grow: 1;
     width: 100%;
-    background-color: #81171B;
+    background-color: #952727;
     cursor: pointer;
-    border: 1px solid #81171B;
+    border: 1px solid #952727;
     box-shadow: 2px 2px 8px rgba(49, 9, 10, 0.2);
 }
 .bttn-primary:hover {
@@ -252,16 +252,16 @@ hr {
     box-shadow: none;
 }
 .bttn-cancel {
-    color: #81171B;
+    color: #952727;
     flex-grow: 1;
     width: 100%;
-    border: 1px solid #81171B;
+    border: 1px solid #952727;
     background-color: white;
     cursor: pointer;
     border-radius: 4px;
 }
 .bttn-cancel:hover {
-    border: 2px solid #81171B;
+    border: 2px solid #952727;
 }
 input[type="checkbox"], input[type="radio"] {
     width: auto;
@@ -419,9 +419,9 @@ button {
     width: 100%;
     padding: 4px 0;
     text-transform: capitalize;
-    background-color: #81171B;
+    background-color: #952727;
     color: white;
-    border: 1px solid #81171B;
+    border: 1px solid #952727;
     box-shadow: 2px 2px 8px rgba(49, 9, 10, 0.2);
     border-radius: 0.25rem;
 }

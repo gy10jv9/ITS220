@@ -76,4 +76,15 @@ class User {
         $stmt->bindParam(1, $result["id"], PDO::PARAM_STR);
         $stmt->execute();
     }
+
+    public function getuserQuantity() {
+        $query = "SELECT COUNT(*) FROM db_redcross.tbl_users";
+
+        $stmt = $this->db->getConnection()->prepare($query);
+        $stmt->execute();
+
+        $result = $stmt->fetch(PDO::FETCH_BOTH);
+
+        return $result[0];
+    }
 }

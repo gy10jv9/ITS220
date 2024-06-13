@@ -60,13 +60,13 @@ $roleRequests = $Request->getallRoleRequests();
 
 
             <div class="request-superAdminRole">
-                <h1> Role Requests </h1>
+                <h1> Table 1: Role Requests </h1>
                 <!-- -----[ ROLE REQUESTS TABLE ]----- -->
                 <table cellpadding="5" style="margin-top: 1rem;" class="w-full">
-                    <tr style="border: 2px solid #81171b;">
-                        <td style="border: 2px solid #81171b;"><h2> Username </h2></td>
-                        <td style="border: 2px solid #81171b;"><h2> Role </h2></td>
-                        <td class="text-center" style="border: 2px solid #81171b;"><h2> Actions </h2></td>
+                    <tr style="border: 2px solid #952727;">
+                        <td style="border: 2px solid #952727;"><h2> Username </h2></td>
+                        <td style="border: 2px solid #952727;"><h2> Role </h2></td>
+                        <td class="text-center" style="border: 2px solid #952727;"><h2> Actions </h2></td>
                     </tr>
                     <?php foreach ($roleRequests as $request): ?>
                         <tr>
@@ -87,9 +87,18 @@ $roleRequests = $Request->getallRoleRequests();
 
 
             <div class="container-charts">
-                <div><canvas id="bar"></canvas></div>
-                <div><canvas id="doughnut"></canvas></div>
-                <div style="grid-column: span 2; height: 30rem"><canvas id="line"></canvas></div>
+                <div>
+                    <!-- <h1> Chart 1: Number of New Volunteers </h1> -->
+                    <canvas id="bar"></canvas>
+                </div>
+                <div>
+                    <!-- <h1> Chart 2: Ratio of Admin and Volunteers </h1> -->
+                    <canvas id="doughnut"></canvas>
+                </div>
+                <div style="grid-column: span 2; height: 30rem">
+                    <!-- <h1> Chart 3: Daily Donations, Volunteers, and Works of Services </h1> -->
+                    <canvas id="line"></canvas>
+                </div>
             </div>
         </section>
     </main>
@@ -125,6 +134,12 @@ $roleRequests = $Request->getallRoleRequests();
                 y: {
                     beginAtZero: true
                 }
+            },
+            plugins: {
+                title: {
+                    display: true,
+                    text: 'Chart 1: Daily New Volunteers'
+                }
             }
         }
     });
@@ -134,43 +149,71 @@ $roleRequests = $Request->getallRoleRequests();
     new Chart(ctxDoughnut, {
         type: 'doughnut',
         data: {
-            labels: ['Red', 'Blue','Yellow'],
+            labels: ['Volunteers', 'Admins','Works'],
             datasets: [{
                 label: 'My First Dataset',
                 data: [300, 50, 100],
                 backgroundColor: [
-                    'rgb(255, 99, 132)',
-                    'rgb(54, 162, 235)',
-                    'rgb(255, 205, 86)'
+                    'rgb(149, 39, 39)',
+                    'rgb(105, 45, 45)',
+                    'rgb(63, 37, 37)'
                 ],
-                hoverOffset: 4
+                hoverOffset: 4 
             }]
         },
         options: {
             responsive: true,
-            maintainAspectRatio: false
+            maintainAspectRatio: false,
+            plugins: {
+                title: {
+                    display: true,
+                    text: 'Chart 2: Total Number of Volunteers, Admins, and Volunteer Services'
+                }
+            }
         }
     });
 
     const ctxLine = document.getElementById('line');
 
     new Chart(ctxLine, {
-        type: 'line',
-        data: {
-            labels: ['January', 'February', 'March', 'April', 'May', 'June'],
-            datasets: [{
-                label: 'My First Dataset',
+    type: 'line',
+    data: {
+        labels: ['January', 'February', 'March', 'April', 'May', 'June'],
+        datasets: [
+            {
+                label: 'Volunteers',
                 data: [65, 59, 80, 81, 56, 55],
                 fill: false,
-                borderColor: 'rgb(75, 192, 192)',
+                borderColor: 'rgb(149, 39, 39)',
                 tension: 0.1
-            }]
-        },
-        options: {
-            responsive: true,
-            maintainAspectRatio: false
+            },
+            {
+                label: 'Donations',
+                data: [28, 48, 40, 19, 86, 27],
+                fill: false,
+                borderColor: 'rgb(105, 45, 45)',
+                tension: 0.1
+            },
+            {
+                label: 'Volunteer Services',
+                data: [45, 25, 60, 75, 50, 40],
+                fill: false,
+                borderColor: 'rgb(63, 37, 37)',
+                tension: 0.1
+            }
+        ]
+    },
+    options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        plugins: {
+            title: {
+                display: true,
+                text: 'Chart 3: Daily Donations, Volunteers, and Volunteer Services'
+            }
         }
-    });
+    }
+});
 </script>
 
 <?php include('./partials/footer.php') ?>

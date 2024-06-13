@@ -61,10 +61,10 @@ if (isset($_GET['search']) && !empty($_GET['search'])) {
 
             <!-- /////[ TABLE ]///// -->
             <table cellpadding="5" style="margin: 1rem 0 1rem 0;">
-                    <tr style="border: 2px solid #81171b;">
-                        <td style="border: 2px solid #81171b;"><h2> Fullname </h2></td>
-                        <td style="border: 2px solid #81171b;"><h2> Contact Num </h2></td>
-                        <td class="text-center" style="border: 2px solid #81171b;"><h2> Actions </h2></td>
+                    <tr style="border: 2px solid #952727;">
+                        <td style="border: 2px solid #952727;"><h2> Fullname </h2></td>
+                        <td style="border: 2px solid #952727;"><h2> Contact Num </h2></td>
+                        <td class="text-center" style="border: 2px solid #952727;"><h2> Actions </h2></td>
                     </tr>
                     <?php foreach($donations as $donation) { ?>
                         <tr>
