@@ -91,4 +91,16 @@ class ServiceReport {
 
         return $stmt->fetchColumn();
     }
+
+    public function displayall() {
+        $query = 'SELECT tbl_servicereports.id, tbl_beneficiaries.beneficiaryName, tbl_locations.location, tbl_servicereports.date, tbl_servicereports.expense, tbl_servicereports.description, tbl_servicereports.remarks
+                FROM tbl_servicereports
+                INNER JOIN tbl_beneficiaries ON tbl_servicereports.beneficiary_id = tbl_beneficiaries.id
+                INNER JOIN tbl_locations ON tbl_servicereports.location_id = tbl_locations.id';
+
+        $stmt = $this->db->getConnection()->prepare($query);
+        $stmt->execute();
+
+        return $stmt->fetchAll(PDO::FETCH_BOTH);
+    }
 }

@@ -100,4 +100,3 @@ class Donation {
         return $stmt->fetchColumn();
     }
 }
-?>

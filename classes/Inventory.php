@@ -95,4 +95,17 @@ class Inventory {
         $stmt->bindParam(7, $item["remarks"], PDO::PARAM_STR);
         $stmt->execute();
     }
+
+    public function displayall() {
+        $query = "SELECT tbl_inventory.id, tbl_brands.brandName, tbl_items.itemName, tbl_inventory.purchaseDate, tbl_inventory.quantity, tbl_distributors.distributorName, tbl_inventory.description, tbl_inventory.remarks
+                FROM tbl_inventory
+                INNER JOIN tbl_brands ON tbl_inventory.brand_id = tbl_brands.id
+                INNER JOIN tbl_items ON tbl_inventory.item_id = tbl_items.id
+                INNER JOIN tbl_distributors ON tbl_inventory.distributor_id = tbl_distributors.id";
+
+        $stmt = $this->db->getConnection()->prepare($query);
+        $stmt->execute();
+
+        return $stmt->fetchAll(PDO::FETCH_BOTH);
+    }
 }
