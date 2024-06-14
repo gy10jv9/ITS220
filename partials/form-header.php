@@ -1,7 +1,7 @@
 <?php
 session_start();
-if (isset($_SESSION["isvalid"]) == false && basename($_SERVER["PHP_SELF"]) != "login.php" && basename($_SERVER["PHP_SELF"]) != "register.php") { // kung wala sa login.php or sa register.php
-    header("Location: forms/user/login.php");
+if (isset($_SESSION["isvalid"]) == false && basename($_SERVER["PHP_SELF"]) != "login.php" && basename($_SERVER["PHP_SELF"]) != "register.php" || $_SESSION["role"] == 1) { // kung wala sa login.php or sa register.php
+    header("Location: ../../index.php");
 }
 ?>
 

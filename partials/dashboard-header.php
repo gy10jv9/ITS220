@@ -1,7 +1,7 @@
 <?php
 session_start();
-if (isset($_SESSION["isvalid"]) == 0) {
-    header("Location: ../forms/user/login.php");
+if (isset($_SESSION["isvalid"]) == 0 || $_SESSION["role"] == 1) {
+    header("Location: ../index.php");
 }
 
 

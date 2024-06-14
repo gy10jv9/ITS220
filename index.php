@@ -67,31 +67,33 @@ $roleRequests = $Request->getallRoleRequests();
             </div>
 
 
-            <div class="request-superAdminRole">
-                <h1> Table 1: Role Requests </h1>
-                <!-- -----[ ROLE REQUESTS TABLE ]----- -->
-                <table cellpadding="5" style="margin-top: 1rem;" class="w-full">
-                    <tr style="border: 2px solid #952727;">
-                        <td style="border: 2px solid #952727;"><h2> Username </h2></td>
-                        <td style="border: 2px solid #952727;"><h2> Role </h2></td>
-                        <td class="text-center" style="border: 2px solid #952727;"><h2> Actions </h2></td>
-                    </tr>
-                    <?php foreach ($roleRequests as $request): ?>
-                        <tr>
-                            <td><?php echo $request['username']; ?></td>
-                            <td><?php echo $request['type']; ?></td>
-                            <td class="text-center">
-                                <form method="post" class="action-form">
-                                    <input type="hidden" name="request_id" value="<?php echo $request['id']; ?>">
-                                    <input type="hidden" name="request_role" value="<?php echo $request['type_id']; ?>">
-                                    <button name="approve" type="submit" class="bttn-primary2">Approve</button>
-                                    <button name="decline" type="submit" class="bttn-primary2">Decline</button>
-                                </form>
-                            </td>
+            <?php if ($_SESSION['role'] == 3): ?>
+                <div class="request-superAdminRole">
+                    <h1> Table 1: Role Requests </h1>
+                    <!-- -----[ ROLE REQUESTS TABLE ]----- -->
+                    <table cellpadding="5" style="margin-top: 1rem;" class="w-full">
+                        <tr style="border: 2px solid #952727;">
+                            <td style="border: 2px solid #952727;"><h2> Username </h2></td>
+                            <td style="border: 2px solid #952727;"><h2> Role </h2></td>
+                            <td class="text-center" style="border: 2px solid #952727;"><h2> Actions </h2></td>
                         </tr>
-                    <?php endforeach; ?>
-                </table>
-            </div>
+                        <?php foreach ($roleRequests as $request): ?>
+                            <tr>
+                                <td><?php echo $request['username']; ?></td>
+                                <td><?php echo $request['type']; ?></td>
+                                <td class="text-center">
+                                    <form method="post" class="action-form">
+                                        <input type="hidden" name="request_id" value="<?php echo $request['id']; ?>">
+                                        <input type="hidden" name="request_role" value="<?php echo $request['type_id']; ?>">
+                                        <button name="approve" type="submit" class="bttn-primary2">Approve</button>
+                                        <button name="decline" type="submit" class="bttn-primary2">Decline</button>
+                                    </form>
+                                </td>
+                            </tr>
+                        <?php endforeach; ?>
+                    </table>
+                </div>
+            <?php endif; ?>
 
 
             <div class="container-charts">
