@@ -41,4 +41,20 @@
     </div>
 </div>
 
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+    const form = document.querySelector("form");
+    form.addEventListener("submit", function(event) {
+        const username = document.querySelector("input[name='username']").value.trim();
+        const email = document.querySelector("input[name='email']").value.trim();
+        const password = document.querySelector("input[name='password']").value.trim();
+
+        if (!username || !email || !password) {
+            event.preventDefault(); // Prevent form submission
+            alert("Please fill in all the fields.");
+        }
+    });
+    });
+</script>
+
 <?php include("../../partials/login-footer.php") ?>
