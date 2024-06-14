@@ -1,10 +1,11 @@
 <?php
 include("../partials/dashboard-header.php");
 include("../partials/dashboard-sidenav.php");
+include("../classes/Database.php");
 include("../classes/Inventory.php");
 
 $db = new Database();
-$Inventory = new Volunteer($db);
+$Inventory = new Inventory($db);
 
 $inventory = $Inventory->displayall();
 ?>

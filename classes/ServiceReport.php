@@ -57,14 +57,14 @@ class ServiceReport {
         }
 
 
-        $query = "INSERT INTO db_redcross.tbl_works (beneficiary_id, location_id, date, expense, description, remarks)
+        $query = "INSERT INTO db_redcross.tbl_works (beneficiary_id, location_id, date, expenses, description, remarks)
                 VALUES (?, ?, ?, ?, ?, ?)";
 
         $stmt = $this->db->getConnection()->prepare($query);
         $stmt->bindParam(1, $beneficiary_id, PDO::PARAM_INT);
         $stmt->bindParam(2, $location_id, PDO::PARAM_INT);
         $stmt->bindParam(3, $report["date"], PDO::PARAM_STR);
-        $stmt->bindParam(4, $report["expense"], PDO::PARAM_INT);
+        $stmt->bindParam(4, $report["expenses"], PDO::PARAM_INT);
         $stmt->bindParam(5, $report["description"], PDO::PARAM_STR);
         $stmt->bindParam(6, $report["remarks"], PDO::PARAM_STR);
         $stmt->execute();
@@ -93,7 +93,7 @@ class ServiceReport {
     }
 
     public function displayall() {
-        $query = 'SELECT tbl_works.id, tbl_beneficiaries.beneficiaryName, tbl_locations.location, tbl_works.date, tbl_works.expense, tbl_works.description, tbl_works.remarks
+        $query = 'SELECT tbl_works.id, tbl_beneficiaries.beneficiaryName, tbl_locations.location, tbl_works.date, tbl_works.expenses, tbl_works.description, tbl_works.remarks
                 FROM tbl_works
                 INNER JOIN tbl_beneficiaries ON tbl_works.beneficiary_id = tbl_beneficiaries.id
                 INNER JOIN tbl_locations ON tbl_works.location_id = tbl_locations.id';
@@ -151,14 +151,14 @@ class ServiceReport {
             $location_id = $this->db->getConnection()->lastInsertId();
         }
         $query = "UPDATE db_redcross.tbl_works 
-                SET beneficiary_id = ?, location_id = ?, date = ?, expense = ?, description = ?, remarks = ?
+                SET beneficiary_id = ?, location_id = ?, date = ?, expenses = ?, description = ?, remarks = ?
                 WHERE id = ?";
 
         $stmt = $this->db->getConnection()->prepare($query);
         $stmt->bindParam(1, $beneficiary_id, PDO::PARAM_INT);
         $stmt->bindParam(2, $location_id, PDO::PARAM_INT);
         $stmt->bindParam(3, $item["date"], PDO::PARAM_STR);
-        $stmt->bindParam(4, $item["expense"], PDO::PARAM_INT);
+        $stmt->bindParam(4, $item["expenses"], PDO::PARAM_INT);
         $stmt->bindParam(5, $item["description"], PDO::PARAM_STR);
         $stmt->bindParam(6, $item["remarks"], PDO::PARAM_STR);
         $stmt->bindParam(7, $id, PDO::PARAM_INT);

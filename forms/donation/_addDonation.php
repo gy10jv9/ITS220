@@ -31,7 +31,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         die("Error: ". $e->getMessage());
     }
 
-    header('Location: ../../dash-donations.php');
+    header('Location: ../../dashboards/dash-donations.php');
     exit;
 }
 ?>

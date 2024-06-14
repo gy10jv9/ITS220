@@ -1,6 +1,7 @@
 <?php
 include("../partials/dashboard-header.php");;
 include("../partials/dashboard-sidenav.php");
+include("../classes/Database.php");
 include("../classes/ServiceReport.php");
 
 $db = new Database();

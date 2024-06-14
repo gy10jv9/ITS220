@@ -1,7 +1,7 @@
 <?php
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $item = [
-        "beneficiaryName" => $_POST["beneficiaryName"],
+        "brandName" => $_POST["brandName"],
         "itemName" => $_POST["itemName"],
         "purchaseDate" => $_POST["purchaseDate"],
         "quantity" => $_POST["quantity"],
@@ -24,6 +24,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         die("Error: ". $e->getMessage());
     }
 } else {
-    header("Location: inventory.php");
+    header("Location: ../../dashboards/dash-inventory.php");
     exit;
 }

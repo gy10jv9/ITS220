@@ -26,7 +26,7 @@ include("../../partials/form-header.php");
             </div>
             <div class="fgrow-2">
                 <p> Total Expenses (PHP) </p> 
-                <input type = "number" name="expense">
+                <input type = "number" name="expenses">
             </div>
         </div>
 

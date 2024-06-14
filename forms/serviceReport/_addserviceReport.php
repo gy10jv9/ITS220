@@ -4,7 +4,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         "beneficiaryName" => $_POST["beneficiaryName"],
         "location" => $_POST["location"],
         "date" => $_POST["date"],
-        "expense" => $_POST["expense"],
+        "expenses" => $_POST["expenses"],
         "description" => $_POST["description"],
         "remarks" => $_POST["remarks"]
     ];
@@ -17,12 +17,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $ServiceReport = new ServiceReport($Database);
         $ServiceReport->add($report);
 
-        header("Location: serviceReport.php");
+        header("Location: ../../dashboards/dash-serviceReport.php");
         exit;
     } catch (Exception $e) {
         die("Error: ". $e->getMessage());
     }
 } else {
-    header("Location: serviceReport.php");
+    header("Location: ../../dashboards/dash-serviceReport.php");
     exit;
 }
