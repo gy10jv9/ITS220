@@ -110,4 +110,58 @@ class ServiceReport {
 
         $this->db->getConnection()->exec($query);
     }
+
+    public function update($id, $item) {
+        // search if may ga exist na nga beneficiary name or wala pa
+        $query = "SELECT COUNT(*) FROM db_redcross.tbl_beneficiaries WHERE beneficiaryName = ?";
+        $stmt = $this->db->getConnection()->prepare($query);
+        $stmt->bindParam(1, $item["beneficiaryName"], PDO::PARAM_STR);
+        $stmt->execute();
+        $result = $stmt->fetchColumn();
+        if ($result > 0) {
+            $query = "SELECT id FROM db_redcross.tbl_beneficiaries WHERE beneficiaryName = ?";
+            $stmt = $this->db->getConnection()->prepare($query);
+            $stmt->bindParam(1, $item["beneficiaryName"], PDO::PARAM_STR);
+            $stmt->execute();
+            $beneficiary_id = $stmt->fetchColumn();
+        } else {
+            $query = "INSERT INTO db_redcross.tbl_beneficiaries (beneficiaryName) VALUES (?)";
+            $stmt = $this->db->getConnection()->prepare($query);
+            $stmt->bindParam(1, $item["beneficiaryName"], PDO::PARAM_STR);
+            $stmt->execute();
+            $beneficiary_id = $this->db->getConnection()->lastInsertId();
+        }
+        // search if may ga exist na nga location or wala pa
+        $query = "SELECT COUNT(*) FROM db_redcross.tbl_locations WHERE location = ?";
+        $stmt = $this->db->getConnection()->prepare($query);
+        $stmt->bindParam(1, $item["location"], PDO::PARAM_STR);
+        $stmt->execute();
+        $result = $stmt->fetchColumn();
+        if ($result > 0) {
+            $query = "SELECT id FROM db_redcross.tbl_locations WHERE location = ?";
+            $stmt = $this->db->getConnection()->prepare($query);
+            $stmt->bindParam(1, $item["location"], PDO::PARAM_STR);
+            $stmt->execute();
+            $location_id = $stmt->fetchColumn();
+        } else {
+            $query = "INSERT INTO db_redcross.tbl_locations (location) VALUES (?)";
+            $stmt = $this->db->getConnection()->prepare($query);
+            $stmt->bindParam(1, $item["location"], PDO::PARAM_STR);
+            $stmt->execute();
+            $location_id = $this->db->getConnection()->lastInsertId();
+        }
+        $query = "UPDATE db_redcross.tbl_works 
+                SET beneficiary_id = ?, location_id = ?, date = ?, expense = ?, description = ?, remarks = ?
+                WHERE id = ?";
+
+        $stmt = $this->db->getConnection()->prepare($query);
+        $stmt->bindParam(1, $beneficiary_id, PDO::PARAM_INT);
+        $stmt->bindParam(2, $location_id, PDO::PARAM_INT);
+        $stmt->bindParam(3, $item["date"], PDO::PARAM_STR);
+        $stmt->bindParam(4, $item["expense"], PDO::PARAM_INT);
+        $stmt->bindParam(5, $item["description"], PDO::PARAM_STR);
+        $stmt->bindParam(6, $item["remarks"], PDO::PARAM_STR);
+        $stmt->bindParam(7, $id, PDO::PARAM_INT);
+        $stmt->execute();
+    }
 }

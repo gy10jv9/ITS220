@@ -46,10 +46,45 @@ class Donation {
         $this->db->getConnection()->exec($query);
     }
     public function update($id, $donation) {
-        $query = "UPDATE tbl_donations SET fname = :fname WHERE donation_id = :id";
+        $query = "UPDATE tbl_donations 
+            SET fname = :fname, 
+                lname = :lname, 
+                contactnum = :contactnum, 
+                nationality = :nationality, 
+                amount = :amount, 
+                brand = :brand, 
+                item = :item, 
+                purchaseDate = :purchaseDate, 
+                quant = :quant, 
+                distributor = :distributor, 
+                streetAddr = :streetAddr, 
+                city = :city, 
+                region = :region, 
+                country = :country, 
+                cardnum = :cardnum, 
+                expdate = :expdate, 
+                ccv = :ccv 
+            WHERE donation_id = :id";
+
         $stmt = $this->db->getConnection()->prepare($query);
         $stmt->bindParam(':id', $id, PDO::PARAM_INT);
         $stmt->bindParam(':fname', $donation["fname"], PDO::PARAM_STR);
+        $stmt->bindParam(':lname', $donation["lname"], PDO::PARAM_STR);
+        $stmt->bindParam(':contactnum', $donation["contactnum"], PDO::PARAM_STR);
+        $stmt->bindParam(':nationality', $donation["nationality"], PDO::PARAM_STR);
+        $stmt->bindParam(':amount', $donation["amount"], PDO::PARAM_INT);
+        $stmt->bindParam(':brand', $donation["brand"], PDO::PARAM_STR);
+        $stmt->bindParam(':item', $donation["item"], PDO::PARAM_STR);
+        $stmt->bindParam(':purchaseDate', $donation["purchaseDate"], PDO::PARAM_STR);
+        $stmt->bindParam(':quant', $donation["quant"], PDO::PARAM_INT);
+        $stmt->bindParam(':distributor', $donation["distributor"], PDO::PARAM_STR);
+        $stmt->bindParam(':streetAddr', $donation["streetAddr"], PDO::PARAM_STR);
+        $stmt->bindParam(':city', $donation["city"], PDO::PARAM_STR);
+        $stmt->bindParam(':region', $donation["region"], PDO::PARAM_STR);
+        $stmt->bindParam(':country', $donation["country"], PDO::PARAM_STR);
+        $stmt->bindParam(':cardnum', $donation["cardnum"], PDO::PARAM_STR);
+        $stmt->bindParam(':expdate', $donation["expdate"], PDO::PARAM_STR);
+        $stmt->bindParam(':ccv', $donation["ccv"], PDO::PARAM_STR);
         $stmt->execute();
     }
     public function view($id) {
