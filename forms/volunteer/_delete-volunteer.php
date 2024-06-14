@@ -10,4 +10,3 @@ if (isset($_GET['id'])) {
     header('Location: ../../dashboards/dash-volunteers.php');
     exit;
 }
-?>

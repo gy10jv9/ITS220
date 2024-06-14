@@ -41,7 +41,7 @@ class Donation {
     }
     public function delete($id) {
         $query = "DELETE FROM tbl_donations
-            WHERE donation_id = $id";
+            WHERE id = $id";
 
         $this->db->getConnection()->exec($query);
     }

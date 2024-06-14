@@ -77,7 +77,7 @@ if (isset($_GET['search']) && !empty($_GET['search'])) {
                                 <a href="http://localhost/its220-infoman/forms/volunteer/updateForm-volunteer.php?id=<?= isset($donation['id'])? (int) $donation['id'] : 0?>">
                                     <img src ='img/edit.png' width = '16' >
                                 </a>
-                                <a href="http://localhost/its220-infoman/forms/volunteer/_delete-volunteer.php?id=<?= isset($donation['id'])? (int) $donation['id'] : 0?>">
+                                <a href="http://localhost/its220-infoman/forms/donation/_deleteDonation.php?id=<?= isset($donation['id'])? (int) $donation['id'] : 0?>">
                                     <img src ='img/delete.png' width = '16' alt="Delete">
                                 </a>
                             </td>

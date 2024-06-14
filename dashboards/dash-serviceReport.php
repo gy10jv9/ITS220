@@ -71,7 +71,7 @@ $report = $ServiceReport->displayall();
                                 <a href="http://localhost/its220-infoman/forms/volunteer/updateForm-volunteer.php?id=<?= isset($rep['id'])? (int) $vol['id'] : 0?>">
                                     <img src ='../img/edit.png' width = '16' >
                                 </a>
-                                <a href="http://localhost/its220-infoman/forms/volunteer/_delete-volunteer.php?id=<?= isset($rep['id'])? (int) $vol['id'] : 0?>">
+                                <a href="http://localhost/its220-infoman/forms/serviceReport/_deleteReport.php?id=<?= isset($rep['id'])? (int) $vol['id'] : 0?>">
                                     <img src ='../img/delete.png' width = '16' alt="Delete">
                                 </a>
                             </td>

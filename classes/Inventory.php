@@ -108,4 +108,11 @@ class Inventory {
 
         return $stmt->fetchAll(PDO::FETCH_BOTH);
     }
+
+    public function delete($id) {
+        $query = "DELETE FROM tbl_inventory
+            WHERE id = $id";
+
+        $this->db->getConnection()->exec($query);
+    }
 }

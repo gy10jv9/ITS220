@@ -103,4 +103,11 @@ class ServiceReport {
 
         return $stmt->fetchAll(PDO::FETCH_BOTH);
     }
+
+    public function delete($id) {
+        $query = "DELETE FROM tbl_works
+            WHERE id = $id";
+
+        $this->db->getConnection()->exec($query);
+    }
 }
